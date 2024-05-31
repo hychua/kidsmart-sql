@@ -26,7 +26,7 @@ from app import app
 from sqlalchemy import create_engine
 import sql
 
-engine = create_engine('postgresql://postres:Stop4grass@localhost:8050/kidsmart')
+engine = create_engine('postgresql://hychua:beHfVqmWgXYspiaR4hnopOP7aa4YscLF@dpg-cp9hcaf109ks73a8p770-a:5432/kidsmart')
 
 # Create layout
 
