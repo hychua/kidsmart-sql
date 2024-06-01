@@ -12,3 +12,4 @@ pandas==2.2.2
 plotly==5.22.0
 psycopg2==2.9.9
 sql==2022.4.0
+SQLAlchemy==2.0.30
