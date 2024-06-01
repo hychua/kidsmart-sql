@@ -26,7 +26,7 @@ from app import app
 from sqlalchemy import create_engine
 import sql
 
-engine = create_engine('postgresql://hychua:beHfVqmWgXYspiaR4hnopOP7aa4YscLF@dpg-cp9hcaf109ks73a8p770-a:5432/kidsmart')
+engine = create_engine('postgresql://hychua:XJHnZrENqEAgflLf0A73HxrxVqqf9gnv@dpg-cpdeiq7sc6pc738uci50-a:5432/kidsmart_d23j')
 
 # Create layout
 
@@ -1934,7 +1934,7 @@ def category_output(order_save_button, list_of_contents, file_name):
                #sql = "SELECT max(Category) as Category FROM category"
                #df = querydatafromdatabase(sql,[],["Category"])
                #Category = int(df['Category'][0])+1
-               sqlinsert = "INSERT INTO category(Order_ID, Order Date, Category, Product Name, Product_ID, Sale Price, Retail Price) VALUES(%s, %s, %s, %s, %s, %s, %s)"
+               sqlinsert = "INSERT INTO category(Order_ID, Order Date, Category, Product Name, Product_ID, Sale Price, Retail Price, Size, Buyer Region, Order Year, City Name, Quantity) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
                #modifydatabase(sqlinsert, [Order_ID,Order_Date])
                sql.write_frame(df_parsed, 'order', sqlinsert, flavor='postgresql')
                return ['Posting Inventory was Successful!',{'display': 'block'}]

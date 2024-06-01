@@ -11,10 +11,10 @@ import psycopg2
 def querydatafromdatabase(sql, values,dbcolumns):
     db = psycopg2.connect(
         user="hychua",
-        password="beHfVqmWgXYspiaR4hnopOP7aa4YscLF",
-        host="dpg-cp9hcaf109ks73a8p770-a",
+        password="XJHnZrENqEAgflLf0A73HxrxVqqf9gnv",
+        host="dpg-cpdeiq7sc6pc738uci50-a",
         port=5432,
-        database="kidsmart")
+        database="kidsmart_d23j")
     cur = db.cursor()
     cur.execute(sql, values)
     rows = pd.DataFrame(cur.fetchall(), columns=dbcolumns)
@@ -24,10 +24,10 @@ def querydatafromdatabase(sql, values,dbcolumns):
 def modifydatabase(sqlcommand, values):
     db = psycopg2.connect(
             user="hychua",
-            password="beHfVqmWgXYspiaR4hnopOP7aa4YscLF",
-            host="dpg-cp9hcaf109ks73a8p770-a",
+            password="XJHnZrENqEAgflLf0A73HxrxVqqf9gnv",
+            host="dpg-cpdeiq7sc6pc738uci50-a",
             port=5432,
-            database="kidsmart")
+            database="kidsmart_d23j")
     cursor = db.cursor()
     cursor.execute(sqlcommand, values)
     db.commit()
