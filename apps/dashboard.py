@@ -1930,7 +1930,7 @@ def category_output(order_save_button, list_of_contents, file_name):
        eventid = ctx.triggered[0]['prop_id'].split('.')[0]
        if eventid =="order-save-button":
            if list_of_contents is not None:
-               df_parsed = parse_contents2(list_of_contents,file_name)
+               df_parsed = parse_contents2(list_of_contents,file_name) for c, n in zip(list_of_contents, list_of_names)
                #sql = "SELECT max(Category) as Category FROM category"
                #df = querydatafromdatabase(sql,[],["Category"])
                #Category = int(df['Category'][0])+1
@@ -1958,7 +1958,7 @@ def category_output(inv_save_button, list_of_contents, file_name):
        eventid = ctx.triggered[0]['prop_id'].split('.')[0]
        if eventid =="inv-save-button":
            if list_of_contents is not None:
-               df_parsed = parse_contents2(list_of_contents,file_name)
+               df_parsed = parse_contents2(list_of_contents,file_name) for c, n in zip(list_of_contents, list_of_names)
                #sql = "SELECT max(Category) as Category FROM category"
                #df = querydatafromdatabase(sql,[],["Category"])
                #Category = int(df['Category'][0])+1
@@ -1986,7 +1986,7 @@ def category_output(cat_save_button, list_of_contents, file_name):
        eventid = ctx.triggered[0]['prop_id'].split('.')[0]
        if eventid =="cat-save-button":
            if list_of_contents is not None:
-               df_parsed = parse_contents2(list_of_contents,file_name)
+               df_parsed = parse_contents2(list_of_contents,file_name) for c, n in zip(list_of_contents, list_of_names)
                #sql = "SELECT max(Category) as Category FROM category"
                #df = querydatafromdatabase(sql,[],["Category"])
                #Category = int(df['Category'][0])+1
