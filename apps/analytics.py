@@ -37,12 +37,12 @@ def modifydatabase(sqlcommand, values):
 #df_inv_data = pd.read_csv(DATA_PATH.joinpath("inv_data.csv"),parse_dates=True)
 #df_cat_data = pd.read_csv(DATA_PATH.joinpath("cat_text.csv"),parse_dates=True)
 
-sql = "SELECT * FROM order"
+sql1 = 'SELECT * FROM "order"'
 sql2 = "SELECT * FROM product"
 sql3 = "SELECT * FROM category"
-df_full_data = querydatafromdatabase(sql,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price"])
-df_inv_data = querydatafromdatabase(sql,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
-df_cat_data = querydatafromdatabase(sql,[],["Category","Category_text"])
+df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+df_cat_data = querydatafromdatabase(sql3,[],["Category","Category_text"])
         
 # Create variables 
 

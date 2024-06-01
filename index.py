@@ -77,7 +77,7 @@ def render_content(tab):
         return dashboard.layout3
 
 
-app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
+#app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
 
 if __name__ == '__main__':
     app.run_server(debug=False)
