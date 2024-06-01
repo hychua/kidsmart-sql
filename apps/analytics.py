@@ -12,7 +12,7 @@ def querydatafromdatabase(sql, values,dbcolumns):
     db = psycopg2.connect(
         user="hychua",
         password="XJHnZrENqEAgflLf0A73HxrxVqqf9gnv",
-        host="dpg-cpdeiq7sc6pc738uci50-a",
+        host="dpg-cpdeiq7sc6pc738uci50-a.oregon-postgres.render.com",
         port=5432,
         database="kidsmart_d23j")
     cur = db.cursor()
@@ -25,7 +25,7 @@ def modifydatabase(sqlcommand, values):
     db = psycopg2.connect(
             user="hychua",
             password="XJHnZrENqEAgflLf0A73HxrxVqqf9gnv",
-            host="dpg-cpdeiq7sc6pc738uci50-a",
+            host="dpg-cpdeiq7sc6pc738uci50-a.oregon-postgres.render.com",
             port=5432,
             database="kidsmart_d23j")
     cursor = db.cursor()
