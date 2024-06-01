@@ -24,7 +24,7 @@ import datetime
 import io
 from app import app
 from sqlalchemy import create_engine
-import sql
+
 
 engine = create_engine('postgresql://hychua:XJHnZrENqEAgflLf0A73HxrxVqqf9gnv@dpg-cpdeiq7sc6pc738uci50-a.oregon-postgres.render.com:5432/kidsmart_d23j')
 
@@ -1930,13 +1930,14 @@ def category_output(order_save_button, list_of_contents, file_name):
        eventid = ctx.triggered[0]['prop_id'].split('.')[0]
        if eventid =="order-save-button":
            if list_of_contents is not None:
-               df_parsed = parse_contents2(list_of_contents,file_name) for c, n in zip(list_of_contents, list_of_names)
-               #sql = "SELECT max(Category) as Category FROM category"
-               #df = querydatafromdatabase(sql,[],["Category"])
-               #Category = int(df['Category'][0])+1
-               sqlinsert = "INSERT INTO category(Order_ID, Order Date, Category, Product Name, Product_ID, Sale Price, Retail Price, Size, Buyer Region, Order Year, City Name, Quantity) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-               #modifydatabase(sqlinsert, [Order_ID,Order_Date])
-               sql.write_frame(df_parsed, 'order', sqlinsert, flavor='postgresql')
+               for c, n in zip(list_of_contents, file_name):
+                   df_parsed = parse_contents2(c, n)
+                   #sql = "SELECT max(Category) as Category FROM category"
+                   #df = querydatafromdatabase(sql,[],["Category"])
+                   #Category = int(df['Category'][0])+1
+                   sqlinsert = "INSERT INTO category(Order_ID, Order Date, Category, Product Name, Product_ID, Sale Price, Retail Price, Size, Buyer Region, Order Year, City Name, Quantity) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                   #modifydatabase(sqlinsert, [Order_ID,Order_Date])
+                   df_parsed.to_sql('order', sqlinsert)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
        return [' ',{'display': 'none'}]
@@ -1958,13 +1959,14 @@ def category_output(inv_save_button, list_of_contents, file_name):
        eventid = ctx.triggered[0]['prop_id'].split('.')[0]
        if eventid =="inv-save-button":
            if list_of_contents is not None:
-               df_parsed = parse_contents2(list_of_contents,file_name) for c, n in zip(list_of_contents, list_of_names)
-               #sql = "SELECT max(Category) as Category FROM category"
-               #df = querydatafromdatabase(sql,[],["Category"])
-               #Category = int(df['Category'][0])+1
-               sqlinsert = "INSERT INTO product(Product_ID, Product Name, Category, Order Year, Stock, Release Date) VALUES(%s, %s, %s, %s, %s, %s)"
-               #modifydatabase(sqlinsert, [Category,Category_text])
-               sql.write_frame(df_parsed, 'product', sqlinsert, flavor='postgresql')
+               for c, n in zip(list_of_contents, file_name):
+                   df_parsed = parse_contents2(c, n)
+                   #sql = "SELECT max(Category) as Category FROM category"
+                   #df = querydatafromdatabase(sql,[],["Category"])
+                   #Category = int(df['Category'][0])+1
+                   sqlinsert = "INSERT INTO product(Product_ID, Product Name, Category, Order Year, Stock, Release Date) VALUES(%s, %s, %s, %s, %s, %s)"
+                   #modifydatabase(sqlinsert, [Category,Category_text])
+                   df_parsed.to_sql('product', sqlinsert)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
        return [' ',{'display': 'none'}]
@@ -1986,13 +1988,14 @@ def category_output(cat_save_button, list_of_contents, file_name):
        eventid = ctx.triggered[0]['prop_id'].split('.')[0]
        if eventid =="cat-save-button":
            if list_of_contents is not None:
-               df_parsed = parse_contents2(list_of_contents,file_name) for c, n in zip(list_of_contents, list_of_names)
-               #sql = "SELECT max(Category) as Category FROM category"
-               #df = querydatafromdatabase(sql,[],["Category"])
-               #Category = int(df['Category'][0])+1
-               sqlinsert = "INSERT INTO category(Category, Category_text) VALUES(%s, %s)"
-               #modifydatabase(sqlinsert, [Category,Category_text])
-               sql.write_frame(df_parsed, 'category', sqlinsert, flavor='postgresql')
+               for c, n in zip(list_of_contents, file_name):
+                   df_parsed = parse_contents2(c, n)
+                   #sql = "SELECT max(Category) as Category FROM category"
+                   #df = querydatafromdatabase(sql,[],["Category"])
+                   #Category = int(df['Category'][0])+1
+                   sqlinsert = "INSERT INTO category(Category, Category_text) VALUES(%s, %s)"
+                   #modifydatabase(sqlinsert, [Category,Category_text])
+                   df_parsed.to_sql('category', sqlinsert)
                return ['Posting Category was Successful!',{'display': 'block'}]
    else:
        return [' ',{'display': 'none'}]
