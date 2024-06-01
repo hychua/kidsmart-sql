@@ -1937,7 +1937,7 @@ def category_output(order_save_button, list_of_contents, file_name):
                    #Category = int(df['Category'][0])+1
                    sqlinsert = "INSERT INTO category(Order_ID, Order Date, Category, Product Name, Product_ID, Sale Price, Retail Price, Size, Buyer Region, Order Year, City Name, Quantity) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
                    #modifydatabase(sqlinsert, [Order_ID,Order_Date])
-                   df_parsed.to_sql(name='order',con=engine, if_exists='append')
+                   df_parsed.to_sql(name='order',con=engine, if_exists='append', index=False)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
        return [' ',{'display': 'none'}]
@@ -1966,7 +1966,7 @@ def category_output(inv_save_button, list_of_contents, file_name):
                    #Category = int(df['Category'][0])+1
                    sqlinsert = "INSERT INTO product(Product_ID, Product Name, Category, Order Year, Stock, Release Date) VALUES(%s, %s, %s, %s, %s, %s)"
                    #modifydatabase(sqlinsert, [Category,Category_text])
-                   df_parsed.to_sql(name='product',con=engine, if_exists='append')
+                   df_parsed.to_sql(name='product',con=engine, if_exists='append', index=False)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
        return [' ',{'display': 'none'}]
@@ -1995,7 +1995,7 @@ def category_output(cat_save_button, list_of_contents, file_name):
                    #Category = int(df['Category'][0])+1
                    sqlinsert = "INSERT INTO category(Category, Category_text) VALUES(%s, %s)"
                    #modifydatabase(sqlinsert, [Category,Category_text])
-                   df_parsed.to_sql(name='category', con=engine, if_exists='append')
+                   df_parsed.to_sql(name='category', con=engine, if_exists='append', index=False)
                return ['Posting Category was Successful!',{'display': 'block'}]
    else:
        return [' ',{'display': 'none'}]
