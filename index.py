@@ -49,7 +49,7 @@ layout_index = html.Div([
                         style={}),
 
     html.Div([
-        dcc.Tabs(id='tabs', value='sales-dash', children=[
+        dcc.Tabs(id='tabs', value='inventory-dash', children=[
             dcc.Tab(label='Sales Dashboard', value='sales-dash',style=tab_style, selected_style=tab_selected_style),
             dcc.Tab(label='Inventory Dashboard', value='inventory-dash',style=tab_style, selected_style=tab_selected_style),
             dcc.Tab(label='Upload Data', value='upload-data',style=tab_style, selected_style=tab_selected_style),
