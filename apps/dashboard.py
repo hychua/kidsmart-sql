@@ -1866,9 +1866,28 @@ def parse_contents2(contents, filename):
             # Assume that the user uploaded a CSV file
             df = pd.read_csv(
                 io.StringIO(decoded.decode('utf-8')))
-        elif 'xls' in filename:
+        elif 'xlsx' in filename:
             # Assume that the user uploaded an excel file
-            df = pd.read_excel(io.BytesIO(decoded))
+            if 'Order.completed.' in filename:
+                # Assume data is from shopee and requires column conversion
+                df_raw = pd.read_excel(io.BytesIO(decoded))
+                data = {
+                    "Order_ID": list(range(1,len(df_raw.index)+1)),
+                    "Order Date": df_raw["Order Creation Date"].tolist(), 
+                    "Category": df_raw["Parent SKU Reference No."].tolist(), 
+                    "Product Name": df_raw["Product Name"].tolist(), 
+                    "Product_ID": list(range(1,len(df_raw.index)+1)), 
+                    "Sale Price": df_raw["Products' Price Paid by Buyer (PHP)"].tolist(), 
+                    "Retail Price": [220] * len(df_raw.index), 
+                    "Size": df_raw["SKU Reference No."].tolist(), 
+                    "Buyer Region": df_raw["Province"].tolist(), 
+                    "Order Year": [x[:10] for x in df_raw["Order Creation Date"]], 
+                    "City Name": df_raw["City"].tolist(), 
+                    "Quantity": df_raw["Quantity"].tolist()
+                    }
+                df = pd.DataFrame(data)
+            else:
+                df = pd.read_excel(io.BytesIO(decoded))
     except Exception as e:
         print(e)
         return html.Div([
