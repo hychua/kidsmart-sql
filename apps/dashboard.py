@@ -1964,13 +1964,13 @@ def update_output3(list_of_contents, list_of_names, list_of_dates):
     [Output('ord-notif', 'children'),
      Output('ord-notif', 'style')
      ],
-    [Input('order-save-button', 'n_clicks'),
+    [Input('ord-save-button', 'n_clicks'),
      Input('upload-data', 'contents')
      ],
     [
      State('upload-data', 'filename')
      ])
-def order_output(order_save_button, list_of_contents, file_name):
+def order_output(ord_save_button, list_of_contents, file_name):
    ctx = dash.callback_context
    if ctx.triggered:
        eventid = ctx.triggered[0]['prop_id'].split('.')[0]
