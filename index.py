@@ -8,7 +8,7 @@ from apps import dashboard
 
 # Connect to main app.py file
 from app import app
-import os
+
 
 # define tab styles
 tab_style = {
@@ -25,10 +25,11 @@ tab_selected_style = {
     'padding': '6px'
 }
 
-# Create Pages
+# live updates
+def serve_layout():
+    return layout_index
 
-# end create pages
-      
+# Create Pages      
 layout_index = html.Div([
     
                 html.Div([
@@ -60,9 +61,9 @@ layout_index = html.Div([
     html.Div(id='tabs-content', style={}),
 
 ])
+# end create pages
 
-
-app.layout = layout_index
+app.layout = serve_layout
 
 
 # Tab callbacks
