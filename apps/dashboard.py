@@ -1865,9 +1865,9 @@ def parse_contents(contents, filename, date):
     return html.Div([
         html.H5(filename),
         html.H6(datetime.datetime.fromtimestamp(date)),
-
+        html.P("Displaying first 10 records."),
         dash_table.DataTable(
-            df.to_dict('records'),
+            df[0:10].to_dict('records'),
             [{'name': i, 'id': i} for i in df.columns]
         ),
 
