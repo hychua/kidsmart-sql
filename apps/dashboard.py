@@ -1842,7 +1842,7 @@ def parse_contents(contents, filename, date):
                 df_order = querydatafromdatabase(sql,[],["max_id"])
                 input_id = int(df_order["max_id"][0])+1
                 data = {
-                    "Order_ID": list(range(input_id,input_id+len(df_raw.index)+1)),
+                    "Order_ID": list(range(input_id,input_id+len(df_raw.index))),
                     "Order Date": df_raw["Order Creation Date"].tolist(), 
                     "Category": df_raw["Parent SKU Reference No."].tolist(), 
                     "Product Name": df_raw["Product Name"].tolist(), 
@@ -1899,7 +1899,7 @@ def parse_contents2(contents, filename):
                 df_order = querydatafromdatabase(sql,[],["Order_ID"])
                 input_id = int(df_order['Order_ID'][0])+1
                 data = {
-                    "Order_ID": list(range(input_id,input_id+len(df_raw.index)+1)),
+                    "Order_ID": list(range(input_id,input_id+len(df_raw.index))),
                     "Order Date": df_raw["Order Creation Date"].tolist(), 
                     "Category": df_raw["Parent SKU Reference No."].tolist(), 
                     "Product Name": df_raw["Product Name"].tolist(), 
