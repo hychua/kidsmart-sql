@@ -1959,7 +1959,7 @@ def update_output3(list_of_contents, list_of_names, list_of_dates):
 
 # start upload callbacks
 
-# orders callbacks
+# order callbacks
 @app.callback(
     [Output('ord-notif', 'children'),
      Output('ord-notif', 'style')
@@ -1970,7 +1970,7 @@ def update_output3(list_of_contents, list_of_names, list_of_dates):
     [
      State('upload-data', 'filename')
      ])
-def category_output(order_save_button, list_of_contents, file_name):
+def order_output(order_save_button, list_of_contents, file_name):
    ctx = dash.callback_context
    if ctx.triggered:
        eventid = ctx.triggered[0]['prop_id'].split('.')[0]
@@ -1978,11 +1978,7 @@ def category_output(order_save_button, list_of_contents, file_name):
            if list_of_contents is not None:
                for c, n in zip(list_of_contents, file_name):
                    df_parsed = parse_contents2(c, n)
-                   #sql = "SELECT max(Category) as Category FROM category"
-                   #df = querydatafromdatabase(sql,[],["Category"])
-                   #Category = int(df['Category'][0])+1
-                   sqlinsert = "INSERT INTO category(Order_ID, Order Date, Category, Product Name, Product_ID, Sale Price, Retail Price, Size, Buyer Region, Order Year, City Name, Quantity) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-                   #modifydatabase(sqlinsert, [Order_ID,Order_Date])
+                   sqlinsert = "INSERT INTO order(Order_ID, Order Date, Category, Product Name, Product_ID, Sale Price, Retail Price, Size, Buyer Region, Order Year, City Name, Quantity) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
                    df_parsed.to_sql(name='order',con=engine, if_exists='append', index=False)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
@@ -2007,11 +2003,7 @@ def category_output(inv_save_button, list_of_contents, file_name):
            if list_of_contents is not None:
                for c, n in zip(list_of_contents, file_name):
                    df_parsed = parse_contents2(c, n)
-                   #sql = "SELECT max(Category) as Category FROM category"
-                   #df = querydatafromdatabase(sql,[],["Category"])
-                   #Category = int(df['Category'][0])+1
                    sqlinsert = "INSERT INTO product(Product_ID, Product Name, Category, Order Year, Stock, Release Date) VALUES(%s, %s, %s, %s, %s, %s)"
-                   #modifydatabase(sqlinsert, [Category,Category_text])
                    df_parsed.to_sql(name='product',con=engine, if_exists='append', index=False)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
@@ -2036,11 +2028,7 @@ def category_output(cat_save_button, list_of_contents, file_name):
            if list_of_contents is not None:
                for c, n in zip(list_of_contents, file_name):
                    df_parsed = parse_contents2(c, n)
-                   #sql = "SELECT max(Category) as Category FROM category"
-                   #df = querydatafromdatabase(sql,[],["Category"])
-                   #Category = int(df['Category'][0])+1
                    sqlinsert = "INSERT INTO category(Category, Category_text) VALUES(%s, %s)"
-                   #modifydatabase(sqlinsert, [Category,Category_text])
                    df_parsed.to_sql(name='category', con=engine, if_exists='append', index=False)
                return ['Posting Category was Successful!',{'display': 'block'}]
    else:
