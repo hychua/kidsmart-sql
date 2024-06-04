@@ -1838,9 +1838,9 @@ def parse_contents(contents, filename, date):
             if 'Order.completed.' in filename:
                 # Assume data is from shopee and requires column conversion
                 df_raw = pd.read_excel(io.BytesIO(decoded))
-                sql = 'SELECT max("Order_ID") as "Order_ID" FROM "order"'
-                df_order = querydatafromdatabase(sql,[],["Order_ID"])
-                input_id = int(df_order['Order_ID'][0])+1
+                sql = 'SELECT max("Order_ID") as max_id FROM "order"'
+                df_order = querydatafromdatabase(sql,[],["max_id"])
+                input_id = int(df_order["max_id"][0])+1
                 data = {
                     "Order_ID": list(range(input_id,input_id+len(df_raw.index)+1)),
                     "Order Date": df_raw["Order Creation Date"].tolist(), 
