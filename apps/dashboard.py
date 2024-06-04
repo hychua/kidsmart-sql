@@ -1857,6 +1857,13 @@ def parse_contents(contents, filename, date):
                     "Quantity": df_raw["Quantity"].tolist()
                     }
                 df = pd.DataFrame(data)
+            elif 'inv_data' in filename:
+               df_raw = pd.read_excel(io.BytesIO(decoded))
+               sql = 'SELECT max("Product_ID") as max_prod FROM "product"'
+               df_inv = querydatafromdatabase(sql,[],["max_prod"])
+               input_id = int(df_inv["max_prod"][0])+1
+               df_raw['Product_ID'] = list(range(input_id,input_id+len(df_raw.index)))
+               df = df_raw
     except Exception as e:
         print(e)
         return html.Div([
