@@ -1838,7 +1838,7 @@ def parse_contents(contents, filename, date):
             if 'Order.completed.' in filename:
                 # Assume data is from shopee and requires column conversion
                 df_raw = pd.read_excel(io.BytesIO(decoded))
-                sql = 'SELECT max("Order_ID") as Order_ID FROM "order"'
+                sql = 'SELECT max("Order_ID") as "Order_ID" FROM "order"'
                 df_order = querydatafromdatabase(sql,[],["Order_ID"])
                 input_id = int(df_order['Order_ID'][0])+1
                 data = {
@@ -1895,7 +1895,7 @@ def parse_contents2(contents, filename):
             if 'Order.completed.' in filename:
                 # Assume data is from shopee and requires column conversion
                 df_raw = pd.read_excel(io.BytesIO(decoded))
-                sql = 'SELECT max("Order_ID") as Order_ID FROM "order"'
+                sql = 'SELECT max("Order_ID") as "Order_ID" FROM "order"'
                 df_order = querydatafromdatabase(sql,[],["Order_ID"])
                 input_id = int(df_order['Order_ID'][0])+1
                 data = {
