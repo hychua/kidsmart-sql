@@ -1976,13 +1976,13 @@ def order_output(ord_save_button, list_of_contents, file_name):
    ctx = dash.callback_context
    if ctx.triggered:
        eventid = ctx.triggered[0]['prop_id'].split('.')[0]
-       if eventid =="order-save-button":
+       if eventid =="ord-save-button":
            if list_of_contents is not None:
                for c, n in zip(list_of_contents, file_name):
                    df_parsed = parse_contents2(c, n)
-                   sqlinsert = "INSERT INTO order(Order_ID, Order Date, Category, Product Name, Product_ID, Sale Price, Retail Price, Size, Buyer Region, Order Year, City Name, Quantity) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                   #sqlinsert = "INSERT INTO order(Order_ID, Order Date, Category, Product Name, Product_ID, Sale Price, Retail Price, Size, Buyer Region, Order Year, City Name, Quantity) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
                    df_parsed.to_sql(name='order',con=engine, if_exists='append', index=False)
-               return ['Posting Inventory was Successful!',{'display': 'block'}]
+               return ['Posting Order was Successful!',{'display': 'block'}]
    else:
        return [['Error encountered.'],{'display': 'none'}]
 
@@ -1997,7 +1997,7 @@ def order_output(ord_save_button, list_of_contents, file_name):
     [
      State('upload-data2', 'filename')
      ])
-def category_output(inv_save_button, list_of_contents, file_name):
+def inventory_output(inv_save_button, list_of_contents, file_name):
    ctx = dash.callback_context
    if ctx.triggered:
        eventid = ctx.triggered[0]['prop_id'].split('.')[0]
@@ -2005,7 +2005,7 @@ def category_output(inv_save_button, list_of_contents, file_name):
            if list_of_contents is not None:
                for c, n in zip(list_of_contents, file_name):
                    df_parsed = parse_contents2(c, n)
-                   sqlinsert = "INSERT INTO product(Product_ID, Product Name, Category, Order Year, Stock, Release Date) VALUES(%s, %s, %s, %s, %s, %s)"
+                   #sqlinsert = "INSERT INTO product(Product_ID, Product Name, Category, Order Year, Stock, Release Date) VALUES(%s, %s, %s, %s, %s, %s)"
                    df_parsed.to_sql(name='product',con=engine, if_exists='append', index=False)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
@@ -2030,7 +2030,7 @@ def category_output(cat_save_button, list_of_contents, file_name):
            if list_of_contents is not None:
                for c, n in zip(list_of_contents, file_name):
                    df_parsed = parse_contents2(c, n)
-                   sqlinsert = "INSERT INTO category(Category, Category_text) VALUES(%s, %s)"
+                   #sqlinsert = "INSERT INTO category(Category, Category_text) VALUES(%s, %s)"
                    df_parsed.to_sql(name='category', con=engine, if_exists='append', index=False)
                return ['Posting Category was Successful!',{'display': 'block'}]
    else:
