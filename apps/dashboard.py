@@ -1832,7 +1832,7 @@ def parse_contents(contents, filename, date):
         if 'csv' in filename:
             # Assume that the user uploaded a CSV file
             if 'inv_data' in filename:
-               df_raw = pd.read_excel(io.BytesIO(decoded))
+               df_raw = pd.read_csv(io.BytesIO(decoded))
                sql = 'SELECT max("Product_ID") as max_prod FROM "product"'
                df_inv = querydatafromdatabase(sql,[],["max_prod"])
                input_id = int(df_inv["max_prod"][0])+1
@@ -1899,7 +1899,7 @@ def parse_contents2(contents, filename):
         if 'csv' in filename:
             # Assume that the user uploaded a CSV file
             if 'inv_data' in filename:
-               df_raw = pd.read_excel(io.BytesIO(decoded))
+               df_raw = pd.read_csv(io.BytesIO(decoded))
                sql = 'SELECT max("Product_ID") as max_prod FROM "product"'
                df_inv = querydatafromdatabase(sql,[],["max_prod"])
                input_id = int(df_inv["max_prod"][0])+1
