@@ -1982,7 +1982,7 @@ def order_output(ord_save_button, list_of_contents, file_name):
                    df_parsed.to_sql(name='order',con=engine, if_exists='append', index=False)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
-       return [' ',{'display': 'none'}]
+       return [[],{'display': 'none'}]
 
 # inventory callbacks
 @app.callback(
@@ -2007,7 +2007,7 @@ def category_output(inv_save_button, list_of_contents, file_name):
                    df_parsed.to_sql(name='product',con=engine, if_exists='append', index=False)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
-       return [' ',{'display': 'none'}]
+       return [[],{'display': 'none'}]
    
 # category callbacks
 @app.callback(
@@ -2032,7 +2032,7 @@ def category_output(cat_save_button, list_of_contents, file_name):
                    df_parsed.to_sql(name='category', con=engine, if_exists='append', index=False)
                return ['Posting Category was Successful!',{'display': 'block'}]
    else:
-       return [' ',{'display': 'none'}]
+       return [[],{'display': 'none'}]
    
 # end upload callbacks
 
