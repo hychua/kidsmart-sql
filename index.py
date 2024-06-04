@@ -8,7 +8,7 @@ from apps import dashboard
 
 # Connect to main app.py file
 from app import app
-
+import os
 
 # define tab styles
 tab_style = {
