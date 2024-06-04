@@ -1500,7 +1500,7 @@ def set_current_inventory_led(year, selected_brand, selected_product, selected_r
 
 
 def set_gauge_value(year, selected_brand, selected_product, selected_region, selected_shoe_size):
-    max_inventory = 50
+
 
     filters = ['Order Year','Buyer Region','Category','Product Name','Size']
     filters2 = ['Order Year','Category','Product Name']
@@ -1576,6 +1576,8 @@ def set_gauge_value(year, selected_brand, selected_product, selected_region, sel
 
     curr_inventory = dff2[curr_metric_col2].sum() - dff[curr_metric_col].sum()
 
+    max_inventory = dff2[curr_metric_col2].sum()
+
     if curr_inventory > max_inventory:
         return max_inventory
     else:
@@ -1595,7 +1597,7 @@ def set_gauge_value(year, selected_brand, selected_product, selected_region, sel
 
 
 def set_gauge_2_value(year, selected_brand, selected_product, selected_region, selected_shoe_size):
-    max_inventory = 50
+    
 
     filters = ['Order Year','Buyer Region','Category','Product Name','Size']
     filters2 = ['Order Year','Category','Product Name']
@@ -1670,6 +1672,8 @@ def set_gauge_2_value(year, selected_brand, selected_product, selected_region, s
 
 
     curr_inventory = dff2[curr_metric_col2].sum() - dff[curr_metric_col].sum()
+
+    max_inventory = dff2[curr_metric_col2].sum()
 
     if curr_inventory > max_inventory:
         return max_inventory
