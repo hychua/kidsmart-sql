@@ -1843,7 +1843,7 @@ def parse_contents(contents, filename, date):
                 input_id = int(df_order["max_id"][0])+1
                 data = {
                     "Order_ID": list(range(input_id,input_id+len(df_raw.index))),
-                    "Order Date": df_raw["Order Creation Date"].tolist(), 
+                    "Order Date": [x[:10] for x in df_raw["Order Creation Date"]], 
                     "Category": df_raw["Parent SKU Reference No."].tolist(), 
                     "Product Name": df_raw["Product Name"].tolist(), 
                     "Product_ID": list(range(1,len(df_raw.index)+1)), 
@@ -1851,7 +1851,7 @@ def parse_contents(contents, filename, date):
                     "Retail Price": [220] * len(df_raw.index), 
                     "Size": df_raw["SKU Reference No."].tolist(), 
                     "Buyer Region": df_raw["Province"].tolist(), 
-                    "Order Year": [x[:10] for x in df_raw["Order Creation Date"]], 
+                    "Order Year": [x[:4] for x in df_raw["Order Creation Date"]], 
                     "City Name": df_raw["City"].tolist(), 
                     "Quantity": df_raw["Quantity"].tolist()
                     }
@@ -1900,7 +1900,7 @@ def parse_contents2(contents, filename):
                 input_id = int(df_order['Order_ID'][0])+1
                 data = {
                     "Order_ID": list(range(input_id,input_id+len(df_raw.index))),
-                    "Order Date": df_raw["Order Creation Date"].tolist(), 
+                    "Order Date": [x[:10] for x in df_raw["Order Creation Date"]], 
                     "Category": df_raw["Parent SKU Reference No."].tolist(), 
                     "Product Name": df_raw["Product Name"].tolist(), 
                     "Product_ID": list(range(1,len(df_raw.index)+1)), 
@@ -1908,7 +1908,7 @@ def parse_contents2(contents, filename):
                     "Retail Price": [220] * len(df_raw.index), 
                     "Size": df_raw["SKU Reference No."].tolist(), 
                     "Buyer Region": df_raw["Province"].tolist(), 
-                    "Order Year": [x[:10] for x in df_raw["Order Creation Date"]], 
+                    "Order Year": [x[:4] for x in df_raw["Order Creation Date"]], 
                     "City Name": df_raw["City"].tolist(), 
                     "Quantity": df_raw["Quantity"].tolist()
                     }
