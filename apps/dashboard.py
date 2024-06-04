@@ -1839,7 +1839,7 @@ def parse_contents(contents, filename, date):
                df_raw['Product_ID'] = list(range(input_id,input_id+len(df_raw.index)))
                df = df_raw
             else:
-               df = pd.read_csv(io.StringIO(decoded.decode('utf-8')))utf-8')))
+               df = pd.read_csv(io.StringIO(decoded.decode('utf-8')))
         elif 'xlsx' in filename:
             # Assume that the user uploaded an excel file
             if 'Order.completed.' in filename:
