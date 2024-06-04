@@ -1841,12 +1841,13 @@ def parse_contents(contents, filename, date):
                 sql = 'SELECT max("Order_ID") as max_id FROM "order"'
                 df_order = querydatafromdatabase(sql,[],["max_id"])
                 input_id = int(df_order["max_id"][0])+1
+                product_id = list(range(1,len(df_raw.index)+1))
                 data = {
                     "Order_ID": list(range(input_id,input_id+len(df_raw.index))),
                     "Order Date": [x[:10] for x in df_raw["Order Creation Date"]], 
                     "Category": df_raw["Parent SKU Reference No."].tolist(), 
                     "Product Name": df_raw["Product Name"].tolist(), 
-                    "Product_ID": list(range(1,len(df_raw.index)+1)), 
+                    "Product_ID": [str(x) for x in product_id], 
                     "Sale Price": df_raw["Products' Price Paid by Buyer (PHP)"].tolist(), 
                     "Retail Price": [220] * len(df_raw.index), 
                     "Size": df_raw["SKU Reference No."].tolist(), 
@@ -1898,12 +1899,13 @@ def parse_contents2(contents, filename):
                 sql = 'SELECT max("Order_ID") as "Order_ID" FROM "order"'
                 df_order = querydatafromdatabase(sql,[],["Order_ID"])
                 input_id = int(df_order['Order_ID'][0])+1
+                product_id = list(range(1,len(df_raw.index)+1))
                 data = {
                     "Order_ID": list(range(input_id,input_id+len(df_raw.index))),
                     "Order Date": [x[:10] for x in df_raw["Order Creation Date"]], 
                     "Category": df_raw["Parent SKU Reference No."].tolist(), 
                     "Product Name": df_raw["Product Name"].tolist(), 
-                    "Product_ID": list(range(1,len(df_raw.index)+1)), 
+                    "Product_ID": [str(x) for x in product_id], 
                     "Sale Price": df_raw["Products' Price Paid by Buyer (PHP)"].tolist(), 
                     "Retail Price": [220] * len(df_raw.index), 
                     "Size": df_raw["SKU Reference No."].tolist(), 
@@ -1982,7 +1984,7 @@ def order_output(ord_save_button, list_of_contents, file_name):
                    df_parsed.to_sql(name='order',con=engine, if_exists='append', index=False)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
-       return [[],{'display': 'none'}]
+       return [['Error encountered.'],{'display': 'none'}]
 
 # inventory callbacks
 @app.callback(
@@ -2007,7 +2009,7 @@ def category_output(inv_save_button, list_of_contents, file_name):
                    df_parsed.to_sql(name='product',con=engine, if_exists='append', index=False)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
-       return [[],{'display': 'none'}]
+       return [['Error encountered.'],{'display': 'none'}]
    
 # category callbacks
 @app.callback(
@@ -2032,7 +2034,7 @@ def category_output(cat_save_button, list_of_contents, file_name):
                    df_parsed.to_sql(name='category', con=engine, if_exists='append', index=False)
                return ['Posting Category was Successful!',{'display': 'block'}]
    else:
-       return [[],{'display': 'none'}]
+       return [['Error encountered.'],{'display': 'none'}]
    
 # end upload callbacks
 
