@@ -186,9 +186,9 @@ def get_avg_sales(filters):
 def get_curr_inventory(filters):    
     df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.groupby(filters,as_index=False).agg({'Product_ID':['count']})
-    filters.append('Current Inventory')
+    filters.append('Order Quantity')
     data.columns = filters
-    data.sort_values(by=['Current Inventory'],ascending=[True],inplace=True)
+    data.sort_values(by=['Order Quantity'],ascending=[True],inplace=True)
     return data
 
 def get_curr_inventory2(filters):    
