@@ -518,7 +518,7 @@ layout3 = html.Div([    html.Div(' ',
                 style={'backgroundColor':'#1f2630','height':42}),
                 html.Div([
                                     
-                    html.A('Upload orders.csv File'),
+                    html.A('Upload Order.completed.xlsx or orders.csv File'),
                 
                     html.Hr(),
                 
