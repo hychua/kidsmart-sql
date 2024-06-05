@@ -61,7 +61,7 @@ METRIC_DICT = {
     'total_sales': 'Total Sales',
     'count_sales':'Sales Count',
     'avg_sales':'Avg Sales',
-    'curr_inventory':'Current Inventory',
+    'curr_inventory':'Order Quantity',
     'curr_inventory2':'Current Inventory 2',
     'top_performers':'Total Sales',
     'bottom_performers':'Total Sales',
