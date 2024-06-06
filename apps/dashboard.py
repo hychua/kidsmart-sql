@@ -245,7 +245,7 @@ layout2 = html.Div(
                                                     id="years-slider",
                                                     min=min(YEARS_INVENTORY),
                                                     max=max(YEARS_INVENTORY),
-                                                    value=min(YEARS_INVENTORY),
+                                                    value=2023,
                                                     marks={
                                                         str(year): {
                                                             "label": str(year),
