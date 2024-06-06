@@ -255,7 +255,7 @@ def get_avg_inventory_turnover(filters):
     df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
     data =  df_full_data.copy()
     data2 = df_inv_data.copy()
-    m_data = pd.merge(data, data2, how='inner', on=['Product Name','Order Year','Category'])
+    m_data = pd.merge(data, data2, on=['Product Name','Order Year','Category'])
     #m_data['Order Date'] = pd.to_datetime(m_data['Order Date'])
     #m_data['Release Date'] = pd.to_datetime(m_data['Release Date'])
 
@@ -264,13 +264,6 @@ def get_avg_inventory_turnover(filters):
     filters.append('Inventory Turnover')
     m_data.columns = filters
     m_data.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
-
-    m_data['days_in_inventory'] = (m_data['Order Date'] - m_data['Release Date'])/np.timedelta64(1,'D')
-    m_data = m_data.groupby(filters,as_index=False).agg({'days_in_inventory':['mean']})
-    filters.append('Inventory Turnover')
-    m_data.columns = filters
-    m_data.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
-    #plot_data = m_data
     return m_data
 
 def get_top_avg_inventory_turnover(filters):
@@ -278,7 +271,7 @@ def get_top_avg_inventory_turnover(filters):
     df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
     data =  df_full_data.copy()
     data2 = df_inv_data.copy()
-    m_data = pd.merge(data, data2, how='inner', on=['Product Name','Order Year','Category'])
+    m_data = pd.merge(data, data2, on=['Product Name','Order Year','Category'])
     data['Order Date'] = pd.to_datetime(data['Order Date'])
     data['Release Date'] = pd.to_datetime(m_data['Release Date'])
 
@@ -287,13 +280,6 @@ def get_top_avg_inventory_turnover(filters):
     filters.append('Inventory Turnover')
     m_data.columns = filters
     m_data.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
-
-    m_data['days_in_inventory'] = (m_data['Order Date'] - m_data['Release Date'])/np.timedelta64(1,'D')
-    m_data = m_data.groupby(filters,as_index=False).agg({'days_in_inventory':['mean']})
-    filters.append('Inventory Turnover')
-    m_data.columns = filters
-    m_data.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
-    #plot_data = m_data
     return m_data.head(10)
 
 
@@ -302,7 +288,7 @@ def get_bottom_avg_inventory_turnover(filters):
     df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
     data =  df_full_data.copy()
     data2 = df_inv_data.copy()
-    m_data = pd.merge(data, data2, how='inner', on=['Product Name','Order Year','Category'])
+    m_data = pd.merge(data, data2, on=['Product Name','Order Year','Category'])
     m_data['Order Date'] = pd.to_datetime(m_data['Order Date'])
     m_data['Release Date'] = pd.to_datetime(m_data['Release Date'])
 
@@ -311,12 +297,6 @@ def get_bottom_avg_inventory_turnover(filters):
     filters.append('Inventory Turnover')
     m_data.columns = filters
     m_data.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
-
-    m_data['days_in_inventory'] = (m_data['Order Date'] - m_data['Release Date'])/np.timedelta64(1,'D')
-    m_data = m_data.groupby(filters,as_index=False).agg({'days_in_inventory':['mean']})
-    filters.append('Inventory Turnover')
-    m_data.columns = filters
-    m_data.sort_values(by=['Inventory Turnover'],ascending=[False],inplace=True)
     return m_data.head(10)
 
 def get_sales_over_time(filters):
