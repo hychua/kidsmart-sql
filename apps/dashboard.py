@@ -1297,7 +1297,7 @@ def set_shoe_size_options(year, selected_product, selected_region):
 
 def set_inventory_table(year, selected_brand, selected_product, selected_region, selected_shoe_size):
 
-    filters = ['Order Year','Buyer Region','Category','Product Name','Size']
+    filters = ['Order Year', 'Order Date','Buyer Region','Category','Product Name','Size']
     metric_type = 'curr_inventory'
     curr_metric_col = METRIC_DICT[metric_type]
     curr_year = year
