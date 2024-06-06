@@ -256,9 +256,8 @@ def get_avg_inventory_turnover(filters):
     data =  df_full_data.copy()
     data2 = df_inv_data.copy()
     m_data = pd.merge(data, data2, on=['Product Name','Order Year','Category'])
-    print(m_data.columns)
-    m_data['Order Date'] = pd.to_datetime(m_data['Order Date'])
-    m_data['Release Date'] = pd.to_datetime(m_data['Release Date'])
+    #m_data['Order Date'] = pd.to_datetime(m_data['Order Date'])
+    #m_data['Release Date'] = pd.to_datetime(m_data['Release Date'])
 
     m_data['days_in_inventory'] = (m_data['Order Date'] - m_data['Release Date'])/np.timedelta64(1,'D')
     m_data = m_data.groupby(filters,as_index=False).agg({'days_in_inventory':['mean']})
