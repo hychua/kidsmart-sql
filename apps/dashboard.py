@@ -1745,7 +1745,7 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
     filters = ['Order Year','Buyer Region','Category','Product Name']
     metric_type = 'avg_inventory_turnover'
     curr_metric_col = METRIC_DICT[metric_type]
-curr_year = year
+    curr_year = year
     pyear = year - 1
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
@@ -1858,7 +1858,7 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     filters = ['Order Year','Buyer Region','Category','Product Name']
     metric_type = 'avg_inventory_turnover'
     curr_metric_col = METRIC_DICT[metric_type]
-curr_year = year
+    curr_year = year
     pyear = year - 1
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
