@@ -1360,9 +1360,17 @@ def set_inventory_table(year, selected_brand, selected_product, selected_region,
 def set_led_display(year,selected_region,selected_brand,selected_product):
 
     filters = ['Order Year','Buyer Region','Category','Product Name']
+    filters2 = ['Order Year','Category','Product Name']
     metric_type = 'avg_inventory_turnover'
-    df = create_plot_metric(filters,'curr_inventory')
-    df2 = create_plot_metric(filters,'curr_inventory2')
+  
+    sql1 = 'SELECT * FROM "order"'
+    sql2 = "SELECT * FROM product"
+    
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+
+    df = df_full_data.copy()
+    df2 = df_inv_data.copy()
    
     curr_metric_col = METRIC_DICT[metric_type]
     curr_year = year
@@ -1463,14 +1471,8 @@ def set_current_inventory_led(year, selected_brand, selected_product, selected_r
     curr_products = [product for product in selected_product]
     curr_shoe_sizes = [shoe for shoe in selected_shoe_size]
 
-    sql1 = 'SELECT * FROM "order"'
-    sql2 = "SELECT * FROM product"
-    
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
-    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
-
-    df = df_full_data.copy()
-    df2 = df_inv_data.copy()
+    df = create_plot_metric(filters,metric_type)
+    df2 = create_plot_metric(filters2,metric_type2)
   
     # If Brand is All
 
