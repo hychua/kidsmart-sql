@@ -1743,6 +1743,7 @@ def set_gauge_2_value(year, selected_brand, selected_product, selected_region, s
 def set_best_turnover_graph(year, selected_brand,selected_region):
 
     filters = ['Order Year','Buyer Region','Category','Product Name']
+    filters2 = ['Order Year','Category','Product Name']
     metric_type = 'avg_inventory_turnover'
     curr_metric_col = METRIC_DICT[metric_type]
     curr_year = year
@@ -1751,7 +1752,7 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
     curr_regions = [region for region in selected_region]
 
     df = create_plot_metric(filters,'curr_inventory')
-    df2 = create_plot_metric(filters,'curr_inventory2')
+    df2 = create_plot_metric(filters2,'curr_inventory2')
    
     if curr_brand == 'All' and (len(curr_regions)==0):
         dff = df[(df['Order Year']==curr_year)]
@@ -1856,6 +1857,7 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
 def set_worse_turnover_graph(year, selected_brand,selected_region):
 
     filters = ['Order Year','Buyer Region','Category','Product Name']
+    filters2 = ['Order Year','Category','Product Name']
     metric_type = 'avg_inventory_turnover'
     curr_metric_col = METRIC_DICT[metric_type]
     curr_year = year
@@ -1864,7 +1866,7 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     curr_regions = [region for region in selected_region]
 
     df = create_plot_metric(filters,'curr_inventory')
-    df2 = create_plot_metric(filters,'curr_inventory2')
+    df2 = create_plot_metric(filters2,'curr_inventory2')
    
     if curr_brand == 'All' and (len(curr_regions)==0):
         dff = df[(df['Order Year']==curr_year)]
