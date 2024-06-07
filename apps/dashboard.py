@@ -1441,8 +1441,10 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
     
     
     turnover = cogs / ((past_inventory + curr_inventory)/2)
+    #days in inventory = 365/turnover
+    dii = 365 / turnover
 
-    return round(turnover,2)
+    return round(dii,2)
 
 
 @app.callback(
@@ -1825,7 +1827,7 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
     #past_inventory = curr_inventory - past_data['past_inv'].sum()
     
     
-    dff['Inventory Turnover'] = cogs['COGS'] / ((past_data['past_inv'] + curr_data['curr_inv'])/2)
+    dff['Inventory Turnover'] = 365 / (cogs['COGS'] / ((past_data['past_inv'] + curr_data['curr_inv'])/2))
     dff.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
 
     dff = dff.head()
@@ -1945,7 +1947,7 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     #past_inventory = curr_inventory - past_data['past_inv'].sum()
     
     
-    dff['Inventory Turnover'] = cogs['COGS'] / ((past_data['past_inv'] + curr_data['curr_inv'])/2)
+    dff['Inventory Turnover'] = 365 / (cogs['COGS'] / ((past_data['past_inv'] + curr_data['curr_inv'])/2))
     dff.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
 
     dff = dff.tail()
