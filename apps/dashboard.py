@@ -1361,10 +1361,12 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
 
     filters = ['Order Year','Buyer Region','Category','Product Name']
     metric_type = 'avg_inventory_turnover'
-    df = create_plot_metric(filters,metric_type)
+    df = create_plot_metric(filters,'get_curr_inventory')
+    df2 = create_plot_metric(filters,'get_curr_inventory2')
    
     curr_metric_col = METRIC_DICT[metric_type]
     curr_year = year
+    pyear = year - 1
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
     curr_products = [product for product in selected_product]
@@ -1372,25 +1374,64 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
     # If Brand is All, region is blank, and product is blank
     if curr_brand != 'All' and (len(curr_regions)==0) and (len(curr_products)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==curr_brand)]
-
+        dff2 = df2[(df2['Order Year']==curr_year) & (df2['Category']==curr_brand)]
+        pdff = df[(df['Order Year']==pyear) & (df['Category']==curr_brand)]
+        pdff2 = df2[(df2['Order Year']==pyear) & (df2['Category']==curr_brand)]
+ 
     elif curr_brand != 'All' and (len(curr_regions)==0) and (len(curr_products)>=1):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==curr_brand) &(df['Product Name'].isin(curr_products))]
+        dff2 = df2[(df2['Order Year']==curr_year) & (df2['Category']==curr_brand) &(df2['Product Name'].isin(curr_products))]
+        pdff = df[(df['Order Year']==pyear) & (df['Category']==curr_brand) &(df['Product Name'].isin(curr_products))]
+        pdff2 = df2[(df2['Order Year']==pyear) & (df2['Category']==curr_brand) &(df2['Product Name'].isin(curr_products))]
 
     elif curr_brand == 'All' and (len(curr_regions)==0) and (len(curr_products)==0):
         dff = df[(df['Order Year']==curr_year)]
-    
+        dff2 = df2[(df2['Order Year']==curr_year)]
+        pdff = df[(df['Order Year']==pyear)]
+        pdff2 = df2[(df2['Order Year']==pyear)]
+      
     elif curr_brand == 'All' and (len(curr_regions)==0) and (len(curr_products)>=1):
         dff = df[(df['Order Year']==curr_year) &  (df['Product Name'].isin(curr_products))]
-    
+        dff2 = df2[(df2['Order Year']==curr_year) &  (df2['Product Name'].isin(curr_products))]
+        pdff = df[(df['Order Year']==pyear) &  (df['Product Name'].isin(curr_products))]
+        pdff2 = df2[(df2['Order Year']==pyear) &  (df2['Product Name'].isin(curr_products))]
+      
     elif curr_brand == 'All' and (len(curr_regions)>=1) and (len(curr_products)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Buyer Region'].isin(curr_regions))]
-
+        dff2 = df2[(df2['Order Year']==curr_year) & (df2['Buyer Region'].isin(curr_regions))]
+        pdff = df[(df['Order Year']==pyear) & (df['Buyer Region'].isin(curr_regions))]
+        pdff2 = df2[(df2['Order Year']==pyear) & (df2['Buyer Region'].isin(curr_regions))]   
+      
     else:
         dff = df[(df['Order Year']==curr_year) & (df['Category']==curr_brand) & (df['Buyer Region'].isin(curr_regions)) & (df['Product Name'].isin(curr_products))]
-  
+        
+    #​Inventory Turnover=COGS/(( beginning inventory + ending inventory) / 2)
+    #Ending Inventory = beginning inventory + restock - sales
+    df['COGS'] = df['Retail Price'] * df['Quantity']
+    cogs = df['COGS'].sum()
+    
+    curr_price = dff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
+    curr_qty = dff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
+    curr_qty['Retail Price'] = curr_price['Retail Price']
+    curr_stock = dff2.groupby(["Product Name"]).agg({'Stock' : 'sum'})
+    
+    past_price = pdff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
+    past_qty = pdff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
+    past_qty['Retail Price'] = past_price['Retail Price']
+    past_stock = pdff2.groupby(["Product Name"]).agg({'Stock' : 'sum'})
+    
+    curr_data = pd.merge(curr_qty, curr_stock, on=['Product Name'])
+    past_data = pd.merge(past_qty, past_stock, on=['Product Name'])
+    
+    curr_data['curr_inv'] = (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
+    curr_inventory = curr_data['curr_inv'].sum()
+    past_data['past_inv'] = past_data['Retail Price'] * past_data['Stock'] - cogs
+    past_inventory = curr_inventory - past_data['past_inv'].sum()
+    
+    
+    turnover = cogs / ((past_inventory + curr_inventory)/2)
 
-
-    return (round(dff[curr_metric_col].mean(),2))
+    return (turnover,2))
 
 
 @app.callback(
