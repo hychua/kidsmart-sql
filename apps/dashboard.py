@@ -1825,8 +1825,8 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
     #past_inventory = curr_inventory - past_data['past_inv'].sum()
     
     
-    curr_data['Inventory Turnover'] = cogs['COGS'] / ((past_data['past_inv'] + curr_data['curr_inv'])/2)
-    curr_data.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
+    dff['Inventory Turnover'] = cogs['COGS'] / ((past_data['past_inv'] + curr_data['curr_inv'])/2)
+    dff.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
 
     dff = dff.head()
 
@@ -1945,8 +1945,8 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     #past_inventory = curr_inventory - past_data['past_inv'].sum()
     
     
-    curr_data['Inventory Turnover'] = cogs['COGS'] / ((past_data['past_inv'] + curr_data['curr_inv'])/2)
-    curr_data.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
+    dff['Inventory Turnover'] = cogs['COGS'] / ((past_data['past_inv'] + curr_data['curr_inv'])/2)
+    dff.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
 
     dff = dff.tail()
 
