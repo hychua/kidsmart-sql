@@ -1431,7 +1431,7 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
     
     turnover = cogs / ((past_inventory + curr_inventory)/2)
 
-    return (turnover,2))
+    return round(turnover,2))
 
 
 @app.callback(
