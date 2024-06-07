@@ -1361,8 +1361,8 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
 
     filters = ['Order Year','Buyer Region','Category','Product Name']
     metric_type = 'avg_inventory_turnover'
-    df = create_plot_metric(filters,'get_curr_inventory')
-    df2 = create_plot_metric(filters,'get_curr_inventory2')
+    df = create_plot_metric(filters,'curr_inventory')
+    df2 = create_plot_metric(filters,'curr_inventory2')
    
     curr_metric_col = METRIC_DICT[metric_type]
     curr_year = year
@@ -1750,8 +1750,8 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
 
-    df = create_plot_metric(filters,'get_curr_inventory')
-    df2 = create_plot_metric(filters,'get_curr_inventory2')
+    df = create_plot_metric(filters,'curr_inventory')
+    df2 = create_plot_metric(filters,'curr_inventory2')
    
     if curr_brand == 'All' and (len(curr_regions)==0):
         dff = df[(df['Order Year']==curr_year)]
@@ -1863,8 +1863,8 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
 
-    df = create_plot_metric(filters,'get_curr_inventory')
-    df2 = create_plot_metric(filters,'get_curr_inventory2')
+    df = create_plot_metric(filters,'curr_inventory')
+    df2 = create_plot_metric(filters,'curr_inventory2')
    
     if curr_brand == 'All' and (len(curr_regions)==0):
         dff = df[(df['Order Year']==curr_year)]
