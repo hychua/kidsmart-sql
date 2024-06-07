@@ -1463,8 +1463,15 @@ def set_current_inventory_led(year, selected_brand, selected_product, selected_r
     curr_products = [product for product in selected_product]
     curr_shoe_sizes = [shoe for shoe in selected_shoe_size]
 
-    df = create_plot_metric(filters,metric_type)
-    df2 = create_plot_metric(filters2,metric_type2)
+    sql1 = 'SELECT * FROM "order"'
+    sql2 = "SELECT * FROM product"
+    
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+
+    df = df_full_data.copy()
+    df2 = df_inv_data.copy()
+  
     # If Brand is All
 
     if curr_brand == 'All' and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
@@ -1751,8 +1758,14 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
 
-    df = create_plot_metric(filters,'curr_inventory')
-    df2 = create_plot_metric(filters2,'curr_inventory2')
+    sql1 = 'SELECT * FROM "order"'
+    sql2 = "SELECT * FROM product"
+    
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+
+    df = df_full_data.copy()
+    df2 = df_inv_data.copy()
    
     if curr_brand == 'All' and (len(curr_regions)==0):
         dff = df[(df['Order Year']==curr_year)]
@@ -1865,8 +1878,14 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
 
-    df = create_plot_metric(filters,'curr_inventory')
-    df2 = create_plot_metric(filters2,'curr_inventory2')
+    sql1 = 'SELECT * FROM "order"'
+    sql2 = "SELECT * FROM product"
+    
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+
+    df = df_full_data.copy()
+    df2 = df_inv_data.copy()
    
     if curr_brand == 'All' and (len(curr_regions)==0):
         dff = df[(df['Order Year']==curr_year)]
