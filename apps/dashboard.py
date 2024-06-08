@@ -1439,7 +1439,7 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
 
     cogs = (curr_data['Retail Price'] * curr_data['Stock']).sum()
     
-    turnover = cogs / ((past_inventory + curr_inventory)/2)
+    turnover = cogs / ((beg_inventory + end_inventory)/2)
     #days in inventory = 365/turnover
     dii = 365 / turnover
 
@@ -1926,8 +1926,7 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     curr_qty = dff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
     curr_qty['Retail Price'] = curr_price['Retail Price']
     curr_stock = dff2.groupby(["Product Name"]).agg({'Stock' : 'sum'})
-    cogs = dff.groupby(["Product Name"]).agg({'COGS' : 'sum'})
-    
+        
     past_price = pdff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
     past_qty = pdff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
     past_qty['Retail Price'] = past_price['Retail Price']
@@ -1951,7 +1950,7 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
 
 
     fig = px.bar(dff, x='Product Name', y =curr_metric_col , color=curr_metric_col,
-                    hover_data = ['Product Name','Buyer Region']
+                    hover_data = ['Product Name']
     
     )
 
