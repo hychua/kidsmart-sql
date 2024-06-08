@@ -1825,9 +1825,9 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
     curr_data['COGS'] = curr_data['Retail Price'] * curr_data['Quantity']
     
     dff = 365 / (curr_data['COGS'] / ((past_data['end_inv'] + curr_data['beg_inv'])/2))
-    df_dii = dff.to_frame(name="Days in Inventory")
+    df_dii = dff.to_frame(name=curr_metric_col)
     df_dii = df_dii.reset_index()
-    df_dii.sort_values(by=["Days in Inventory"],ascending=[True],inplace=True)
+    df_dii.sort_values(by=[curr_metric_col],ascending=[True],inplace=True)
 
     df_dii = df_dii.head()
 
@@ -1945,9 +1945,9 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     curr_data['COGS'] = curr_data['Retail Price'] * curr_data['Quantity']
     
     dff = 365 / (curr_data['COGS'] / ((past_data['end_inv'] + curr_data['beg_inv'])/2))
-    df_dii = dff.to_frame(name="Days in Inventory")
+    df_dii = dff.to_frame(name=curr_metric_col)
     df_dii = df_dii.reset_index()
-    df_dii.sort_values(by=["Days in Inventory"],ascending=[True],inplace=True)
+    df_dii.sort_values(by=[curr_metric_col],ascending=[True],inplace=True)
 
     df_dii = df_dii.tail()
 
