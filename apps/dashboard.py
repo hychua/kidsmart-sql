@@ -1926,7 +1926,7 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     curr_qty = dff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
     curr_qty['Retail Price'] = curr_price['Retail Price']
     curr_stock = dff2.groupby(["Product Name"]).agg({'Stock' : 'sum'})
-        
+    
     past_price = pdff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
     past_qty = pdff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
     past_qty['Retail Price'] = past_price['Retail Price']
