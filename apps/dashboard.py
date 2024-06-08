@@ -1432,10 +1432,10 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
     curr_data = pd.merge(curr_qty, curr_stock, on=['Product Name'])
     past_data = pd.merge(past_qty, past_stock, on=['Product Name'])
     
-    curr_data['curr_inv'] = (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
-    curr_inventory = curr_data['curr_inv'].sum()
-    past_data['past_inv'] = (past_data['Retail Price'] * past_data['Stock']) + (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
-    past_inventory = curr_inventory - past_data['past_inv'].sum()
+    curr_data['beg_inv'] = (past_data['Retail Price'] * past_data['Stock']) - (past_data['Retail Price'] * past_data['Quantity'])
+    beg_inventory = curr_data['beg_inv'].sum()
+    past_data['end_inv'] = curr_data['beg_inv'] + (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
+    end_inventory = past_data['end_inv'].sum()
 
     cogs = (curr_data['Retail Price'] * curr_data['Stock']).sum()
     
@@ -1803,14 +1803,11 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
 
     #​Inventory Turnover=COGS/(( beginning inventory + ending inventory) / 2)
     #Ending Inventory = beginning inventory + restock - sales
-    dff['COGS'] = dff['Retail Price'] * dff['Quantity']
-    #cogs = df['COGS'].sum()
     
     curr_price = dff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
     curr_qty = dff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
     curr_qty['Retail Price'] = curr_price['Retail Price']
     curr_stock = dff2.groupby(["Product Name"]).agg({'Stock' : 'sum'})
-    cogs = dff.groupby(["Product Name"]).agg({'COGS' : 'sum'})
     
     past_price = pdff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
     past_qty = pdff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
@@ -1820,13 +1817,14 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
     curr_data = pd.merge(curr_qty, curr_stock, on=['Product Name'])
     past_data = pd.merge(past_qty, past_stock, on=['Product Name'])
     
-    curr_data['curr_inv'] = (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
-    #curr_inventory = curr_data['curr_inv'].sum()
-    past_data['past_inv'] = (past_data['Retail Price'] * past_data['Stock']) + (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
-    #past_inventory = curr_inventory - past_data['past_inv'].sum()
+    curr_data['beg_inv'] = (past_data['Retail Price'] * past_data['Stock']) - (past_data['Retail Price'] * past_data['Quantity'])
+    #beg_inventory = curr_data['beg_inv'].sum()
+    past_data['end_inv'] = curr_data['beg_inv'] + (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
+    #end_inventory = past_data['end_inv'].sum()
+
+    curr_data['COGS'] = curr_data['Retail Price'] * curr_data['Quantity']
     
-    
-    dff['Inventory Turnover'] = 365 / (cogs['COGS'] / ((past_data['past_inv'] + curr_data['curr_inv'])/2))
+    dff['Inventory Turnover'] = 365 / (curr_data['COGS'] / ((past_data['end_inv'] + curr_data['beg_inv'])/2))
     dff.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
 
     dff = dff.head()
@@ -1923,8 +1921,6 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
 
     #​Inventory Turnover=COGS/(( beginning inventory + ending inventory) / 2)
     #Ending Inventory = beginning inventory + restock - sales
-    dff['COGS'] = dff['Retail Price'] * dff['Quantity']
-    #cogs = df['COGS'].sum()
     
     curr_price = dff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
     curr_qty = dff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
@@ -1940,13 +1936,14 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     curr_data = pd.merge(curr_qty, curr_stock, on=['Product Name'])
     past_data = pd.merge(past_qty, past_stock, on=['Product Name'])
     
-    curr_data['curr_inv'] = (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
-    #curr_inventory = curr_data['curr_inv'].sum()
-    past_data['past_inv'] = (past_data['Retail Price'] * past_data['Stock']) + (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
-    #past_inventory = curr_inventory - past_data['past_inv'].sum()
+    curr_data['beg_inv'] = (past_data['Retail Price'] * past_data['Stock']) - (past_data['Retail Price'] * past_data['Quantity'])
+    #beg_inventory = curr_data['beg_inv'].sum()
+    past_data['end_inv'] = curr_data['beg_inv'] + (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
+    #end_inventory = past_data['end_inv'].sum()
+
+    curr_data['COGS'] = curr_data['Retail Price'] * curr_data['Quantity']
     
-    
-    dff['Inventory Turnover'] = 365 / (cogs['COGS'] / ((past_data['past_inv'] + curr_data['curr_inv'])/2))
+    dff['Inventory Turnover'] = 365 / (curr_data['COGS'] / ((past_data['end_inv'] + curr_data['beg_inv'])/2))
     dff.sort_values(by=['Inventory Turnover'],ascending=[True],inplace=True)
 
     dff = dff.tail()
