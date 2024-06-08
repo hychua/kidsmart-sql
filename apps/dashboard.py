@@ -1953,6 +1953,8 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
 
 
 
+
+
     fig = px.bar(df_dii, x='Product Name', y =curr_metric_col , color=curr_metric_col,
                     hover_data = ['Product Name']
     
