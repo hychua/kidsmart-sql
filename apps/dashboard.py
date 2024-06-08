@@ -1406,15 +1406,15 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
       
     elif curr_brand == 'All' and (len(curr_regions)>=1) and (len(curr_products)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Buyer Region'].isin(curr_regions))]
-        dff2 = df2[(df2['Order Year']==curr_year) & (df2['Buyer Region'].isin(curr_regions))]
+        dff2 = df2[(df2['Order Year']==curr_year)
         pdff = df[(df['Order Year']==pyear) & (df['Buyer Region'].isin(curr_regions))]
-        pdff2 = df2[(df2['Order Year']==pyear) & (df2['Buyer Region'].isin(curr_regions))]   
+        pdff2 = df2[(df2['Order Year']==pyear)
       
     else:
         dff = df[(df['Order Year']==curr_year) & (df['Category']==curr_brand) & (df['Buyer Region'].isin(curr_regions)) & (df['Product Name'].isin(curr_products))]
-        dff2 = df2[(df2['Order Year']==curr_year) & (df2['Category']==curr_brand) & (df2['Buyer Region'].isin(curr_regions)) & (df2['Product Name'].isin(curr_products))]  
+        dff2 = df2[(df2['Order Year']==curr_year) & (df2['Category']==curr_brand) & (df2['Product Name'].isin(curr_products))]  
         pdff = df[(df['Order Year']==pyear) & (df['Category']==curr_brand) & (df['Buyer Region'].isin(curr_regions)) & (df['Product Name'].isin(curr_products))]
-        pdff2 = df2[(df2['Order Year']==pyear) & (df2['Category']==curr_brand) & (df2['Buyer Region'].isin(curr_regions)) & (df2['Product Name'].isin(curr_products))]
+        pdff2 = df2[(df2['Order Year']==pyear) & (df2['Category']==curr_brand) & (df2['Product Name'].isin(curr_products))]
         
     #​Inventory Turnover=COGS/(( beginning inventory + ending inventory) / 2)
     #Ending Inventory = beginning inventory + restock - sales
@@ -1778,9 +1778,9 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
 
     elif curr_brand == 'All' and (len(curr_regions)>=1):
         dff = df[(df['Order Year']==curr_year) & (df['Buyer Region'].isin(curr_regions))]
-        dff2 = df2[(df2['Order Year']==curr_year) & (df2['Buyer Region'].isin(curr_regions))]
+        dff2 = df2[(df2['Order Year']==curr_year)
         pdff = df[(df['Order Year']==pyear) & (df['Buyer Region'].isin(curr_regions))]
-        pdff2 = df2[(df2['Order Year']==pyear) & (df2['Buyer Region'].isin(curr_regions))]
+        pdff2 = df2[(df2['Order Year']==pyear)
 
     elif curr_brand != 'All' and (len(curr_regions)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==curr_brand)]
@@ -1791,9 +1791,9 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
 
     elif curr_brand != 'All' and (len(curr_regions)>=1):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==curr_brand) & (df['Buyer Region'].isin(curr_regions))]
-        dff2 = df2[(df2['Order Year']==curr_year) & (df2['Category']==curr_brand) & (df2['Buyer Region'].isin(curr_regions))]
+        dff2 = df2[(df2['Order Year']==curr_year) & (df2['Category']==curr_brand)
         pdff = df[(df['Order Year']==pyear) & (df['Category']==curr_brand) & (df['Buyer Region'].isin(curr_regions))]
-        pdff2 = df2[(df2['Order Year']==pyear) & (df2['Category']==curr_brand) & (df2['Buyer Region'].isin(curr_regions))]
+        pdff2 = df2[(df2['Order Year']==pyear) & (df2['Category']==curr_brand)
         
     else:
         dff = df[(df['Order Year']==curr_year)]
