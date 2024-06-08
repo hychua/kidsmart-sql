@@ -1947,9 +1947,9 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     dff = 365 / (curr_data['COGS'] / ((past_data['end_inv'] + curr_data['beg_inv'])/2))
     df_dii = dff.to_frame(name=curr_metric_col)
     df_dii = df_dii.reset_index()
-    df_dii.sort_values(by=[curr_metric_col],ascending=[True],inplace=True)
+    df_dii.sort_values(by=[curr_metric_col],ascending=[False],inplace=True)
 
-    df_dii = df_dii.tail()
+    df_dii = df_dii.head()
 
 
 
