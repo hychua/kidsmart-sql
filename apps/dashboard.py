@@ -1436,7 +1436,7 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
     
     curr_data['curr_inv'] = (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
     curr_inventory = curr_data['curr_inv'].sum()
-    past_data['past_inv'] = past_data['Retail Price'] * past_data['Stock'] - cogs
+    past_data['past_inv'] = (past_data['Retail Price'] * past_data['Stock']) + (curr_data['Retail Price'] * curr_data['Stock']) - cogs['COGS']
     past_inventory = curr_inventory - past_data['past_inv'].sum()
     
     
@@ -1823,7 +1823,7 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
     
     curr_data['curr_inv'] = (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
     #curr_inventory = curr_data['curr_inv'].sum()
-    past_data['past_inv'] = past_data['Retail Price'] * past_data['Stock'] - cogs['COGS']
+    past_data['past_inv'] = (past_data['Retail Price'] * past_data['Stock']) + (curr_data['Retail Price'] * curr_data['Stock']) - cogs['COGS']
     #past_inventory = curr_inventory - past_data['past_inv'].sum()
     
     
@@ -1943,7 +1943,7 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     
     curr_data['curr_inv'] = (curr_data['Retail Price'] * curr_data['Stock']) - (curr_data['Retail Price'] * curr_data['Quantity'])
     #curr_inventory = curr_data['curr_inv'].sum()
-    past_data['past_inv'] = past_data['Retail Price'] * past_data['Stock'] - cogs['COGS']
+    past_data['past_inv'] = (past_data['Retail Price'] * past_data['Stock']) + (curr_data['Retail Price'] * curr_data['Stock']) - cogs['COGS']
     #past_inventory = curr_inventory - past_data['past_inv'].sum()
     
     
