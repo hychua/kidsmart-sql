@@ -231,7 +231,7 @@ def get_avg_net_profit(filters):
 def get_top_avg_net_profit(filters):
     df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.copy()
-    data['Retail Price'] = [150] * len(data.index)
+    data['Retail Price'] = [120] * len(data.index)
     data['net_profit'] = data['Sale Price'] - data['Retail Price']
     data = data.groupby(filters,as_index=False).agg({'net_profit':['mean']})
     filters.append('Avg Net Profit')
@@ -243,7 +243,7 @@ def get_top_avg_net_profit(filters):
 def get_bottom_avg_net_profit(filters):
     df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.copy()
-    data['Retail Price'] = [150] * len(data.index)
+    data['Retail Price'] = [120] * len(data.index)
     data['net_profit'] = data['Sale Price'] - data['Retail Price']
     data = data.groupby(filters,as_index=False).agg({'net_profit':['mean']})
     filters.append('Avg Net Profit')
