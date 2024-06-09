@@ -1024,6 +1024,7 @@ def display_selected_data3(selected_data, year):
 
         dff['Size'] = np.sqrt(dff[curr_metric_col])
         dff['Size'] = np.sqrt(dff['Size']).round(0)
+        dff = dff.head(n=24)
 
         fig3 = px.scatter(dff, x='City Name', y=curr_metric_col, color='City Name',
                          size ="Size", hover_data=[curr_metric_col])
