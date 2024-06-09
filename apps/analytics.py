@@ -40,8 +40,8 @@ def modifydatabase(sqlcommand, values):
 sql1 = 'SELECT * FROM "order"'
 sql2 = "SELECT * FROM product"
 sql3 = "SELECT * FROM category"
-df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
-df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date", "Retail Price"])
 df_cat_data = querydatafromdatabase(sql3,[],["Category","Category_text"])
         
 # Create variables 
@@ -159,7 +159,7 @@ def create_plot_metric(filters,metric_type="total_sales"):
 
 
 def get_total_sales(filters):
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.groupby(filters,as_index=False).agg({'Sale Price':['sum']})
     filters.append('Total Sales')
     data.columns = filters
@@ -167,7 +167,7 @@ def get_total_sales(filters):
     return data
 
 def get_count_sales(filters):    
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.groupby(filters,as_index=False).agg({'Sale Price':['count']})
     filters.append('Sales Count')
     data.columns = filters
@@ -175,7 +175,7 @@ def get_count_sales(filters):
     return data
 
 def get_avg_sales(filters):    
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.groupby(filters,as_index=False).agg({'Sale Price':['mean']})
     filters.append('Avg Sales')
     data.columns = filters
@@ -184,7 +184,7 @@ def get_avg_sales(filters):
 
 
 def get_curr_inventory(filters):    
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.groupby(filters,as_index=False).agg({'Quantity':['sum']})
     filters.extend(['Order Quantity'])
     data.columns = filters
@@ -192,7 +192,7 @@ def get_curr_inventory(filters):
     return data
 
 def get_curr_inventory2(filters):    
-    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date", "Retail Price"])
     data =  df_inv_data.groupby(filters,as_index=False).agg({'Stock':['sum']})
     filters.append('Current Inventory 2')
     data.columns = filters
@@ -200,7 +200,7 @@ def get_curr_inventory2(filters):
     return data
 
 def get_top_performers(filters):    
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.groupby(filters,as_index=False).agg({'Sale Price':['sum']})
     filters.append('Total Sales')
     data.columns = filters
@@ -209,7 +209,7 @@ def get_top_performers(filters):
 
 
 def get_bottom_performers(filters):    
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.groupby(filters,as_index=False).agg({'Sale Price':['sum']})
     filters.append('Total Sales')
     data.columns = filters
@@ -218,7 +218,7 @@ def get_bottom_performers(filters):
 
 
 def get_avg_net_profit(filters):    
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.copy()
     data['net_profit'] = data['Sale Price'] - data['Retail Price']
     data = data.groupby(filters,as_index=False).agg({'net_profit':['mean']})
@@ -228,7 +228,7 @@ def get_avg_net_profit(filters):
     return data
 
 def get_top_avg_net_profit(filters):
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.copy()
     data['net_profit'] = data['Sale Price'] - data['Retail Price']
     data = data.groupby(filters,as_index=False).agg({'net_profit':['mean']})
@@ -239,7 +239,7 @@ def get_top_avg_net_profit(filters):
 
 
 def get_bottom_avg_net_profit(filters):
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data =  df_full_data.copy()
     data['net_profit'] = data['Sale Price'] - data['Retail Price']
     data = data.groupby(filters,as_index=False).agg({'net_profit':['mean']})
@@ -251,8 +251,8 @@ def get_bottom_avg_net_profit(filters):
 
 
 def get_avg_inventory_turnover(filters):
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
-    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date", "Retail Price"])
     data =  df_full_data.copy()
     data2 = df_inv_data.copy()
     m_data = pd.merge(data, data2, on=['Product Name','Order Year','Category'])
@@ -267,8 +267,8 @@ def get_avg_inventory_turnover(filters):
     return m_data
 
 def get_top_avg_inventory_turnover(filters):
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
-    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date", "Retail Price"])
     data =  df_full_data.copy()
     data2 = df_inv_data.copy()
     m_data = pd.merge(data, data2, on=['Product Name','Order Year','Category'])
@@ -284,8 +284,8 @@ def get_top_avg_inventory_turnover(filters):
 
 
 def get_bottom_avg_inventory_turnover(filters):
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
-    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date", "Retail Price"])
     data =  df_full_data.copy()
     data2 = df_inv_data.copy()
     m_data = pd.merge(data, data2, on=['Product Name','Order Year','Category'])
@@ -300,7 +300,7 @@ def get_bottom_avg_inventory_turnover(filters):
     return m_data.head(10)
 
 def get_sales_over_time(filters):
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
     data = df_full_data[filters].copy()   
     return data
 
