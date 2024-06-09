@@ -759,10 +759,10 @@ def display_selected_data(selected_data, year):
 
     if selected_data == "bottom_performers":
 
-        fig = px.bar(dff, x='Buyer Region', y =curr_metric_col , color=curr_metric_col,
-                     hover_data = ['Buyer Region']
-        
-        )
+        values = dff[curr_metric_col]
+        names = dff['Buyer Region'].unique()
+  
+        fig = px.pie(dff, values=values, names=names, color=names,)
 
 
 
@@ -928,10 +928,10 @@ def display_selected_data2(selected_data, year):
 
     if selected_data == "bottom_performers":
         merged_df = pd.merge(dff,df_cat_data, on='Category')
-        fig = px.bar(merged_df, x='Category_text', y =curr_metric_col , color=curr_metric_col,
-                     hover_data = ['Category_text']
-        
-        )
+        values = merged_df[curr_metric_col]
+        names = merged_df['Category_text'].unique()
+  
+        fig = px.pie(dff, values=values, names=names, color=names,)
 
 
 
@@ -1094,10 +1094,10 @@ def display_selected_data3(selected_data, year):
 
     if selected_data == "bottom_performers":
 
-        fig = px.bar(dff, x='City Name', y =curr_metric_col , color=curr_metric_col,
-                     hover_data = ['City Name']
-        
-        )
+        values = dff[curr_metric_col]
+        names = dff['City Name'].unique()
+  
+        fig = px.pie(dff, values=values, names=names, color=names,)
 
 
 
@@ -1111,7 +1111,6 @@ def display_selected_data3(selected_data, year):
 
         )
         return fig
-
 
 
     if selected_data == "avg_net_profit":
