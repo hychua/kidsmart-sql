@@ -785,8 +785,14 @@ def display_selected_data(selected_data, year):
 
     if selected_data == "top_avg_net_profit":
 
-        fig = px.density_heatmap(dff, x="Buyer Region", y=curr_metric_col)
-     
+        fig = px.bar(dff, x='Buyer Region', y =curr_metric_col , color=curr_metric_col,
+                     hover_data = ['Buyer Region']
+        
+        )
+
+
+
+
         fig.update_layout(
             title = f'Regional Retail: {curr_metric_col}',
             paper_bgcolor="#1f2630",
