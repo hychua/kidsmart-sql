@@ -1366,8 +1366,8 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
     sql1 = 'SELECT * FROM "order"'
     sql2 = "SELECT * FROM product"
     
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
-    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date", "Retail Price"])
 
     df = df_full_data.copy()
     df2 = df_inv_data.copy()
@@ -1419,12 +1419,12 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
     #​Inventory Turnover=COGS/(( beginning inventory + ending inventory) / 2)
     #Ending Inventory = beginning inventory + restock - sales
     
-    curr_price = dff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
+    curr_price = dff2.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
     curr_qty = dff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
     curr_qty['Retail Price'] = curr_price['Retail Price']
     curr_stock = dff2.groupby(["Product Name"]).agg({'Stock' : 'sum'})
     
-    past_price = pdff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
+    past_price = pdff2.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
     past_qty = pdff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
     past_qty['Retail Price'] = past_price['Retail Price']
     past_stock = pdff2.groupby(["Product Name"]).agg({'Stock' : 'sum'})
@@ -1764,8 +1764,8 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
     sql1 = 'SELECT * FROM "order"'
     sql2 = "SELECT * FROM product"
     
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
-    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date", "Retail Price"])
 
     df = df_full_data.copy()
     df2 = df_inv_data.copy()
@@ -1804,12 +1804,12 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
     #​Inventory Turnover=COGS/(( beginning inventory + ending inventory) / 2)
     #Ending Inventory = beginning inventory + restock - sales
     
-    curr_price = dff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
+    curr_price = dff2.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
     curr_qty = dff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
     curr_qty['Retail Price'] = curr_price['Retail Price']
     curr_stock = dff2.groupby(["Product Name"]).agg({'Stock' : 'sum'})
     
-    past_price = pdff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
+    past_price = pdff2.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
     past_qty = pdff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
     past_qty['Retail Price'] = past_price['Retail Price']
     past_stock = pdff2.groupby(["Product Name"]).agg({'Stock' : 'sum'})
@@ -1884,8 +1884,8 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     sql1 = 'SELECT * FROM "order"'
     sql2 = "SELECT * FROM product"
     
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Retail Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
-    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Size", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date", "Retail Price"])
 
     df = df_full_data.copy()
     df2 = df_inv_data.copy()
@@ -1924,12 +1924,12 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     #​Inventory Turnover=COGS/(( beginning inventory + ending inventory) / 2)
     #Ending Inventory = beginning inventory + restock - sales
     
-    curr_price = dff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
+    curr_price = dff2.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
     curr_qty = dff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
     curr_qty['Retail Price'] = curr_price['Retail Price']
     curr_stock = dff2.groupby(["Product Name"]).agg({'Stock' : 'sum'})
     
-    past_price = pdff.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
+    past_price = pdff2.groupby(["Product Name"]).agg({'Retail Price' : 'mean'})
     past_qty = pdff.groupby(["Product Name"]).agg({'Quantity' : 'sum'})
     past_qty['Retail Price'] = past_price['Retail Price']
     past_stock = pdff2.groupby(["Product Name"]).agg({'Stock' : 'sum'})
@@ -2006,7 +2006,6 @@ def parse_contents(contents, filename, date):
                     "Product Name": df_raw["Product Name"].tolist(), 
                     "Product_ID": [str(x) for x in product_id], 
                     "Sale Price": df_raw["Products' Price Paid by Buyer (PHP)"].tolist(), 
-                    "Retail Price": [220] * len(df_raw.index), 
                     "Size": df_raw["SKU Reference No."].tolist(), 
                     "Buyer Region": df_raw["Province"].tolist(), 
                     "Order Year": [x[:4] for x in df_raw["Order Creation Date"]], 
@@ -2073,7 +2072,6 @@ def parse_contents2(contents, filename):
                     "Product Name": df_raw["Product Name"].tolist(), 
                     "Product_ID": [str(x) for x in product_id], 
                     "Sale Price": df_raw["Products' Price Paid by Buyer (PHP)"].tolist(), 
-                    "Retail Price": [220] * len(df_raw.index), 
                     "Size": df_raw["SKU Reference No."].tolist(), 
                     "Buyer Region": df_raw["Province"].tolist(), 
                     "Order Year": [x[:4] for x in df_raw["Order Creation Date"]], 
@@ -2146,7 +2144,7 @@ def order_output(ord_save_button, list_of_contents, file_name):
            if list_of_contents is not None:
                for c, n in zip(list_of_contents, file_name):
                    df_parsed = parse_contents2(c, n)
-                   #sqlinsert = "INSERT INTO order(Order_ID, Order Date, Category, Product Name, Product_ID, Sale Price, Retail Price, Size, Buyer Region, Order Year, City Name, Quantity) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                   #sqlinsert = "INSERT INTO order(Order_ID, Order Date, Category, Product Name, Product_ID, Sale Price, Size, Buyer Region, Order Year, City Name, Quantity) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
                    df_parsed.to_sql(name='order',con=engine, if_exists='append', index=False)
                return ['Posting Order was Successful!',{'display': 'block'}]
    else:
@@ -2171,7 +2169,7 @@ def inventory_output(inv_save_button, list_of_contents, file_name):
            if list_of_contents is not None:
                for c, n in zip(list_of_contents, file_name):
                    df_parsed = parse_contents2(c, n)
-                   #sqlinsert = "INSERT INTO product(Product_ID, Product Name, Category, Order Year, Stock, Release Date) VALUES(%s, %s, %s, %s, %s, %s)"
+                   #sqlinsert = "INSERT INTO product(Product_ID, Product Name, Category, Order Year, Stock, Release Date, Retail Price) VALUES(%s, %s, %s, %s, %s, %s, %s)"
                    df_parsed.to_sql(name='product',con=engine, if_exists='append', index=False)
                return ['Posting Inventory was Successful!',{'display': 'block'}]
    else:
