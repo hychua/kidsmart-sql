@@ -879,10 +879,11 @@ def display_selected_data2(selected_data, year):
         pass
 
     if selected_data == "avg_sales":
+        merged_df = pd.merge(dff,df_cat_data, on='Category')
 
-        fig = px.histogram(dff, x='Category', y=curr_metric_col,
+        fig = px.histogram(merged_df, x='Category_text', y=curr_metric_col,
                     #title='Histogram of bills',
-                    labels={'x':'Category', 'y':curr_metric_col }, # can specify one label per df column
+                    labels={'x':'Category_text', 'y':curr_metric_col }, # can specify one label per df column
                     opacity=.8,
                     log_y=True, # represent bars with log scale
                     color_discrete_sequence=['deepskyblue'] # color of histogram bars
@@ -905,9 +906,9 @@ def display_selected_data2(selected_data, year):
 
 
     if selected_data == "top_performers":
-
-        values = dff[curr_metric_col]
-        names = dff['Category'].unique()
+        merged_df = pd.merge(dff,df_cat_data, on='Category')
+        values = merged_df[curr_metric_col]
+        names = merged_df['Category_text'].unique()
   
         fig = px.pie(dff, values=values, names=names, color=names,)
 
@@ -926,9 +927,9 @@ def display_selected_data2(selected_data, year):
 
 
     if selected_data == "bottom_performers":
-
-        fig = px.bar(dff, x='Category', y =curr_metric_col , color=curr_metric_col,
-                     hover_data = ['Category']
+        merged_df = pd.merge(dff,df_cat_data, on='Category')
+        fig = px.bar(merged_df, x='Category_text', y =curr_metric_col , color=curr_metric_col,
+                     hover_data = ['Category_text']
         
         )
 
@@ -952,8 +953,8 @@ def display_selected_data2(selected_data, year):
 
 
     if selected_data == "top_avg_net_profit":
-
-        fig = px.density_heatmap(dff, x='Category', y=curr_metric_col)
+        merged_df = pd.merge(dff,df_cat_data, on='Category')
+        fig = px.density_heatmap(merged_df, x='Category_text', y=curr_metric_col)
      
         fig.update_layout(
             title = f'Product Category: {curr_metric_col}',
@@ -967,9 +968,9 @@ def display_selected_data2(selected_data, year):
 
 
     if selected_data == "bottom_avg_net_profit":
-
-        fig = px.bar(dff, x='Category', y =curr_metric_col , color=curr_metric_col,
-                     hover_data = ['Category']
+        merged_df = pd.merge(dff,df_cat_data, on='Category')
+        fig = px.bar(merged_df, x='Category_text', y =curr_metric_col , color=curr_metric_col,
+                     hover_data = ['Category_text']
         
         )
 
