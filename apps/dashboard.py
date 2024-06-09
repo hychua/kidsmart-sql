@@ -960,8 +960,14 @@ def display_selected_data2(selected_data, year):
 
     if selected_data == "top_avg_net_profit":
         merged_df = pd.merge(dff,df_cat_data, on='Category')
-        fig = px.density_heatmap(merged_df, x='Category_text', y=curr_metric_col)
-     
+        fig = px.bar(merged_df, x='Category_text', y =curr_metric_col , color=curr_metric_col,
+                     hover_data = ['Category_text']
+        
+        )
+
+
+
+
         fig.update_layout(
             title = f'Product Category: {curr_metric_col}',
             paper_bgcolor="#1f2630",
@@ -1125,10 +1131,16 @@ def display_selected_data3(selected_data, year):
 
     if selected_data == "top_avg_net_profit":
 
-        fig = px.density_heatmap(dff, x='City Name', y=curr_metric_col)
-     
+        fig = px.bar(dff, x='City Name', y =curr_metric_col , color=curr_metric_col,
+                     hover_data = ['City Name']
+        
+        )
+
+
+
+
         fig.update_layout(
-            title = f'Regional Retail: {curr_metric_col}',
+            title = f'Sales by City: {curr_metric_col}',
             paper_bgcolor="#1f2630",
             plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
