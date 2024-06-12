@@ -114,7 +114,7 @@ layout1 = html.Div(
                                                 marks={
                                                     str(year): {
                                                         "label": str(year),
-                                                        "style": {"color": "#7fafdf"},
+                                                        #"style": {"color": "#7fafdf"},
                                                     }
                                                     for year in YEARS_INVENTORY
                                                 },
@@ -249,7 +249,7 @@ layout2 = html.Div(
                                                     marks={
                                                         str(year): {
                                                             "label": str(year),
-                                                            "style": {"color": "#7fafdf"},
+                                                            #"style": {"color": "#7fafdf"},
                                                         }
                                                         for year in YEARS_INVENTORY
                                                     },
@@ -332,7 +332,7 @@ layout2 = html.Div(
                                             id='inventory-table',
                                             columns=[{"name": i, "id": i} for i in INVENTORY_TABLE_COLUMNS],
                                             style_header={
-                                                'backgroundColor': 'rgb(30, 30, 30)',
+                                                #'backgroundColor': 'rgb(30, 30, 30)',
                                                 'fontWeight': 'bold',
                                                 'textAlign': 'left',
                                                 'font_size': '16px',
@@ -446,7 +446,7 @@ layout2 = html.Div(
                                             id="inventory-current-led",
                                             label="Total Inventory Available",
                                             #value=5,
-                                            #backgroundColor="#FF5E5E",
+                                            backgroundColor="#1f2630",
                                             size=90,
                                         ), 
                                 
@@ -477,8 +477,8 @@ layout2 = html.Div(
                                             figure = dict(
                                                 data=[dict(x=0, y=0)],
                                                 layout=dict(
-                                                    paper_bgcolor="#1f2630",
-                                                    plot_bgcolor="#1f2630",
+                                                    #paper_bgcolor="#1f2630",
+                                                    #plot_bgcolor="#1f2630",
                                                     autofill=True,
                                                     margin=dict(t=75, r=50, b=100, l=50),
                                                 ),
@@ -493,8 +493,8 @@ layout2 = html.Div(
                                             figure = dict(
                                                 data=[dict(x=0, y=0)],
                                                 layout=dict(
-                                                    paper_bgcolor="#1f2630",
-                                                    plot_bgcolor="#1f2630",
+                                                    #paper_bgcolor="#1f2630",
+                                                    #plot_bgcolor="#1f2630",
                                                     autofill=True,
                                                     margin=dict(t=75, r=50, b=100, l=50),
                                                 ),
