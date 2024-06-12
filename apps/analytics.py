@@ -205,7 +205,7 @@ def get_top_performers(filters):
     filters.append('Total Sales')
     data.columns = filters
     data.sort_values(by=['Total Sales'],ascending=[False],inplace=True)
-    return data.head(10)
+    return data.head(5)
 
 
 def get_bottom_performers(filters):    
@@ -214,7 +214,7 @@ def get_bottom_performers(filters):
     filters.append('Total Sales')
     data.columns = filters
     data.sort_values(by=['Total Sales'],ascending=[True],inplace=True)
-    return data
+    return data.head(5)
 
 
 def get_avg_net_profit(filters):    
@@ -237,7 +237,7 @@ def get_top_avg_net_profit(filters):
     filters.append('Avg Net Profit')
     data.columns = filters
     data.sort_values(by=['Avg Net Profit'],ascending=[False],inplace=True)
-    return data.head(10)
+    return data.head(5)
 
 
 def get_bottom_avg_net_profit(filters):
@@ -249,7 +249,7 @@ def get_bottom_avg_net_profit(filters):
     filters.append('Avg Net Profit')
     data.columns = filters
     data.sort_values(by=['Avg Net Profit'],ascending=[True],inplace=True)
-    return data.head(10)
+    return data.head(5)
 
 
 
