@@ -350,7 +350,7 @@ layout2 = html.Div(
 
                                             style_cell={
                                                 'backgroundColor': "#7fafdf",
-                                                'color': 'white',
+                                                'color': 'black',
                                                 'font_size': '15px',
                                                 'minWidth': '120px', 'width': '120px', 'maxWidth': '180px',
                                                 'whiteSpace': 'normal',
