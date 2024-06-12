@@ -48,12 +48,10 @@ df_cat_data = querydatafromdatabase(sql3,[],["Category","Category_text"])
 
 YEARS_INVENTORY = df_full_data['Order Year'].unique().tolist()
 
-ALL_BRANDS = df_inv_data['Category'].unique().tolist()
+#ALL_BRANDS = df_inv_data['Category'].unique().tolist()
 ALL_CAT = df_cat_data['Category_text'].unique().tolist()
 ALL_TEXT = df_cat_data['Category'].unique().tolist()
-ALL_BRANDS = sorted(ALL_BRANDS)
-ALL_CAT = sorted(ALL_CAT)
-ALL_TEXT = sorted(ALL_TEXT)
+#ALL_BRANDS = sorted(ALL_BRANDS)
 
 
 INVENTORY_TABLE_COLUMNS = ['Order Date','Product Name','Category','Size','Order Quantity']
