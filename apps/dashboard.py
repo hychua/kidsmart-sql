@@ -1088,7 +1088,7 @@ def display_selected_data3(selected_data, year):
 
 
     if selected_data == "top_performers":
-        dff = dff.head(n=20)
+
         values = dff[curr_metric_col]
         names = dff['City Name'].unique()
   
@@ -1109,7 +1109,7 @@ def display_selected_data3(selected_data, year):
 
 
     if selected_data == "bottom_performers":
-        dff = dff.head(n=20)
+
         values = dff[curr_metric_col]
         names = dff['City Name'].unique()
   
@@ -1134,7 +1134,7 @@ def display_selected_data3(selected_data, year):
 
 
     if selected_data == "top_avg_net_profit":
-        dff = dff.head(n=20)
+
         fig = px.bar(dff, x='City Name', y =curr_metric_col , color=curr_metric_col,
                      hover_data = ['City Name']
         
@@ -1155,7 +1155,7 @@ def display_selected_data3(selected_data, year):
 
 
     if selected_data == "bottom_avg_net_profit":
-        dff = dff.head(n=20)
+
         fig = px.bar(dff, x='City Name', y =curr_metric_col , color=curr_metric_col,
                      hover_data = ['City Name']
         
