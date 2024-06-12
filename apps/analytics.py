@@ -214,7 +214,7 @@ def get_bottom_performers(filters):
     filters.append('Total Sales')
     data.columns = filters
     data.sort_values(by=['Total Sales'],ascending=[True],inplace=True)
-    return data.head(10)
+    return data
 
 
 def get_avg_net_profit(filters):    
