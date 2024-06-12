@@ -337,7 +337,7 @@ layout2 = html.Div(
                                                 'textAlign': 'left',
                                                 'font_size': '16px',
                                                 'border': '1px solid black',
-
+                                                'color': 'white'
                                                 },
 
                                             style_data_conditional=[
