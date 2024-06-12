@@ -10,7 +10,7 @@ import numpy as np
 from apps.analytics import( create_plot_metric, 
                                     YEARS_INVENTORY,
                                     INVENTORY_TABLE_COLUMNS,
-                                    ALL_BRANDS,
+                                    #ALL_BRANDS,
                                     ALL_CAT,
                                     ALL_TEXT,
                                     df_cat_data,
@@ -33,7 +33,7 @@ engine = create_engine('postgresql://hychua:XJHnZrENqEAgflLf0A73HxrxVqqf9gnv@dpg
 # start from dashboard.py
 
 # Append 'All' to ALL_BRANDS
-ALL_BRANDS.append('All')
+#ALL_BRANDS.append('All')
 ALL_CAT.append('All')
 ALL_TEXT.append('All')
 
