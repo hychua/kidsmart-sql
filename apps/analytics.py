@@ -250,7 +250,6 @@ def get_bottom_avg_net_profit(filters):
     filters.append('Avg Net Profit')
     data.columns = filters
     data.sort_values(by=['Avg Net Profit'],ascending=[False],inplace=True)
-    data = data.dropna()
     return data.tail(10)
 
 
