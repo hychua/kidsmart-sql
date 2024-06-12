@@ -168,8 +168,8 @@ layout1 = html.Div(
                                         figure = dict(
                                             data=[dict(x=0, y=0)],
                                             layout=dict(
-                                                paper_bgcolor="#1f2630",
-                                                plot_bgcolor="#1f2630",
+                                                #paper_bgcolor="#1f2630",
+                                                #plot_bgcolor="#1f2630",
                                                 autofill=True,
                                                 #margin=dict(t=75, r=50, b=100, l=50),
                                             )
@@ -183,8 +183,8 @@ layout1 = html.Div(
                                         figure = dict(
                                             data=[dict(x=0, y=0)],
                                             layout=dict(
-                                                paper_bgcolor="#1f2630",
-                                                plot_bgcolor="#1f2630",
+                                                #paper_bgcolor="#1f2630",
+                                                #plot_bgcolor="#1f2630",
                                                 autofill=True,
                                                 #margin=dict(t=75, r=50, b=100, l=50),
                                             )
@@ -201,8 +201,8 @@ layout1 = html.Div(
                                         figure = dict(
                                             data=[dict(x=0, y=0)],
                                             layout=dict(
-                                                paper_bgcolor="#1f2630",
-                                                plot_bgcolor="#1f2630",
+                                                #paper_bgcolor="#1f2630",
+                                                #plot_bgcolor="#1f2630",
                                                 autofill=True,
                                                 #margin=dict(t=75, r=50, b=100, l=50),
                                             )
@@ -332,7 +332,7 @@ layout2 = html.Div(
                                             id='inventory-table',
                                             columns=[{"name": i, "id": i} for i in INVENTORY_TABLE_COLUMNS],
                                             style_header={
-                                                #'backgroundColor': 'rgb(30, 30, 30)',
+                                                'backgroundColor': 'rgb(30, 30, 30)',
                                                 'fontWeight': 'bold',
                                                 'textAlign': 'left',
                                                 'font_size': '16px',
@@ -515,7 +515,10 @@ layout2 = html.Div(
                 )    
     
 layout3 = html.Div([    html.Div(' ',
-                style={'backgroundColor':'#1f2630','height':42}),
+                style={
+                  #'backgroundColor':'#1f2630',
+                  'height':42}
+                                ),
                 html.Div([
                                     
                     html.A('Upload Order.completed.xlsx or orders.csv File'),
@@ -550,7 +553,7 @@ layout3 = html.Div([    html.Div(' ',
                             children='Save Orders',
                             style={'fontSize':14,
                            'color':'rgb(255,255,255)',
-                           'backgroundColor':'rgb(0,123,255)',
+                           'backgroundColor':'#1f2630',
                            'borderRadius':5,
                            'height':38}),
                           html.Br(),
@@ -600,7 +603,7 @@ layout3 = html.Div([    html.Div(' ',
                             children='Save Product',
                             style={'fontSize':14,
                            'color':'rgb(255,255,255)',
-                           'backgroundColor':'rgb(0,123,255)',
+                           'backgroundColor':'#1f2630',
                            'borderRadius':5,
                            'height':38}),
                           html.Br(),
@@ -649,7 +652,7 @@ layout3 = html.Div([    html.Div(' ',
                             children='Save Category',
                             style={'fontSize':14,
                            'color':'rgb(255,255,255)',
-                           'backgroundColor':'rgb(0,123,255)',
+                           'backgroundColor':'#1f2630',
                            'borderRadius':5,
                            'height':38}),
                           html.Br(),
@@ -698,8 +701,8 @@ def display_selected_data(selected_data, year):
 
         fig.update_layout(
             title = f'Regional Retail: {curr_metric_col} {curr_year}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -723,8 +726,8 @@ def display_selected_data(selected_data, year):
 
         fig.update_layout(
             title = f'Regional Retail: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -748,8 +751,8 @@ def display_selected_data(selected_data, year):
 
         fig.update_layout(
             title = f'Regional Retail: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -769,8 +772,8 @@ def display_selected_data(selected_data, year):
 
         fig.update_layout(
             title = f'Regional Retail: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -795,8 +798,8 @@ def display_selected_data(selected_data, year):
 
         fig.update_layout(
             title = f'Regional Retail: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -816,8 +819,8 @@ def display_selected_data(selected_data, year):
 
         fig.update_layout(
             title = f'Regional Retail: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -872,8 +875,8 @@ def display_selected_data2(selected_data, year):
 
         fig2.update_layout(
             title = f'Product Category: {curr_metric_col} {curr_year}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -898,8 +901,8 @@ def display_selected_data2(selected_data, year):
 
         fig.update_layout(
             title = f'Product Category: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -923,8 +926,8 @@ def display_selected_data2(selected_data, year):
 
         fig.update_layout(
             title = f'Product Category: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -944,8 +947,8 @@ def display_selected_data2(selected_data, year):
 
         fig.update_layout(
             title = f'Product Category: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -970,8 +973,8 @@ def display_selected_data2(selected_data, year):
 
         fig.update_layout(
             title = f'Product Category: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -991,8 +994,8 @@ def display_selected_data2(selected_data, year):
 
         fig.update_layout(
             title = f'Product Category: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -1045,8 +1048,8 @@ def display_selected_data3(selected_data, year):
 
         fig3.update_layout(
             title = f'Sales by City: {curr_metric_col} {curr_year}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -1070,8 +1073,8 @@ def display_selected_data3(selected_data, year):
 
         fig.update_layout(
             title = f'Sales by City: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -1095,8 +1098,8 @@ def display_selected_data3(selected_data, year):
 
         fig.update_layout(
             title = f'Sales by City: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -1116,8 +1119,8 @@ def display_selected_data3(selected_data, year):
 
         fig.update_layout(
             title = f'Sales by City: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -1141,8 +1144,8 @@ def display_selected_data3(selected_data, year):
 
         fig.update_layout(
             title = f'Sales by City: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -1162,8 +1165,8 @@ def display_selected_data3(selected_data, year):
 
         fig.update_layout(
             title = f'Sales by City: {curr_metric_col}',
-            paper_bgcolor="#1f2630",
-            plot_bgcolor="#1f2630",
+            #paper_bgcolor="#1f2630",
+            #plot_bgcolor="#1f2630",
             #margin=dict(t=75, r=50, b=100, l=50),
             font=dict(color="#2cfec1")
 
@@ -1864,8 +1867,8 @@ def set_best_turnover_graph(year, selected_brand,selected_region):
 
     fig.update_layout(
         title = f'Best Turnover Rate',
-        paper_bgcolor="#1f2630",
-        plot_bgcolor="#1f2630",
+        #paper_bgcolor="#1f2630",
+        #plot_bgcolor="#1f2630",
         margin=dict(t=75, r=50, b=100, l=50),
         font=dict(color="#2cfec1")
 
@@ -1984,8 +1987,8 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
 
     fig.update_layout(
         title = f'Worse Turnover Rate',
-        paper_bgcolor="#1f2630",
-        plot_bgcolor="#1f2630",
+        #paper_bgcolor="#1f2630",
+        #plot_bgcolor="#1f2630",
         margin=dict(t=75, r=50, b=100, l=50),
         font=dict(color="#2cfec1")
 
