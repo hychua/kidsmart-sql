@@ -447,6 +447,7 @@ layout2 = html.Div(
                                             label="Total Inventory Available",
                                             #value=5,
                                             backgroundColor="#D3D3D3",
+                                            color="#000000"
                                             size=90,
                                         ), 
                                 
