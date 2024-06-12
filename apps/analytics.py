@@ -214,7 +214,6 @@ def get_bottom_performers(filters):
     filters.append('Total Sales')
     data.columns = filters
     data.sort_values(by=['Total Sales'],ascending=[False],inplace=True)
-    data = data.dropna()
     return data.tail(10)
 
 
