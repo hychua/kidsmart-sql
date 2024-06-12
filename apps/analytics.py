@@ -52,6 +52,8 @@ ALL_BRANDS = df_inv_data['Category'].unique().tolist()
 ALL_CAT = df_cat_data['Category_text'].unique().tolist()
 ALL_TEXT = df_cat_data['Category'].unique().tolist()
 ALL_BRANDS = sorted(ALL_BRANDS)
+ALL_CAT = sorted(ALL_CAT)
+ALL_TEXT = sorted(ALL_TEXT)
 
 
 INVENTORY_TABLE_COLUMNS = ['Order Date','Product Name','Category','Size','Order Quantity']
