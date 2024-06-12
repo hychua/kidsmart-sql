@@ -214,6 +214,7 @@ def get_bottom_performers(filters):
     filters.append('Total Sales')
     data.columns = filters
     data.sort_values(by=['Total Sales'],ascending=[False],inplace=True)
+    data = data.dropna()
     return data.tail(10)
 
 
@@ -249,6 +250,7 @@ def get_bottom_avg_net_profit(filters):
     filters.append('Avg Net Profit')
     data.columns = filters
     data.sort_values(by=['Avg Net Profit'],ascending=[False],inplace=True)
+    data = data.dropna()
     return data.tail(10)
 
 
@@ -300,6 +302,7 @@ def get_bottom_avg_inventory_turnover(filters):
     filters.append('Inventory Turnover')
     m_data.columns = filters
     m_data.sort_values(by=['Inventory Turnover'],ascending=[False],inplace=True)
+    m_data = m_data.dropna()
     return m_data.head(10)
 
 def get_sales_over_time(filters):
