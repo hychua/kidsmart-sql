@@ -764,7 +764,7 @@ def display_selected_data(selected_data, year):
     if selected_data == "bottom_performers":
 
         values = dff[curr_metric_col]
-        names = dff['Buyer Region']
+        names = dff['Buyer Region'].unique()
   
         fig = px.pie(dff, values=values, names=names, color=names,)
 
@@ -939,7 +939,7 @@ def display_selected_data2(selected_data, year):
     if selected_data == "bottom_performers":
         merged_df = pd.merge(dff,df_cat_data, on='Category')
         values = merged_df[curr_metric_col]
-        names = merged_df['Category_text']
+        names = merged_df['Category_text'].unique()
   
         fig = px.pie(dff, values=values, names=names, color=names,)
 
@@ -1111,7 +1111,7 @@ def display_selected_data3(selected_data, year):
     if selected_data == "bottom_performers":
 
         values = dff[curr_metric_col]
-        names = dff['City Name']
+        names = dff['City Name'].unique()
   
         fig = px.pie(dff, values=values, names=names, color=names,)
 
