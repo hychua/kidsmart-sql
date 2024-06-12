@@ -398,7 +398,7 @@ input[type="button"] {
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
-    background-color: transparent;
+    background-color: #1f2630;
     border-radius: 4px;
     border: 1px solid #bbb;
     cursor: pointer;
@@ -651,7 +651,7 @@ hr {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 #slider-container {
-    background-color: #252e3f;
+    background-color: transparent;
     padding: 2rem 6rem 4rem 4rem;
     height: 8rem;
 }
