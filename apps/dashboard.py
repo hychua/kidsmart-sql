@@ -108,15 +108,15 @@ layout1 = html.Div(
                                             ),
                                             dcc.Slider(
                                                 id="years-slider",
-                                                min=min(YEARS_INVENTORY),
-                                                max=max(YEARS_INVENTORY),
-                                                value=max(YEARS_INVENTORY)-1,
+                                                min=min(df_full_data['Order Year'].unique().tolist()),
+                                                max=max(df_full_data['Order Year'].unique().tolist()),
+                                                value=max(df_full_data['Order Year'].unique().tolist())-1,
                                                 marks={
                                                     str(year): {
                                                         "label": str(year),
                                                         #"style": {"color": "#7fafdf"},
                                                     }
-                                                    for year in YEARS_INVENTORY
+                                                    for year in df_full_data['Order Year'].unique().tolist()
                                                 },
                                             ),
                                         ],
@@ -243,15 +243,15 @@ layout2 = html.Div(
                                                 ),
                                                 dcc.Slider(
                                                     id="years-slider",
-                                                    min=min(YEARS_INVENTORY),
-                                                    max=max(YEARS_INVENTORY),
-                                                    value=max(YEARS_INVENTORY)-1,
+                                                    min=min(df_full_data['Order Year'].unique().tolist()),
+                                                    max=max(df_full_data['Order Year'].unique().tolist()),
+                                                    value=max(df_full_data['Order Year'].unique().tolist())-1,
                                                     marks={
                                                         str(year): {
                                                             "label": str(year),
                                                             #"style": {"color": "#7fafdf"},
                                                         }
-                                                        for year in YEARS_INVENTORY
+                                                        for year in df_full_data['Order Year'].unique().tolist()
                                                     },
                                                 ),
                                             ],
