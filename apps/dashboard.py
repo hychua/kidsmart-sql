@@ -861,7 +861,9 @@ def display_selected_data2(selected_data, year):
 
     df = create_plot_metric(filters,metric_type)
     dff = df[df['Order Year'] == curr_year]
-    
+    # define categories
+    sql3 = "SELECT * FROM category"
+    df_cat_data = querydatafromdatabase(sql3,[],["Category","Category_text"])
 
     if selected_data == "total_sales":
 
