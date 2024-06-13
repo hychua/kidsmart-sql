@@ -1224,7 +1224,7 @@ def set_products_options(year, selected_brand):
 
 
 
-# Products from selected Brand
+# Products from selected Region
 @app.callback(
     Output("region-dropdown", "options"),
     [
@@ -1262,7 +1262,7 @@ def set_brands_options(year, selected_product):
 
 
 
-# Get Shoe Size from Selected Region
+# Get Size from Selected Region
 @app.callback(
     Output("shoe-size-dropdown", "options"),
     [
