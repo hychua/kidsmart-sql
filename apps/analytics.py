@@ -205,7 +205,7 @@ def get_top_performers(filters):
     filters.append('Total Sales')
     data.columns = filters
     data.sort_values(by=['Total Sales'],ascending=[False],inplace=True)
-    return data.head(10)
+    return data
 
 
 def get_bottom_performers(filters):    
@@ -213,8 +213,8 @@ def get_bottom_performers(filters):
     data =  df_full_data.groupby(filters,as_index=False).agg({'Sale Price':['sum']})
     filters.append('Total Sales')
     data.columns = filters
-    data.sort_values(by=['Total Sales'],ascending=[False],inplace=True)
-    return data.tail(10)
+    data.sort_values(by=['Total Sales'],ascending=[True],inplace=True)
+    return data
 
 
 def get_avg_net_profit(filters):    
@@ -237,7 +237,7 @@ def get_top_avg_net_profit(filters):
     filters.append('Avg Net Profit')
     data.columns = filters
     data.sort_values(by=['Avg Net Profit'],ascending=[False],inplace=True)
-    return data.head(10)
+    return data
 
 
 def get_bottom_avg_net_profit(filters):
@@ -248,8 +248,8 @@ def get_bottom_avg_net_profit(filters):
     data = data.groupby(filters,as_index=False).agg({'net_profit':['mean']})
     filters.append('Avg Net Profit')
     data.columns = filters
-    data.sort_values(by=['Avg Net Profit'],ascending=[False],inplace=True)
-    return data.tail(10)
+    data.sort_values(by=['Avg Net Profit'],ascending=[True],inplace=True)
+    return data
 
 
 
