@@ -741,7 +741,7 @@ def display_selected_data(selected_data, year):
 
 
     if selected_data == "top_performers":
-
+        dff = dff.head(10)
         values = dff[curr_metric_col]
         names = dff['Buyer Region'].unique()
   
@@ -762,7 +762,7 @@ def display_selected_data(selected_data, year):
 
 
     if selected_data == "bottom_performers":
-
+        dff = dff.head(10)
         values = dff[curr_metric_col]
         names = dff['Buyer Region'].unique()
   
@@ -788,7 +788,7 @@ def display_selected_data(selected_data, year):
 
 
     if selected_data == "top_avg_net_profit":
-
+        dff = dff.head(10)
         fig = px.bar(dff, x='Buyer Region', y =curr_metric_col , color=curr_metric_col,
                      hover_data = ['Buyer Region']
         
@@ -809,7 +809,7 @@ def display_selected_data(selected_data, year):
 
 
     if selected_data == "bottom_avg_net_profit":
-
+        dff = dff.head(10)
         fig = px.bar(dff, x='Buyer Region', y =curr_metric_col , color=curr_metric_col,
                      hover_data = ['Buyer Region']
         
@@ -916,6 +916,7 @@ def display_selected_data2(selected_data, year):
 
 
     if selected_data == "top_performers":
+        dff = dff.head(10)
         merged_df = pd.merge(dff,df_cat_data, on='Category')
         values = merged_df[curr_metric_col]
         names = merged_df['Category_text'].unique()
@@ -937,6 +938,7 @@ def display_selected_data2(selected_data, year):
 
 
     if selected_data == "bottom_performers":
+        dff = dff.head(10)
         merged_df = pd.merge(dff,df_cat_data, on='Category')
         values = merged_df[curr_metric_col]
         names = merged_df['Category_text'].unique()
@@ -963,6 +965,7 @@ def display_selected_data2(selected_data, year):
 
 
     if selected_data == "top_avg_net_profit":
+        dff = dff.head(10)
         merged_df = pd.merge(dff,df_cat_data, on='Category')
         fig = px.bar(merged_df, x='Category_text', y =curr_metric_col , color=curr_metric_col,
                      hover_data = ['Category_text']
@@ -984,6 +987,7 @@ def display_selected_data2(selected_data, year):
 
 
     if selected_data == "bottom_avg_net_profit":
+        dff = dff.head(10)
         merged_df = pd.merge(dff,df_cat_data, on='Category')
         fig = px.bar(merged_df, x='Category_text', y =curr_metric_col , color=curr_metric_col,
                      hover_data = ['Category_text']
@@ -1088,7 +1092,7 @@ def display_selected_data3(selected_data, year):
 
 
     if selected_data == "top_performers":
-
+        dff = dff.head(10)
         values = dff[curr_metric_col]
         names = dff['City Name'].unique()
   
@@ -1109,7 +1113,7 @@ def display_selected_data3(selected_data, year):
 
 
     if selected_data == "bottom_performers":
-
+        dff = dff.head(10)
         values = dff[curr_metric_col]
         names = dff['City Name'].unique()
   
@@ -1134,7 +1138,7 @@ def display_selected_data3(selected_data, year):
 
 
     if selected_data == "top_avg_net_profit":
-
+        dff = dff.head(10)
         fig = px.bar(dff, x='City Name', y =curr_metric_col , color=curr_metric_col,
                      hover_data = ['City Name']
         
@@ -1155,7 +1159,7 @@ def display_selected_data3(selected_data, year):
 
 
     if selected_data == "bottom_avg_net_profit":
-
+        dff = dff.head(10)
         fig = px.bar(dff, x='City Name', y =curr_metric_col , color=curr_metric_col,
                      hover_data = ['City Name']
         
