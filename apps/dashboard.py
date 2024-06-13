@@ -751,7 +751,7 @@ def display_selected_data(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Regional Retail: {curr_metric_col}',
+            title = f'Regional Retail: Top {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
@@ -772,7 +772,7 @@ def display_selected_data(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Regional Retail: {curr_metric_col}',
+            title = f'Regional Retail: Bottom {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
@@ -798,7 +798,7 @@ def display_selected_data(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Regional Retail: {curr_metric_col}',
+            title = f'Regional Retail: Top {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
@@ -819,7 +819,7 @@ def display_selected_data(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Regional Retail: {curr_metric_col}',
+            title = f'Regional Retail: Bottom {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
@@ -929,7 +929,7 @@ def display_selected_data2(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Product Category: {curr_metric_col}',
+            title = f'Product Category: Top {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
@@ -951,7 +951,7 @@ def display_selected_data2(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Product Category: {curr_metric_col}',
+            title = f'Product Category: Bottom {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
@@ -978,7 +978,7 @@ def display_selected_data2(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Product Category: {curr_metric_col}',
+            title = f'Product Category: Top {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
@@ -1000,7 +1000,7 @@ def display_selected_data2(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Product Category: {curr_metric_col}',
+            title = f'Product Category: Bottom {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
@@ -1104,7 +1104,7 @@ def display_selected_data3(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Sales by City: {curr_metric_col}',
+            title = f'Sales by City: Top {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
@@ -1125,7 +1125,7 @@ def display_selected_data3(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Sales by City: {curr_metric_col}',
+            title = f'Sales by City: Bottom {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
@@ -1150,7 +1150,7 @@ def display_selected_data3(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Sales by City: {curr_metric_col}',
+            title = f'Sales by City: Top {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
@@ -1171,7 +1171,7 @@ def display_selected_data3(selected_data, year):
 
 
         fig.update_layout(
-            title = f'Sales by City: {curr_metric_col}',
+            title = f'Sales by City: Bottom {curr_metric_col}',
             #paper_bgcolor="#1f2630",
             plot_bgcolor="#D3D3D3",
             #margin=dict(t=75, r=50, b=100, l=50),
