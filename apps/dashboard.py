@@ -78,18 +78,7 @@ METRIC_DICT = {
 layout1 = html.Div(
                 id="sales-dash",
                 children=[
-                    html.Div(
-                        id="header",
-                        children=[
-                            
-                            html.H4(children="Sales Performance Dashboard"),
-                            html.P(
-                                id="description",
-                                children="† Retail Sales from inventory data by year, buyer region, and product type \
-                                ",
-                            ),
-                        ],
-                    ),
+        
                     html.Div(
                         id="app-container",
                         children=[
@@ -223,17 +212,7 @@ layout1 = html.Div(
 layout2 = html.Div(
                     id="inv-dash",
                     children=[
-                        html.Div(
-                            id="header",
-                            children=[
-                                html.H4(children="Inventory Monitoring Dashboard"),
-                                html.P(
-                                    id="description",
-                                    children="† Inventory data and turnover rates based on sales data \
-                                    ",
-                                ),
-                            ],
-                        ),
+              
                             html.Div(
                                             id="slider-container",
                                             children=[
