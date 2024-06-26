@@ -242,13 +242,13 @@ layout2 = html.Div(
                             children=[
                                 html.Div(
                                     children=[
-                                        html.P(id="brands-radio-text",
+                                        html.P(id="category-dropdown-text",
                                         children="Choose Category: "),
-                                        dcc.RadioItems(
-                                            id="brands-radio",
-                                            options=[{'label': j, 'value':k} for j,k in zip(ALL_CAT,ALL_TEXT)],
-                                            value='All',
-                                            labelStyle={'display': 'inline-block'},                           
+                                        dcc.Dropdown(
+                                            id="category-dropdown",
+                                            options = [],   
+                                            value=[],
+                                            multi= True ,                           
                                         ),
 
                                     ],className='three columns',
@@ -1172,6 +1172,34 @@ def display_selected_data3(selected_data, year):
 
     if selected_data == "bottom_avg_inventory_turnover":
         pass
+
+# Categories
+@app.callback(
+    Output("category-dropdown", "options"),
+    [
+        Input("years-slider", "value"),
+
+    ],
+)
+
+
+def set_category_options(year):
+    filters = ['Order Year','Buyer Region','Category','Product Name']
+    metric_type = 'curr_inventory'
+    curr_metric_col = METRIC_DICT[metric_type]
+    curr_year = year
+
+    df = create_plot_metric(filters,metric_type)
+
+    dff = df[(df['Order Year']==curr_year)]
+    
+    merged_df = pd.merge(dff,df_cat_data, on='Category')
+
+    categories = merged_df['Category'].unique().tolist()
+    text = merged_df['Category_text'].unique().tolist()
+    
+
+    return [{'label':j, 'value':i} for i, j in zip(categories, text)]
 
 # Product and Brand
 @app.callback(
