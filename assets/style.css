@@ -332,7 +332,7 @@ p {
     margin-bottom: 2rem;
 }
 
-#slider-text, #chart-selector, #product-dropdown-text,#regions-dropdown-text,#shoe-sizes-dropdown-text,#brands-radio-text{
+#slider-text, #chart-selector, #product-dropdown-text,#regions-dropdown-text,#shoe-sizes-dropdown-text,#category-dropdown{
     margin-bottom: 2rem !important;
     font-size: 2rem;
 }
