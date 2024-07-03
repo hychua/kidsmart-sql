@@ -299,56 +299,57 @@ layout2 = html.Div(
                         ), # end bottom div 1
 
                         # START BOTTOM DIV 2
-                        html.Div(
-                            id="app-container-3",
-                            children=[
-                                html.Div(
-                                    children=[
-                                        html.P(id="inventory-table-title",
-                                        children=["Inventory Management Table"],
-                                        ),
-                                        dash_table.DataTable(
-                                            id='inventory-table',
-                                            columns=[{"name": i, "id": i} for i in INVENTORY_TABLE_COLUMNS],
-                                            style_header={
-                                                'backgroundColor': 'rgb(30, 30, 30)',
-                                                'fontWeight': 'bold',
-                                                'textAlign': 'left',
-                                                'font_size': '16px',
-                                                'border': '1px solid black',
-                                                'color': 'white'
-                                                },
+                        #html.Div(
+                         #   id="app-container-3",
+                          #  children=[
+                           #     html.Div(
+                            #        children=[
+                             #           html.P(id="inventory-table-title",
+                              #          children=["Inventory Management Table"],
+                               #         ),
+                                #        dash_table.DataTable(
+                                 #           id='inventory-table',
+                                  #          columns=[{"name": i, "id": i} for i in INVENTORY_TABLE_COLUMNS],
+                                   #         style_header={
+                                    #            'backgroundColor': 'rgb(30, 30, 30)',
+                                     #           'fontWeight': 'bold',
+                                      #          'textAlign': 'left',
+                                       #         'font_size': '16px',
+                                        #        'border': '1px solid black',
+                                         #       'color': 'white'
+                                          #      },
 
-                                            style_data_conditional=[
-                                                {
-                                                    'if': {'row_index': 'odd'},
-                                                    'backgroundColor': '#D3D3D3',
-                                                    'border': '1px solid grey' ,
-                                                },
-                                            ],
+                                            #style_data_conditional=[
+                                             #   {
+                                              #      'if': {'row_index': 'odd'},
+                                               #     'backgroundColor': '#D3D3D3',
+                                                #    'border': '1px solid grey' ,
+                                                #},
+                                            #],
 
-                                            style_cell={
-                                                'backgroundColor': "#7fafdf",
-                                                'color': 'black',
-                                                'font_size': '15px',
-                                                'minWidth': '120px', 'width': '120px', 'maxWidth': '180px',
-                                                'whiteSpace': 'normal',
-                                            },
-                                            page_size=18,
-                                            style_table={'overflowX': '120px', 'overflowY':'auto'},
-                                            editable=True,
-                                            filter_action="native",
-                                            sort_action="native",
-                                            sort_mode="multi",
+                                            #style_cell={
+                                             #   'backgroundColor': "#7fafdf",
+                                              #  'color': 'black',
+                                               # 'font_size': '15px',
+                                                #'minWidth': '120px', 'width': '120px', 'maxWidth': '180px',
+                                                #'whiteSpace': 'normal',
+                                            #},
+                                            #page_size=18,
+                                            #style_table={'overflowX': '120px', 'overflowY':'auto'},
+                                            #editable=True,
+                                            #filter_action="native",
+                                            #sort_action="native",
+                                            #sort_mode="multi",
                                             #column_selectable="single",
                                             #row_selectable="multi",
                                             
-                                        ),
+                                        #),
 
-                                    ], className='six columns',
+                                    #], className='six columns',
 
-                                ),
+                                #),
 
+                      html.Div([
                                 html.Div(
                                     id = "no-id",
                                     children=[
@@ -416,7 +417,7 @@ layout2 = html.Div(
                                             children=[
                                                 html.P(
                                                     id='inventory-current-led-header',
-                                                    children=["Current Inventory"]
+                                                    #children=["Current Inventory"]
                                                 ),
 
                                             ],className='row',
@@ -429,7 +430,9 @@ layout2 = html.Div(
                                             color="#000000",
                                             size=90,
                                         ), 
-                                
+
+                                    ]),
+                                      
                                         html.Br(),
                                         html.Br(),
                                         html.Div(
