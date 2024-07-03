@@ -774,7 +774,7 @@ hr {
 @media (min-width: 1251px) {
     /*For desktop*/
     #logo {
-        float: right;
+        float: left;
         padding-right: 2rem;
     }
 
