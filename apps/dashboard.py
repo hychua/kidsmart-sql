@@ -435,6 +435,8 @@ layout2 = html.Div(
                                       
                                         html.Br(),
                                         html.Br(),
+
+                        html.Div([
                                         html.Div(
                                             id='turnover-led-container',
                                             children=[
@@ -485,9 +487,11 @@ layout2 = html.Div(
 
                                         ), # end area graph                            
 
-                                    ], className='six columns',
+                                    ]
 
                                 ),
+
+                      ], className='six columns',)
 
                             ],className='row'
 
