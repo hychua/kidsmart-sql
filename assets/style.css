@@ -776,6 +776,7 @@ hr {
     #logo {
         float: left;
         padding-right: 2rem;
+        padding-left: 2rem;
     }
 
     #header p {
