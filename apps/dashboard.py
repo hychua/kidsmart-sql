@@ -491,11 +491,8 @@ layout2 = html.Div(
 
                             ],className='row'
 
-                        ), # end bottom div 2
-
-
-                    ],
-                )    
+                        ) # end bottom div 2
+  
     
 layout3 = html.Div([    html.Div(' ',
                 style={
