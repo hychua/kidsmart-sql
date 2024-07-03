@@ -12,15 +12,15 @@ import os
 
 # define tab styles
 tab_style = {
-    'borderBottom': '1px solid #d6d6d6',
+    'borderBottom': '2px solid #d6d6d6',
     'padding': '6px',
     'fontWeight': 'bold'
 }
 
 tab_selected_style = {
-    'borderTop': '1px solid #d6d6d6',
-    'borderBottom': '1px solid #d6d6d6',
-    'backgroundColor': '#119DFF',
+    'borderTop': '2px solid #d6d6d6',
+    'borderBottom': '2px solid #d6d6d6',
+    'backgroundColor': '#000000',
     'color': 'white',
     'padding': '6px'
 }
@@ -36,10 +36,9 @@ layout_index = html.Div([
                     
                 html.Img(id="logo", src=app.get_asset_url("logo.png")),
                 
-                    html.Div([
-                        html.H2('Kidsmart Dashboard'),
+                    #html.Div([ html.H2('Kidsmart Dashboard'),
        
-                    ],style={'display':'inline-block','margin-left':50}),
+                    #],style={'display':'inline-block','margin-left':50}),
                             
                         ],
                         style={}),
