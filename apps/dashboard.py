@@ -282,10 +282,10 @@ layout2 = html.Div(
                                 ),
                                 html.Div(
                                     children=[
-                                        html.P(id="shoe-sites-dropdown-text",
+                                        html.P(id="shoe-sizes-dropdown-text",
                                         children="Choose Site: "),
                                         dcc.Dropdown(
-                                            id="shoe-site-dropdown",
+                                            id="shoe-size-dropdown",
                                             options=[], 
                                             value=[],
                                             multi= True ,                           
@@ -314,7 +314,7 @@ layout2 = html.Div(
                                                 'backgroundColor': 'rgb(30, 30, 30)',
                                                 'fontWeight': 'bold',
                                                 'textAlign': 'left',
-                                                'font_site': '16px',
+                                                'font_size': '16px',
                                                 'border': '1px solid black',
                                                 'color': 'white'
                                                 },
@@ -330,11 +330,11 @@ layout2 = html.Div(
                                             style_cell={
                                                 'backgroundColor': "#7fafdf",
                                                 'color': 'black',
-                                                'font_site': '15px',
+                                                'font_size': '15px',
                                                 'minWidth': '120px', 'width': '120px', 'maxWidth': '180px',
                                                 'whiteSpace': 'normal',
                                             },
-                                            page_site=18,
+                                            page_size=18,
                                             style_table={'overflowX': '120px', 'overflowY':'auto'},
                                             editable=True,
                                             filter_action="native",
@@ -369,7 +369,7 @@ layout2 = html.Div(
                                                     step=1,
                                                     labelPosition= 'bottom',
                                                     showCurrentValue=True,
-                                                    site=800,
+                                                    size=800,
                                                     value=15,
                                                     vertical=False,
                                                     theme={
@@ -396,7 +396,7 @@ layout2 = html.Div(
                                                     step=1,
                                                     labelPosition= 'bottom',
                                                     showCurrentValue=True,
-                                                    site=800,
+                                                    size=800,
                                                     #value=15,
                                                     vertical=False,
                                                     theme={
@@ -427,7 +427,7 @@ layout2 = html.Div(
                                             #value=5,
                                             backgroundColor="#D3D3D3",
                                             color="#000000",
-                                            site=90,
+                                            size=90,
                                         ), 
                                 
                                         html.Br(),
@@ -448,7 +448,7 @@ layout2 = html.Div(
                                             label="Average Inventory Turnover ( in days )",
                                             #value=5,
                                             backgroundColor="#FF5E5E",
-                                            site=90,
+                                            size=90,
                                         ), 
                                         html.Br(),
                                         html.Br(),
@@ -675,7 +675,7 @@ def display_selected_data(selected_data, year):
         dff['Site'] = np.sqrt(dff['Site']).round(0)
 
         fig = px.scatter(dff, x="Buyer Region", y=curr_metric_col, color="Buyer Region",
-                         site ="Site", hover_data=[curr_metric_col])
+                         size ="Site", hover_data=[curr_metric_col])
 
 
 
@@ -851,7 +851,7 @@ def display_selected_data2(selected_data, year):
         merged_df = pd.merge(dff,df_cat_data, on='Category')
 
         fig2 = px.scatter(merged_df, x='Category_text', y=curr_metric_col, color='Category_text',
-                         site ="Site", hover_data=[curr_metric_col])
+                         size ="Site", hover_data=[curr_metric_col])
 
 
 
@@ -1028,7 +1028,7 @@ def display_selected_data3(selected_data, year):
         dff = dff.head(n=20)
 
         fig3 = px.scatter(dff, x='City Name', y=curr_metric_col, color='City Name',
-                         site ="Site", hover_data=[curr_metric_col])
+                         size ="Site", hover_data=[curr_metric_col])
 
 
 
@@ -1272,7 +1272,7 @@ def set_region_options(year, selected_product):
 
 # Get Site from Selected Region
 @app.callback(
-    Output("shoe-site-dropdown", "options"),
+    Output("shoe-size-dropdown", "options"),
     [
         Input("years-slider", "value"),
         Input("product-dropdown", "value"),
@@ -1281,7 +1281,7 @@ def set_region_options(year, selected_product):
 )
 
 
-def set_shoe_site_options(year, selected_product, selected_region):
+def set_shoe_size_options(year, selected_product, selected_region):
 
     filters = ['Order Year','Buyer Region','Category','Product Name','Site']
     metric_type = 'curr_inventory'
@@ -1294,29 +1294,29 @@ def set_shoe_site_options(year, selected_product, selected_region):
 
     df = create_plot_metric(filters,metric_type)
 
-    # If Product is blank and regions is blank, show all shoe sites
+    # If Product is blank and regions is blank, show all shoe sizes
     if (len(curr_products)==0) and (len(curr_regions)==0):
         dff = df.copy()
 
-    # If product is blank but region populated, show avail sites
+    # If product is blank but region populated, show avail sizes
     elif (len(curr_products)==0) and (len(curr_regions)>=1):
         dff = df[(df['Order Year']==curr_year) & (df['Buyer Region'].isin(curr_regions))]
 
-    # If product is populated but region is blank, show avail sites
+    # If product is populated but region is blank, show avail sizes
     elif(len(curr_products)>=1) and (len(curr_regions)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products))]
 
-    # Other wise if product is populated and region is populated, show avail sites
+    # Other wise if product is populated and region is populated, show avail sizes
     else:
         dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) &(df['Buyer Region'].isin(curr_regions))]
 
 
-    shoe_sites = dff['Site'].unique().tolist()
+    shoe_sizes = dff['Site'].unique().tolist()
 
-    shoe_sites = sorted(shoe_sites)
+    shoe_sizes = sorted(shoe_sizes)
 
 
-    return [{'label':i, 'value':i} for i in shoe_sites]
+    return [{'label':i, 'value':i} for i in shoe_sizes]
 
 
 # Inventory management table
@@ -1327,12 +1327,12 @@ def set_shoe_site_options(year, selected_product, selected_region):
         Input("category-dropdown", "value"),
         Input("product-dropdown", "value"),
         Input("region-dropdown", "value"),
-        Input("shoe-site-dropdown", "value"),
+        Input("shoe-size-dropdown", "value"),
     ],
 )
 
 
-def set_inventory_table(year, selected_brand, selected_product, selected_region, selected_shoe_site):
+def set_inventory_table(year, selected_brand, selected_product, selected_region, selected_shoe_size):
 
     filters = ['Order Year', 'Order Date','Buyer Region','Category','Product Name','Site']
     metric_type = 'curr_inventory'
@@ -1341,7 +1341,7 @@ def set_inventory_table(year, selected_brand, selected_product, selected_region,
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
     curr_products = [product for product in selected_product]
-    curr_shoe_sites = [shoe for shoe in selected_shoe_site]
+    curr_shoe_sizes = [shoe for shoe in selected_shoe_size]
 
     df = create_plot_metric(filters,metric_type)
     # If Brand is All
@@ -1349,29 +1349,29 @@ def set_inventory_table(year, selected_brand, selected_product, selected_region,
     if (len(curr_brand)==0) and (len(curr_products)==0):
         dff = df[(df['Order Year']==curr_year)]
 
-    elif (len(curr_brand)==0) and (len(curr_shoe_sites)==0) and (len(curr_products)>=1) and (len(curr_regions)==0):
+    elif (len(curr_brand)==0) and (len(curr_shoe_sizes)==0) and (len(curr_products)>=1) and (len(curr_regions)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products))]
 
-    elif (len(curr_brand)>=1) and (len(curr_shoe_sites)==0) and (len(curr_products)==0) and (len(curr_regions)==0):
+    elif (len(curr_brand)>=1) and (len(curr_shoe_sizes)==0) and (len(curr_products)==0) and (len(curr_regions)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']== str(curr_brand[0]) )]
 
-    elif (len(curr_brand)>=1) and (len(curr_shoe_sites)==0) and (len(curr_products)>=1) and (len(curr_regions)==0):
+    elif (len(curr_brand)>=1) and (len(curr_shoe_sizes)==0) and (len(curr_products)>=1) and (len(curr_regions)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']== str(curr_brand[0]) ) & (df['Product Name'].isin(curr_products))]
 
-    elif (len(curr_brand)>=1) and (len(curr_shoe_sites)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1):
+    elif (len(curr_brand)>=1) and (len(curr_shoe_sizes)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1):
         dff = df[(df['Order Year']==curr_year) & (df['Category']== str(curr_brand[0]) ) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions))]
 
-    elif (len(curr_brand)>=1) and (len(curr_shoe_sites)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and(len(curr_shoe_sites)>=1):
-        dff = df[(df['Order Year']==curr_year) & (df['Category']== str(curr_brand[0]) ) & (df['Product Name'].isin(curr_products)) & (df['Site'].isin(curr_shoe_sites))]
+    elif (len(curr_brand)>=1) and (len(curr_shoe_sizes)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and(len(curr_shoe_sizes)>=1):
+        dff = df[(df['Order Year']==curr_year) & (df['Category']== str(curr_brand[0]) ) & (df['Product Name'].isin(curr_products)) & (df['Site'].isin(curr_shoe_sizes))]
 
-    elif (len(curr_brand)>=1) and (len(curr_shoe_sites)==0) and (len(curr_products)==0) and (len(curr_regions)>=1):
+    elif (len(curr_brand)>=1) and (len(curr_shoe_sizes)==0) and (len(curr_products)==0) and (len(curr_regions)>=1):
         dff = df[(df['Order Year']==curr_year) & (df['Category']== str(curr_brand[0]) ) & (df['Buyer Region'].isin(curr_regions))]
 
-    elif (len(curr_brand)>=1) and (len(curr_shoe_sites)>=1) and (len(curr_products)==0) and (len(curr_regions)==0):
-        dff = df[(df['Order Year']==curr_year) & (df['Category']== str(curr_brand[0]) ) & (df['Site'].isin(curr_shoe_sites))]
+    elif (len(curr_brand)>=1) and (len(curr_shoe_sizes)>=1) and (len(curr_products)==0) and (len(curr_regions)==0):
+        dff = df[(df['Order Year']==curr_year) & (df['Category']== str(curr_brand[0]) ) & (df['Site'].isin(curr_shoe_sizes))]
 
     else:
-        dff = df[(df['Order Year']==curr_year) &(df['Category']==str(curr_brand[0])) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sites))]
+        dff = df[(df['Order Year']==curr_year) &(df['Category']==str(curr_brand[0])) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sizes))]
  
 
 
@@ -1490,12 +1490,12 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
         Input("category-dropdown", "value"),
         Input("product-dropdown", "value"),
         Input("region-dropdown", "value"),
-        Input("shoe-site-dropdown", "value"),
+        Input("shoe-size-dropdown", "value"),
     ],
 )
 
 
-def set_current_inventory_led(year, selected_brand, selected_product, selected_region, selected_shoe_site):
+def set_current_inventory_led(year, selected_brand, selected_product, selected_region, selected_shoe_size):
 
     filters = ['Order Year','Buyer Region','Category','Product Name','Site']
     filters2 = ['Order Year','Category','Product Name']
@@ -1507,39 +1507,39 @@ def set_current_inventory_led(year, selected_brand, selected_product, selected_r
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
     curr_products = [product for product in selected_product]
-    curr_shoe_sites = [shoe for shoe in selected_shoe_site]
+    curr_shoe_sizes = [shoe for shoe in selected_shoe_size]
 
     df = create_plot_metric(filters,metric_type)
     df2 = create_plot_metric(filters2,metric_type2)
   
     # If Brand is All
 
-    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year)]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)>=1):
-        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sites))]
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
+        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sizes))]
         
 
-    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==str(curr_brand[0]))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==str(curr_brand[0])) & (df['Product Name'].isin(curr_products))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==str(curr_brand[0])) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions))]
 
     else:
-        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sites))]
+        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sizes))]
 
     # if statements for curr_inventory2
     if (len(curr_brand)==0) and (len(curr_products)==0):
@@ -1548,10 +1548,10 @@ def set_current_inventory_led(year, selected_brand, selected_product, selected_r
     elif (len(curr_brand)==0) and (len(curr_products)>=1):
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product Name'].isin(curr_products))]
     
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and len(curr_shoe_sites)==0:
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and len(curr_shoe_sizes)==0:
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product Name'].isin(curr_products))]
     
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)>=1):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product Name'].isin(curr_products))]
         
     
@@ -1585,12 +1585,12 @@ def set_current_inventory_led(year, selected_brand, selected_product, selected_r
         Input("category-dropdown", "value"),
         Input("product-dropdown", "value"),
         Input("region-dropdown", "value"),
-        Input("shoe-site-dropdown", "value"),
+        Input("shoe-size-dropdown", "value"),
     ],
 )
 
 
-def set_gauge_value(year, selected_brand, selected_product, selected_region, selected_shoe_site):
+def set_gauge_value(year, selected_brand, selected_product, selected_region, selected_shoe_size):
 
 
     filters = ['Order Year','Buyer Region','Category','Product Name','Site']
@@ -1603,38 +1603,38 @@ def set_gauge_value(year, selected_brand, selected_product, selected_region, sel
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
     curr_products = [product for product in selected_product]
-    curr_shoe_sites = [shoe for shoe in selected_shoe_site]
+    curr_shoe_sizes = [shoe for shoe in selected_shoe_size]
 
     df = create_plot_metric(filters,metric_type)
     df2 = create_plot_metric(filters2,metric_type2)
     # If Brand is All
 
-    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year)]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)>=1):
-        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sites))]
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
+        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sizes))]
         
 
-    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==str(curr_brand[0]))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==str(curr_brand[0])) & (df['Product Name'].isin(curr_products))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==str(curr_brand[0])) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions))]
 
     else:
-        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sites))]
+        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sizes))]
 
     # if statements for curr_inventory2
     if (len(curr_brand)==0) and (len(curr_products)==0):
@@ -1643,10 +1643,10 @@ def set_gauge_value(year, selected_brand, selected_product, selected_region, sel
     elif (len(curr_brand)==0) and (len(curr_products)>=1):
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product Name'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and len(curr_shoe_sites)==0:
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and len(curr_shoe_sizes)==0:
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product Name'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)>=1):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product Name'].isin(curr_products))]
         
 
@@ -1682,12 +1682,12 @@ def set_gauge_value(year, selected_brand, selected_product, selected_region, sel
         Input("category-dropdown", "value"),
         Input("product-dropdown", "value"),
         Input("region-dropdown", "value"),
-        Input("shoe-site-dropdown", "value"),
+        Input("shoe-size-dropdown", "value"),
     ],
 )
 
 
-def set_gauge_2_value(year, selected_brand, selected_product, selected_region, selected_shoe_site):
+def set_gauge_2_value(year, selected_brand, selected_product, selected_region, selected_shoe_size):
     
 
     filters = ['Order Year','Buyer Region','Category','Product Name','Site']
@@ -1700,38 +1700,38 @@ def set_gauge_2_value(year, selected_brand, selected_product, selected_region, s
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
     curr_products = [product for product in selected_product]
-    curr_shoe_sites = [shoe for shoe in selected_shoe_site]
+    curr_shoe_sizes = [shoe for shoe in selected_shoe_size]
 
     df = create_plot_metric(filters,metric_type)
     df2 = create_plot_metric(filters2,metric_type2)
     # If Brand is All
 
-    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year)]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)>=1):
-        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sites))]
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
+        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sizes))]
         
 
-    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==str(curr_brand[0]))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==str(curr_brand[0])) & (df['Product Name'].isin(curr_products))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category']==str(curr_brand[0])) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions))]
 
     else:
-        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sites))]
+        dff = df[(df['Order Year']==curr_year) & (df['Product Name'].isin(curr_products)) & (df['Buyer Region'].isin(curr_regions)) & (df['Site'].isin(curr_shoe_sizes))]
     
     # if statements for curr_inventory2
     if (len(curr_brand)==0) and (len(curr_products)==0):
@@ -1740,10 +1740,10 @@ def set_gauge_2_value(year, selected_brand, selected_product, selected_region, s
     elif (len(curr_brand)==0) and (len(curr_products)>=1):
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product Name'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and len(curr_shoe_sites)==0:
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and len(curr_shoe_sizes)==0:
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product Name'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sites)>=1):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product Name'].isin(curr_products))]
         
 
