@@ -445,7 +445,7 @@ layout2 = html.Div(
                                                     children=["Inventory Turnover"]
                                                 ),
 
-                                            ],className='row',
+                                            ]
                                         ),
 
                                         daq.LEDDisplay(
