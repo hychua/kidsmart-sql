@@ -348,7 +348,7 @@ layout2 = html.Div(
                                     #], className='six columns',
 
                                 #),
-              html.Div(className='row', children=[
+              html.Div([
                       html.Div([
                                 html.Div(
                                     id = "no-id",
