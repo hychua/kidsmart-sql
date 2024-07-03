@@ -348,7 +348,7 @@ layout2 = html.Div(
                                     #], className='six columns',
 
                                 #),
-
+              html.Div(className='row', children=[
                       html.Div([
                                 html.Div(
                                     id = "no-id",
@@ -379,7 +379,7 @@ layout2 = html.Div(
                                                     
                                                 ), 
 
-                                            ],className='row'
+                                            ]
 
                                             
                                         ),
@@ -406,7 +406,7 @@ layout2 = html.Div(
                                                     
                                                 ), 
 
-                                            ],className='row'
+                                            ]
 
                                             
                                         ),
@@ -420,7 +420,7 @@ layout2 = html.Div(
                                                     #children=["Current Inventory"]
                                                 ),
 
-                                            ],className='row',
+                                            ]
                                         ),
                                         daq.LEDDisplay(
                                             id="inventory-current-led",
@@ -496,7 +496,7 @@ layout2 = html.Div(
                             ],className='row'
 
                         ) # end bottom div 2
-  
+                    ])
     
 layout3 = html.Div([    html.Div(' ',
                 style={
