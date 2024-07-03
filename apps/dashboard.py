@@ -349,7 +349,7 @@ layout2 = html.Div(
 
                                 #),
               html.Div([
-                      html.Div([
+                      html.Div([id="app-container-3",
                                 html.Div(
                                     id = "no-id",
                                     children=[
