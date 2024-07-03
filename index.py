@@ -37,13 +37,8 @@ layout_index = html.Div([
                 html.Img(id="logo", src=app.get_asset_url("logo.png")),
                 
                     html.Div([
-                        html.H1('Kidsmart Sales and Inventory Monitoring Dashboard'),
-                        html.P(
-                            id="description",
-                            children="† Please select dashboard from the tabs below. \
-                            ",
-                        ),
-                                                
+                        html.H2('Kidsmart Dashboard'),
+       
                     ],style={'display':'inline-block','margin-left':50}),
                             
                         ],
