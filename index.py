@@ -34,7 +34,7 @@ layout_index = html.Div([
     
                 html.Div([
                     
-                html.Img(id="logo", src=app.get_asset_url("logo.png")),
+                #html.Img(id="logo", src=app.get_asset_url("logo.png")),
                 
                     #html.Div([ html.H2('Kidsmart Dashboard'),
        
@@ -45,6 +45,7 @@ layout_index = html.Div([
 
     html.Div([
         dcc.Tabs(id='tabs', value='inventory-dash', children=[
+            dcc.Tab(label='', value='home', style={background: app.get_asset_url("logo.png")}, selected_style={background: app.get_asset_url("logo.png")}),
             dcc.Tab(label='Sales Dashboard', value='sales-dash',style=tab_style, selected_style=tab_selected_style),
             dcc.Tab(label='Inventory Dashboard', value='inventory-dash',style=tab_style, selected_style=tab_selected_style),
             dcc.Tab(label='Upload Data', value='upload-data',style=tab_style, selected_style=tab_selected_style),
