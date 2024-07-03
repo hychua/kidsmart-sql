@@ -12,17 +12,19 @@ import os
 
 # define tab styles
 tab_style = {
-    'borderBottom': '2px solid #d6d6d6',
-    'padding': '6px',
-    'fontWeight': 'bold'
+    'borderBottom': '3px solid #d6d6d6',
+    'padding': '12x',
+    'fontWeight': 'bold',
+    'font_size': '12px'
 }
 
 tab_selected_style = {
-    'borderTop': '2px solid #d6d6d6',
-    'borderBottom': '2px solid #d6d6d6',
+    'borderTop': '3px solid #d6d6d6',
+    'borderBottom': '3px solid #d6d6d6',
     'backgroundColor': '#000000',
     'color': 'white',
-    'padding': '6px'
+    'padding': '6px',
+    'font_size': '12px'
 }
 
 # live updates
@@ -34,7 +36,7 @@ layout_index = html.Div([
     
                 html.Div([
                     
-                #html.Img(id="logo", src=app.get_asset_url("logo.png")),
+                html.Img(id="logo", src=app.get_asset_url("logo.png")),
                 
                     #html.Div([ html.H2('Kidsmart Dashboard'),
        
@@ -45,7 +47,6 @@ layout_index = html.Div([
 
     html.Div([
         dcc.Tabs(id='tabs', value='inventory-dash', children=[
-            html.Img(id="logo", src=app.get_asset_url("logo.png")),
             dcc.Tab(label='Sales Dashboard', value='sales-dash',style=tab_style, selected_style=tab_selected_style),
             dcc.Tab(label='Inventory Dashboard', value='inventory-dash',style=tab_style, selected_style=tab_selected_style),
             dcc.Tab(label='Upload Data', value='upload-data',style=tab_style, selected_style=tab_selected_style),
