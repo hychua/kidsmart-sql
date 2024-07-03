@@ -431,7 +431,7 @@ layout2 = html.Div(
                                             size=90,
                                         ), 
 
-                                    ]),
+                                    ], className='six columns'),
                                       
                                         html.Br(),
                                         html.Br(),
