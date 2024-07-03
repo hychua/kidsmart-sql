@@ -15,7 +15,7 @@ tab_style = {
     'borderBottom': '3px solid #d6d6d6',
     'padding': '12x',
     'fontWeight': 'bold',
-    'font_size': '12px'
+    'font_size': '16px'
 }
 
 tab_selected_style = {
@@ -23,13 +23,9 @@ tab_selected_style = {
     'borderBottom': '3px solid #d6d6d6',
     'backgroundColor': '#000000',
     'color': 'white',
-    'padding': '6px',
-    'font_size': '12px'
+    'padding': '12px',
+    'font_size': '16px'
 }
-
-# live updates
-def serve_layout():
-    return layout_index
 
 # Create Pages      
 layout_index = html.Div([
@@ -59,7 +55,7 @@ layout_index = html.Div([
 ])
 # end create pages
 
-app.layout = serve_layout
+app.layout = layout_index
 
 
 # Tab callbacks
