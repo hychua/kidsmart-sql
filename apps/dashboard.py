@@ -1801,7 +1801,7 @@ def set_best_turnover_graph(year, selected_brand, selected_region):
     sql1 = 'SELECT * FROM "order"'
     sql2 = "SELECT * FROM product"
     
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Site", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Sale Price", "Site", "Buyer Region", "Order Year", "City Name", "Quantity"])
     df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date", "Retail Price"])
 
     df = df_full_data.copy()
@@ -1921,7 +1921,7 @@ def set_worse_turnover_graph(year, selected_brand, selected_region):
     sql1 = 'SELECT * FROM "order"'
     sql2 = "SELECT * FROM product"
     
-    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Product_ID", "Sale Price", "Site", "Buyer Region", "Order Year", "City Name", "Quantity"])
+    df_full_data = querydatafromdatabase(sql1,[],["Order_ID", "Order Date", "Category", "Product Name", "Sale Price", "Site", "Buyer Region", "Order Year", "City Name", "Quantity"])
     df_inv_data = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category", "Order Year", "Stock", "Release Date", "Retail Price"])
 
     df = df_full_data.copy()
