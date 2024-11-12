@@ -148,7 +148,7 @@ for i in [1, 2, 3]:
     )(toggle_navbar_collapse)
 
 
-#app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
+app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
 
 if __name__ == '__main__':
     app.run_server(debug=False)
