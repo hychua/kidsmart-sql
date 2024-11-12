@@ -2,7 +2,7 @@ import dash
 from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output, State
-import dash-bootstrap-components as dbc
+import dash_bootstrap_components as dbc
 
 # from dashboard.py
 from apps import dashboard
