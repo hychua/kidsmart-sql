@@ -280,7 +280,7 @@ h3 {
     line-height: 1.3;
     letter-spacing: -.1rem;
     margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
+    text-align: center;
 }
 
 h4 {
@@ -306,6 +306,7 @@ h6 {
     letter-spacing: 0;
     margin-bottom: 0.75rem;
     margin-top: 0.75rem;
+    text-align: center;
 }
 
 p {
@@ -328,19 +329,26 @@ p {
 }
 
 #logo {
-    height: 10rem;
-    margin-bottom: 2rem;
+    height: 8rem;
+    padding: 0.5rem;
 }
 
-#slider-text, #chart-selector, #product-dropdown-text,#regions-dropdown-text,#shoe-sizes-dropdown-text,#category-dropdown-text{
-    margin-bottom: 2rem !important;
+#slider-text, #chart-selector, #product-dropdown-text,#regions-dropdown-text,#shoe-sizes-dropdown-text,#category-dropdown-text,#site-dropdown-text, #variable-selector, #metric-selector{
+    margin-left: 1rem !important;
     font-size: 2rem;
 }
+
+#chart-dropdown,#product-dropdown,#region-dropdown,#shoe-size-dropdown,#category-dropdown, #site-dropdown, #variable-dropdown, #metric-dropdown{
+    margin: 1rem !important;
+
+}
+
 #inventory-table-title,#inventory-gauage-title,#inventory-turnover-led-header,#inventory-current-led-header{
 
     margin-bottom: 2rem !important;
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
+    margin-left: 2rem
 }
 
 
@@ -518,7 +526,7 @@ input[type="radio"] {
 }
 
 label > .label-body {
-    display: inline-block;
+    display: block;
     margin-left: .5rem;
     font-weight: normal;
 }
@@ -752,9 +760,24 @@ hr {
 
 #graph-container,#inventory-gauge-container {
     background-color: #ffffff;
-    padding: 5rem;
+    padding: 3rem;
     margin: 0;
 }
+
+#best-turnover-graph, #worse-turnover-graph {
+    height: auto;
+    width: 160%;
+    padding: 1rem;
+
+}
+
+#selected-data, #selected-data2, #selected-data3 {
+    height: auto;
+    width: 90%;
+    padding: 1rem;
+
+}
+
 
 @media (max-width: 1250px) {
     /*For mobile and smaller screens*/
@@ -763,7 +786,7 @@ hr {
     }
 
     #graph-container,#inventory-gauge-container{
-        margin-top: 5rem;
+        margin-top: 3rem;
     }
 
     #selected-data {
@@ -775,8 +798,7 @@ hr {
     /*For desktop*/
     #logo {
         float: left;
-        padding-right: 2rem;
-        padding-left: 2rem;
+        padding-left: 1rem;
     }
 
     #header p {
@@ -799,7 +821,7 @@ hr {
 
 @media (max-width: 550px) {
     #graph-container,#inventory-gauge-container{
-        padding: 2.5rem;
+        padding: 2rem;
     }
 
     #selected-data .xtick text{
@@ -880,11 +902,11 @@ hr {
     }
     #app-container-2 {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
         height: 18rem;
-        margin-bottom: 5rem;
+
     }
 }
 
