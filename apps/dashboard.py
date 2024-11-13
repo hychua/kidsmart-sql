@@ -2512,6 +2512,24 @@ def inventory_metric_selector(metric):
                 ])
                                       
                 ]
+
+    elif metric == "top_turnover":
+        return [
+            
+                dcc.Graph(className="six columns",
+                    id="best-turnover-graph",
+                    figure = dict(
+                        data=[dict(x=0, y=0)],
+                        layout=dict(
+                            #paper_bgcolor="#1f2630",
+                            #plot_bgcolor="#1f2630",
+                            autofill=True,
+                            margin=dict(t=75, r=50, b=100, l=50),
+                        ),
+                    ), style={"display":"block"}
+                ), # end area graph
+           
+            ]
     elif metric == "bottom_turnover":
         return [        
            
