@@ -423,7 +423,7 @@ sale_page = html.Div([html.Hr(),
                             'margin': '10px'
                         },
                         # Allow multiple files to be uploaded
-                        multiple=False
+                        multiple=True
                     ),
                     html.Div([
                         
