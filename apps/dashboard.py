@@ -2571,7 +2571,7 @@ def parse_contents(contents, filename, date):
                     #"Sale_ID": list(range(input_id,input_id+len(df_raw.index))),
                     #"Sale Date": [x[:10] for x in df_raw["Order Creation Date"]], 
                     #"Category": df_raw["Parent SKU Reference No."].tolist(), 
-                    "Product_ID": df_raw["Product_ID"].tolist(), 
+                    "Product_ID": df_raw["Product Name"].tolist(), 
                     #"PO_ID": [str(x) for x in PO_ID], 
                     "Sale Price": df_raw["Products' Price Paid by Buyer (PHP)"].tolist(), 
                     #"Store_ID": ["Online"] * len(df_raw.index), 
@@ -2681,7 +2681,7 @@ def parse_contents2(contents, filename):
                 #    }
                 #data2 = {
                 #    "Sale_ID": list(range(input_id,input_id+len(df_raw.index))),
-                    "Product_ID": df_raw["Product_ID"].tolist(), 
+                    "Product_ID": df_raw["Product Name"].tolist(), 
                     "Sale Price": df_raw["Products' Price Paid by Buyer (PHP)"].tolist(), 
                     "Quantity": df_raw["Quantity"].tolist()
                     }
