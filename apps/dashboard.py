@@ -343,51 +343,6 @@ layout2 = html.Div([
                 
                 html.Div([
                     
-                    html.Div([
-                        html.Div([
-                            html.Div(
-                                id='current-inventory-led-container',
-                                children=[
-                                    html.H6(
-                                        #id='inventory-current-led-header',
-                                        children=["Total Inventory Available"]
-                                    ),
-
-                                ],
-                            ),
-                            daq.LEDDisplay(
-                                id="inventory-current-led",
-                                label="Total Stock - Total Sales",
-                                #value=5,
-                                backgroundColor="#D3D3D3",
-                                color="#000000",
-                                size=70,
-                            ), 
-                            ],className="five columns"),
-                        
-                        html.Div([
-                            html.Div(
-                                id='turnover-led-container',
-                                children=[
-                                    html.H6(
-                                        #id='inventory-turnover-led-header',
-                                        children=["Days Sales of Inventory (DSI)"]
-                                    ),
-
-                                ],
-                            ),
-
-                            daq.LEDDisplay(
-                                id="inventory-turnover-led",
-                                label="Average Inventory/COGS * 365",
-                                #value=5,
-                                backgroundColor="#FF5E5E",
-                                size=70,
-                            ), 
-                            ],className="five columns"),
-
-                        ],className="row"),
-                    
                         html.Div(id="app-container-3",
                                  className="row")
 
@@ -2424,7 +2379,53 @@ def set_worse_turnover_graph(year, selected_brand, selected_region):
 def inventory_metric_selector(metric):
     if metric == "inventory_metrics":
         return [
-                html.Div([html.Br(),
+            
+            html.Div([html.Div([
+                        html.Div([
+                            html.Div(
+                                id='current-inventory-led-container',
+                                children=[
+                                    html.H6(
+                                        #id='inventory-current-led-header',
+                                        children=["Total Inventory Available"]
+                                    ),
+
+                                ],
+                            ),
+                            daq.LEDDisplay(
+                                id="inventory-current-led",
+                                label="Total Stock - Total Sales",
+                                #value=5,
+                                backgroundColor="#D3D3D3",
+                                color="#000000",
+                                size=70,
+                            ), 
+                            ],className="five columns"),
+                        
+                        html.Div([
+                            html.Div(
+                                id='turnover-led-container',
+                                children=[
+                                    html.H6(
+                                        #id='inventory-turnover-led-header',
+                                        children=["Days Sales of Inventory (DSI)"]
+                                    ),
+
+                                ],
+                            ),
+
+                            daq.LEDDisplay(
+                                id="inventory-turnover-led",
+                                label="Average Inventory/COGS * 365",
+                                #value=5,
+                                backgroundColor="#FF5E5E",
+                                size=70,
+                            ), 
+                            ],className="five columns"),
+
+                        ],className="row"),
+                html.Div([
+                    html.Br(),
                     html.Br(),
                     html.H3(id="inventory-gauage-title",
                     children=["Current Inventory with Reorder Point"],
@@ -2508,25 +2509,9 @@ def inventory_metric_selector(metric):
                     ],className="five columns")
                 
                 ],className="row")])
-                          
+                ])
+                                      
                 ]
-    elif metric == "top_turnover":
-        return [
-            
-                dcc.Graph(className="six columns",
-                    id="best-turnover-graph",
-                    figure = dict(
-                        data=[dict(x=0, y=0)],
-                        layout=dict(
-                            #paper_bgcolor="#1f2630",
-                            #plot_bgcolor="#1f2630",
-                            autofill=True,
-                            margin=dict(t=75, r=50, b=100, l=50),
-                        ),
-                    ), style={"display":"block"}
-                ), # end area graph
-           
-            ]
     elif metric == "bottom_turnover":
         return [        
            
