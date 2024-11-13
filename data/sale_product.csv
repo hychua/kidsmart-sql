@@ -1,0 +1,1922 @@
+Sale_ID,Product_ID,Quantity,Sale Price
+301,Pajamas,1,100
+302,Set boy,1,500
+302,Set boy,1,440
+303,Set boy,1,420
+304,Shorts,3,100
+305,Pajamas,3,180
+306,Diaper,1,400
+307,Set girl,1,400
+308,Dress,1,720
+309,Pants,1,100
+310,Set barong,2,180
+311,Polo shirt,1,220
+312,Blouse,1,200
+313,Blouse,1,150
+314,Set boy,1,400
+315,Pajamas,2,120
+316,Dress,1,330
+317,Set boy,1,400
+318,Dress,1,380
+319,Dress,1,370
+320,Dress,1,1000
+321,Set girl,1,420
+322,Pajamas,1,200
+323,Pants,1,100
+324,Dress,1,580
+325,Pajamas,2,150
+326,Pants,1,200
+327,Dress,1,350
+328,Shorts,1,300
+329,Set boy,1,180
+329,Shoes,1,50
+329,Cap,1,50
+330,T-shirt,1,100
+331,Dress,1,250
+332,Shorts,1,300
+333,Pants,1,200
+334,Overall,1,400
+335,Tuxedo,1,560
+336,Shorts,1,100
+337,Dress,1,250
+338,Dress,1,650
+339,Infant Dress,1,150
+340,Shorts,1,320
+340,Blouse,1,200
+341,Pajamas,3,130
+342,Dress,2,220
+343,Pajamas,2,150
+344,Leggings,2,180
+345,Dress,1,700
+346,Comforter,1,480
+347,Shorts,1,100
+349,T-shirt,1,50
+349,Pants,1,200
+350,Dress,1,250
+351,Dress,1,350
+352,Jacket,1,150
+353,T-shirt,1,180
+354,Bag,1,250
+355,Shorts,1,300
+356,Dress,1,500
+357,Jacket,1,150
+358,Bag,1,250
+359,Pajamas,1,150
+360,Pants,1,200
+362,Comforter,1,280
+363,Dress,1,500
+364,Bike Lock,1,100
+365,Set army,1,520
+366,Chinese dress,1,300
+367,Shorts,1,200
+368,Pants,1,200
+369,Shorts,1,200
+370,Dress,1,320
+371,Comforter,1,280
+372,Shorts,1,350
+373,Dress,1,250
+374,T-shirt,1,150
+375,Bag,1,250
+376,Comforter,1,280
+377,Toy gun,1,170
+378,Shorts,1,200
+379,Bag,1,250
+380,Dress,1,300
+381,Dress,1,350
+382,Shorts,1,150
+383,Jumper,1,420
+384,Pants,1,200
+385,Pants,1,200
+386,Set boy,1,600
+387,Dress,1,250
+388,Pants,1,200
+389,Dress,1,700
+390,Dress,1,380
+391,Dress,1,370
+392,Set boy,1,650
+392,Dress,1,500
+392,Dress,1,600
+393,Pants,1,100
+394,Dress,1,300
+395,T-shirt,1,200
+396,Set costume,1,500
+396,Shield,1,100
+397,Set girl,1,1000
+398,Dress,1,350
+399,Pants,1,200
+400,Dress,1,300
+401,Chinese dress,1,350
+402,T-shirt,1,150
+403,Bag,1,250
+404,Diaper,1,400
+405,Sando,2,50
+405,Polo shirt,1,250
+406,Set boy,2,500
+407,Pajamas,2,120
+408,Dress,2,700
+409,Dress,1,700
+410,Dress,7,220
+412,Dress,1,350
+413,Pants,1,100
+414,T-shirt,1,150
+415,Pants,1,150
+417,Shorts,1,300
+418,Dress,1,250
+420,Dress,1,300
+421,Bag,1,250
+422,Pants,1,100
+422,Shorts,1,100
+423,Dress,1,150
+424,Dress,1,200
+425,Pants,1,200
+426,Pants,1,200
+427,Dress,1,300
+428,Bag,1,250
+429,Bag,1,100
+430,Bag,1,300
+431,Shorts,1,180
+432,Dress,2,370
+432,Set boy,1,570
+433,Set boy,1,180
+433,Shoes,1,50
+434,Dress,1,580
+434,Crown,1,50
+435,Pants,1,150
+436,Dress,1,250
+437,Shorts,1,100
+437,Pants,1,100
+438,Dress,1,250
+439,Dress,1,350
+440,Dress,1,300
+441,Jacket,2,250
+441,Set boy,2,540
+441,Swimsuit,2,400
+442,Set boy,1,800
+443,Dress,1,720
+444,Skirt,1,240
+444,Blouse,1,260
+445,Dress,1,200
+446,Pants,1,100
+447,Shorts,2,100
+448,Dress,1,300
+449,Hat,1,250
+450,Shorts,1,150
+451,Dress,1,300
+453,Dress,1,300
+454,Shorts,1,320
+455,Comforter,1,180
+456,Shorts,1,150
+457,Brief,1,100
+458,Bag,1,250
+459,Bag,1,250
+460,Pants,1,200
+461,Comforter,1,180
+462,Bag,1,250
+463,Bag,1,300
+464,Shorts,2,50
+465,Dress,1,550
+466,Dress,1,700
+466,Pants,1,400
+467,Dress,2,700
+468,Jumper,1,470
+468,Set boy,1,230
+469,Dress,1,330
+469,Set girl,1,220
+470,Dress,1,270
+470,Set boy,1,280
+470,Sando,1,60
+471,Set boy,1,590
+472,Pants,1,100
+473,Dress,1,250
+474,Comforter,1,280
+475,Panty,1,100
+475,Brief,1,100
+476,Swimsuit,1,400
+477,Bag,1,250
+478,Bag,1,250
+479,Bag,1,250
+480,T-shirt,1,200
+481,Baby Carrier,1,200
+482,Dress,1,550
+483,Dress,1,750
+484,Hat,1,300
+485,Necktie,1,80
+486,Belt,2,50
+487,Polo shirt,1,120
+488,Necktie,2,80
+489,Sando,2,60
+489,Baby Binder,1,75
+490,Pants,1,400
+491,Barong,1,180
+491,Shorts,1,50
+491,Hat,1,50
+491,Sando,1,60
+492,Pants,1,130
+492,Scarf,1,30
+493,Dress,1,650
+494,Set boy,1,540
+495,Pajamas,3,180
+496,Set girl,1,500
+497,Dress,1,400
+498,Set boy,1,800
+499,Blouse,2,125
+499,Dress,1,140
+500,Set girl,1,470
+251,Set boy,1,420
+252,Set boy,1,480
+253,Set boy,1,640
+253,Toy hammer,1,130
+254,Dress,1,400
+254,Dress,1,350
+255,Set boy,1,570
+256,Set girl,1,1380
+257,Dress,1,470
+257,Wand,1,50
+257,Crown,1,50
+258,Dress,1,320
+259,Sando,5,58
+260,Comforter,1,480
+260,Set boy,1,600
+261,Dress,1,470
+261,Set boy,1,1000
+262,Set boy,1,420
+263,Dress,1,380
+264,Towel,1,320
+264,Sando,6,60
+265,Set boy,1,650
+266,Set girl,1,400
+267,Shorts,1,500
+267,Set boy,1,400
+267,Headband,1,50
+268,Set boy,1,400
+269,Set boy,1,400
+270,Set boy,1,620
+271,Set girl,1,400
+272,Towel,1,320
+273,Dress,1,320
+273,Dress,1,450
+273,Swimsuit,2,250
+273,Panty,2,100
+274,Dress,2,350
+275,Set boy,1,570
+276,Dress,2,160
+276,Dress,7,100
+277,Pants,1,200
+278,Pants,1,100
+279,Brief,1,100
+280,Diaper,1,400
+281,Dress,1,700
+282,Panty,1,100
+283,Bag,1,350
+284,Set girl,1,420
+285,Blouse,1,280
+285,Skirt,1,320
+286,Skirt,1,200
+287,Jacket,1,150
+287,Panty,2,100
+288,Overall,1,420
+289,Bag,1,250
+289,Dress,1,600
+290,Polo shirt,1,190
+291,Dress,1,550
+292,Set boy,1,400
+293,Slippers,5,235
+294,Dress,1,700
+295,Pajamas,1,150
+296,Darna,1,420
+297,Sando,4,60
+298,Slippers,5,235
+299,Dress,1,300
+300,Pants,1,200
+201,Shorts,2,100
+202,Dress,1,300
+203,Pants,1,100
+204,Shorts,1,150
+205,Dress,1,450
+206,Jacket,1,250
+207,Pants,1,100
+208,Uniform,1,230
+209,Dress,1,350
+210,T-shirt,1,50
+211,Pants,1,200
+212,Jacket,1,150
+213,Dress,1,400
+214,Shorts,1,250
+215,Costume,1,300
+216,Dress,1,350
+217,Dress,1,200
+218,Pants,1,100
+219,T-shirt,2,50
+220,Dress,1,300
+221,Set boy,1,180
+221,Hat,1,50
+222,Dress,1,320
+223,Dress,1,160
+223,Shoes,1,50
+223,Cap,1,50
+224,Dress,1,300
+224,Dress,1,160
+225,Set boy,1,400
+226,Crown,12,27
+227,Blouse,1,50
+228,Pants,1,200
+229,Set girl,1,450
+230,Set girl,1,480
+230,Headband,1,200
+231,Set boy,1,470
+232,Dress,1,320
+232,Set girl,1,340
+233,Dress,2,1000
+234,Set boy,1,400
+235,Pants,1,200
+236,Blouse,1,150
+237,Hat,1,50
+238,Mask,1,50
+239,Pants,1,200
+240,Shorts,1,100
+241,Pants,1,200
+242,Pajamas,1,300
+242,Pajamas,1,220
+243,Swimsuit,1,470
+244,Skirt,1,320
+245,Set boy,1,420
+245,Set boy,1,200
+246,Set girl,1,800
+247,Dress,1,550
+248,Set girl,1,470
+249,Dress,1,700
+250,Dress,1,500
+151,Set girl,1,75
+152,Dress,1,330
+153,Dress,1,350
+154,Pajamas,1,100
+155,Dress,1,330
+156,Pajamas,1,130
+157,Set boy,1,220
+158,Polo shirt,1,360
+159,Dress,1,330
+159,Pajamas,1,100
+160,Blouse,1,280
+160,T-shirt,1,50
+161,Set boy,3,100
+161,Shorts,2,100
+162,Dress,1,350
+163,Pajamas,1,120
+163,Pajamas,1,180
+164,Set boy,1,180
+164,Shoes,1,50
+164,Hat,1,50
+165,Set boy,1,400
+165,Pajamas,1,100
+166,Blouse,1,280
+166,Blouse,1,150
+167,Skirt,1,320
+167,Blouse,1,280
+168,Shorts,3,100
+168,Dress,1,160
+169,Blouse,1,250
+169,Polo shirt,1,220
+170,Dress,1,350
+170,Blouse,1,150
+171,Set boy,1,420
+172,Pajamas,1,130
+172,Pajamas,1,150
+173,Polo shirt,1,280
+173,Blouse,1,280
+174,Set girl,1,100
+174,Set boy,1,200
+175,Pajamas,6,55
+175,Hat,3,30
+176,Set boy,1,400
+176,Blouse,1,280
+177,Pajamas,2,130
+177,Pajamas,2,100
+178,Panty,3,100
+178,Set boy,1,200
+179,Set boy,1,400
+179,Blouse,1,150
+180,Set boy,1,370
+180,Set girl,1,370
+181,Shorts,3,100
+181,Dress,1,160
+182,Blouse,1,280
+182,Shorts,1,100
+183,Comforter,1,280
+183,Panty,1,100
+184,Dress,1,330
+185,Polo shirt,1,300
+185,Shorts,1,100
+186,T-shirt,4,50
+186,Shorts,2,100
+187,Dress,1,350
+188,Set boy,1,600
+189,Polo shirt,1,280
+189,Pajamas,1,130
+190,Dress,1,330
+190,Set boy,1,180
+191,Set boy,1,420
+192,Dress,1,370
+192,Set boy,1,200
+193,T-shirt,3,100
+193,Shorts,2,100
+194,Dress,1,470
+195,Dress,2,470
+196,Skirt,1,140
+196,Blouse,1,140
+196,Brief,1,100
+197,Jacket,1,150
+198,Jacket,1,250
+200,Dress,1,300
+101,Shorts,1,400
+102,T-shirt,1,170
+103,Set boy,1,490
+104,Pajamas,1,180
+105,Pajamas,2,120
+105,Panty,1,100
+106,Dress,1,470
+107,Polo shirt,1,100
+107,Shorts,1,250
+107,Hat,1,50
+107,Belt,1,70
+108,Panty,2,100
+109,Dress,1,470
+110,Mask,1,80
+111,Pajamas,1,100
+112,Pants,1,250
+113,Shorts,2,100
+114,Dress,1,350
+115,Dress,1,300
+116,Dress,1,650
+117,Jacket,1,250
+118,Shorts,1,320
+119,Hat,1,50
+120,Shorts,1,100
+121,Polo shirt,1,140
+121,Polo shirt,1,140
+121,Polo shirt,1,140
+122,Set boy,1,400
+123,Sando,3,65
+123,Shorts,3,70
+124,Orange costume,2,250
+125,Shorts,4,100
+126,Jacket,1,250
+127,Dress,1,700
+128,Uniform,1,150
+129,Shorts,5,100
+130,T-shirt,4,128
+131,Uniform Pants,1,160
+131,Uniform Pants,1,200
+132,Set boy,1,770
+132,Set boy,1,370
+133,Set boy,1,370
+134,Blouse,2,130
+134,Blouse,2,150
+134,Brief,1,100
+135,Dress,2,330
+136,Panty,1,100
+136,Brief,1,100
+137,Set boy,1,750
+138,Khaki Pants,1,220
+139,Khaki Pants,1,220
+140,Chinese pants,1,720
+141,Overall,1,400
+142,Pajamas,1,300
+143,Pajamas,2,150
+143,Pajamas,1,100
+143,Comforter,1,480
+144,Overall,1,400
+145,Dress,1,1000
+146,Pajamas,1,100
+146,Scarf,1,30
+147,Dress,1,290
+147,Scarf,1,30
+148,Shorts,12,90
+149,Panty,2,100
+150,Pajamas,2,120
+51,Polo shirt,1,220
+52,Dress,1,370
+53,Panty,1,100
+54,Jacket,1,150
+54,Jacket,1,250
+55,Dress,1,470
+56,Dress,1,550
+57,Panty,1,100
+58,Pajamas,1,150
+59,Set boy,1,170
+59,Sando,1,65
+60,Set girl,1,75
+61,Brief,1,100
+61,Panty,1,100
+62,Set boy,1,400
+63,Jacket,1,250
+64,Pajamas,1,120
+65,Toy gun,1,120
+66,Dress,1,280
+67,Set boy,1,370
+68,Set boy,1,390
+69,Birds eye cloth,1,320
+69,Gauze cloth,1,190
+70,Pajamas,1,120
+71,Panty,1,100
+72,T-shirt,2,100
+73,Set boy,1,170
+74,Uniform,1,160
+75,Panty,1,100
+76,Dress,1,200
+76,Hat,1,50
+77,Set boy,1,150
+78,Set boy,1,370
+79,Shorts,1,300
+80,Sando,4,100
+81,Hat,1,50
+81,Shoes,1,50
+81,Dress,1,200
+82,Swimsuit,1,150
+82,Panty,1,100
+83,Set boy,1,600
+83,Set boy,1,170
+83,Sando,1,65
+83,Shoes,1,50
+83,Hat,1,50
+83,Toy hammer,1,130
+84,Dress,1,480
+85,Set boy,1,420
+86,Pajamas,2,100
+87,Dress,1,400
+87,Crown,1,100
+88,Pajamas,2,100
+89,Diaper,1,400
+90,Long gown,2,300
+91,Set boy,1,170
+92,Pajamas,2,130
+93,Pajamas,1,100
+94,Shorts,3,100
+95,Comforter,1,280
+96,Baby,1,200
+96,Set boy,1,150
+97,Set boy,1,170
+97,Hat,1,50
+97,Shoes,1,50
+98,Dress,1,470
+99,Siggim,4,180
+100,Set girl,2,75
+1,Dress,1,700
+2,Shorts,1,100
+3,Pants,1,150
+4,Brief,1,150
+5,Long sleeve,1,200
+6,Set toy,1,100
+7,Blouse,1,150
+8,Dress,1,200
+9,Dress,1,250
+10,Pants,1,100
+10,T-shirt,1,50
+11,Dress,1,180
+11,Dress,1,150
+12,Shorts,1,160
+13,Dress,2,75
+14,Bike lock,1,100
+15,Dress,1,180
+15,Hat,1,50
+15,Shoes,1,50
+16,Tuxedo,1,560
+17,Barong,1,170
+18,Baby dress,1,180
+18,Hat,1,50
+18,Shoes,1,50
+19,Dress,1,720
+20,Set boy,1,370
+21,Dress,1,150
+22,Brief,1,100
+23,Brief,3,100
+24,Dress,1,150
+25,Shoes,1,50
+25,Hat,1,50
+25,Set boy,1,170
+26,Set boy,1,370
+26,Brief,1,100
+27,Set boy,1,170
+27,Sando,1,65
+27,Hat,1,50
+28,Dress,1,150
+29,Dress,1,650
+30,Pajamas,1,360
+31,Set boy,1,550
+32,Long gown,1,300
+32,Barong,1,170
+33,Dress,1,200
+34,Mittens,3,25
+34,Hat,3,25
+34,Hat,2,25
+35,Backpack,1,270
+36,Costume M,1,400
+36,Hat,1,80
+37,Jacket,1,150
+38,Hat,1,300
+39,T-shirt,1,100
+40,Set girl,2,100
+40,Panty,1,100
+41,Swimsuit,1,150
+42,Dress,1,470
+43,Backpack,1,400
+44,Pajamas,1,170
+44,Hat,1,50
+45,Sando,2,100
+46,Pajamas,1,130
+47,Set boy,1,100
+48,Panty,1,100
+49,Set boy,1,100
+50,Shorts,1,200
+501,Set girl,1,470
+502,Pants,1,250
+503,Dress,1,300
+504,Pants,1,200
+505,Muslim Costume,1,400
+506,Set boy,1,280
+507,Bag,1,250
+508,Pajamas,1,130
+509,Bag,1,250
+510,Bag,1,280
+511,Dress,1,450
+512,Bag,1,300
+513,Pants,1,380
+514,Dress,1,330
+515,Uniform,1,200
+516,Bag,1,350
+517,Uniform,1,400
+518,Bag,1,380
+519,Bag,1,350
+520,Dress,1,250
+521,Bag,1,350
+522,Uniform,1,550
+523,Pants,1,150
+524,Bag,1,250
+525,Dress,1,250
+526,Diaper,1,380
+527,Overall,1,420
+528,Shorts,1,320
+529,Birds eye cloth,1,320
+529,Pajamas,3,60
+530,Pants,1,150
+531,T-shirt,1,100
+532,Dress,1,350
+533,Pajamas,4,150
+533,Pajamas,4,120
+534,Pants,1,160
+534,Scarf,1,30
+535,Pants,1,150
+536,Dress,1,320
+537,Shorts,1,200
+538,T-shirt,1,150
+539,Chinese dress,1,320
+540,Dress,1,500
+541,Dress,1,250
+542,Bag,1,250
+543,Pants,1,250
+544,Bag,1,250
+545,Dress,1,350
+546,T-shirt,5,106
+547,Shorts,1,150
+547,Blouse,1,100
+548,Set boy,1,180
+549,Infant,1,310
+550,Set boy,1,800
+551,Dress,1,250
+552,Pants,1,400
+553,Dress,1,380
+554,Bag,1,250
+555,Comforter,1,280
+556,Barong,1,170
+557,Bag,1,350
+558,Pants,1,150
+559,T-shirt,1,100
+560,T-shirt,5,106
+561,Sando,1,220
+561,Sando,1,200
+561,Set girl,1,550
+561,Set girl,1,400
+561,Blouse,1,260
+562,Set boy,1,720
+563,Set boy,1,800
+564,Set boy,1,420
+565,Dress,1,370
+565,Set boy,1,440
+566,Set boy,1,440
+566,Headband,1,200
+566,Sash,1,100
+567,Bag,1,350
+568,Jacket,1,250
+569,Set girl,1,440
+570,Apple Costume,1,250
+571,Set girl,1,400
+572,Set boy,1,420
+573,Shorts,1,100
+573,Pants,1,100
+574,Pants,1,250
+575,Dress,1,350
+576,Dress,1,370
+577,T-shirt,1,100
+577,Pants,1,100
+578,Towel,1,100
+578,B-sheet,1,120
+579,Dress,1,150
+579,Pants,1,200
+580,Set boy,1,540
+581,Dress,1,650
+582,Pants,1,200
+583,Comforter,1,280
+584,Bag,1,350
+585,Chinese dress,1,370
+586,Set boy,1,400
+587,Set boy,1,570
+588,Towel,1,100
+588,Blanket,1,100
+589,Blanket,1,100
+589,Towel,1,100
+590,Pants,1,200
+591,Shorts,1,100
+591,T-shirt,1,150
+592,Shorts,1,250
+593,Shorts,2,100
+594,Towel,1,200
+595,Dress,1,350
+596,Bag,1,350
+597,Pants,1,200
+598,Pajamas,1,180
+599,Comforter,1,280
+600,Dress,1,380
+601,Towel,1,100
+601,Blanket,1,100
+602,Blanket,1,200
+603,Dress,1,400
+604,Blanket,1,100
+604,Towel,1,100
+605,Towel,2,100
+605,Blanket,1,100
+606,Towel,3,100
+607,Dress,1,350
+608,Comforter,1,380
+609,Bag,1,250
+610,Blanket,5,100
+611,Dress,1,470
+612,Blanket,1,100
+613,Dress,1,720
+614,Dress,1,580
+614,Crown,1,50
+614,Dress,1,700
+615,Pajamas,1,130
+616,Blouse,1,270
+617,Dress,1,740
+617,Dress,1,400
+618,Dress,1,700
+619,Towel,1,100
+619,Blanket,1,100
+620,Blanket,4,100
+622,Dress,1,300
+623,Bag,1,250
+624,Comforter,1,280
+625,Pants,1,300
+626,Dress,1,350
+627,Pajamas,1,150
+628,Bag,1,280
+629,Shorts,1,150
+630,Dress,1,250
+631,Dress,1,300
+632,Blanket,1,100
+632,Towel,2,80
+633,Set boy,1,400
+634,Pants,1,150
+635,Dress,1,350
+636,Towel,1,80
+636,Blanket,1,100
+637,Bag,1,250
+638,Blanket,1,100
+639,Towel,1,100
+639,Blanket,1,100
+640,Bag,1,250
+640,Towel,1,100
+641,Pajamas,1,150
+642,Bag,1,350
+643,Dress,1,350
+644,Blanket,1,100
+644,Towel,1,100
+645,Bag,1,350
+646,Bag,1,200
+647,Bag,1,280
+648,Khaki Pants,1,220
+648,Polo shirt,1,180
+649,Bag,1,350
+650,Pajamas,1,180
+650,Pajamas,1,100
+651,Bag,1,250
+652,Pajamas,1,180
+653,Dress,1,400
+653,Set boy,1,620
+654,Pajamas,2,150
+655,Bag,1,250
+656,Pajamas,1,500
+657,Polo shirt,1,250
+658,Set boy,1,800
+659,Pajamas,1,180
+659,Pajamas,1,100
+660,Pants,1,300
+661,Bag,1,350
+662,Comforter,1,280
+663,Chinese dress,1,370
+664,Dress,2,400
+665,Dress,1,550
+666,Set boy,2,600
+666,Dress,1,750
+667,Pajamas,1,100
+667,Chinese dress,1,370
+668,Bag,1,250
+668,Shorts,1,50
+669,Jeans,1,180
+670,Dress,1,550
+671,Shorts,1,100
+671,Pants,1,100
+672,Dress,1,300
+673,Dress,1,350
+674,Headband,1,100
+675,Dress,1,370
+676,Shorts,1,250
+677,Comforter,1,280
+678,Bag,1,250
+679,Towel,1,100
+680,Blanket,1,100
+681,Dress,2,580
+682,Dress,6,330
+683,Dress,2,150
+684,Jacket,1,150
+685,Towel,1,100
+685,Blanket,1,100
+686,Bag,1,250
+687,Dress,1,350
+688,Towel,1,100
+688,Blanket,1,100
+689,Pajamas,1,180
+690,Shorts,1,100
+690,Brief,1,100
+691,Bag,1,350
+692,Towel,1,200
+692,Blanket,1,100
+694,Bag,1,350
+695,Towel,2,200
+696,Mask,2,80
+697,Blanket,3,100
+698,Bag,3,250
+699,Pants,1,100
+699,Shorts,1,100
+700,Pajamas,2,90
+701,Set boy,1,540
+701,Belt,1,70
+702,Blanket,2,100
+702,Towel,3,100
+703,Blanket,2,100
+704,Dress,1,250
+705,Set boy,1,440
+706,Dress,1,320
+707,Dress,3,720
+708,Towel,1,100
+708,Blanket,1,100
+709,Shorts,2,100
+710,Dress,1,350
+711,Pajamas,1,150
+712,Comforter,1,280
+713,Sando,1,150
+714,Bag,1,250
+715,Pajamas,1,180
+716,Pajamas,1,140
+717,Bag,1,350
+718,Snake Costume,1,420
+719,Towel,1,100
+719,Blanket,1,100
+720,Shorts,1,250
+721,Bag,1,350
+722,Comforter,1,280
+723,Bag,1,250
+724,Dress,1,350
+725,Dress,1,250
+726,Comforter,1,280
+727,Pants,1,100
+727,Shorts,1,100
+728,Bag,1,350
+729,Pajamas,1,150
+730,Pajamas,2,150
+731,Pants,2,100
+732,Shorts,2,100
+733,Pajamas,2,150
+734,Bag,1,250
+735,Blanket,1,100
+735,Towel,1,100
+736,Bag,1,250
+737,Shorts,1,200
+738,Bag,2,250
+739,Dress,1,720
+739,Set boy,2,340
+740,Dress,1,740
+741,Pajamas,2,130
+742,Anna Dress,2,180
+743,Dress,1,150
+744,Dress,1,250
+745,Shorts,2,100
+746,Leggings,1,180
+747,Shorts,1,320
+748,Dress,1,400
+749,Long sleeve,1,250
+750,Skirt,1,320
+751,Set boy,1,420
+752,Shorts,5,60
+753,Dress,2,700
+753,Set boy,1,570
+754,Pants,1,500
+755,Dress,1,500
+756,Dress,1,1000
+756,Dress,1,700
+757,Dress,2,500
+758,Toy gun,2,130
+759,Set pajamas,4,120
+759,Set boy,2,75
+760,Set boy,28,235
+760,Set girl,7,255
+761,Set boy,1,400
+762,Set boy,1,620
+763,Set girl,1,420
+764,Set boy,1,420
+764,Set girl,1,420
+765,Dress,1,720
+766,Set boy,1,180
+767,Dress,1,160
+767,Set boy,1,180
+768,Set boy,1,400
+769,Set girl,1,160
+769,Dress,1,490
+770,Dress,1,160
+771,Set boy,1,420
+772,Set girl,1,420
+773,Set girl,1,400
+773,Dress,1,160
+774,Dress,1,490
+775,"Pants, red #18",1,200
+776,Shorts,1,200
+777,Dress,1,390
+778,Shorts,1,100
+779,Blouse,1,200
+780,Jacket,1,250
+781,Pants,1,350
+782,Blouse,1,150
+783,Dress,1,500
+784,Set boy,1,570
+785,Dress,1,570
+786,Set boy,2,800
+787,Set boy,1,570
+787,Set boy,1,800
+788,Dress,1,580
+789,Set boy,1,570
+790,Set pajamas,1,180
+791,Jacket,1,250
+792,Pants,1,200
+793,Blouse,1,150
+794,Set boy,1,100
+795,T-shirt,1,50
+796,Set pajamas,1,130
+797,Set boy,1,420
+797,Set boy,1,200
+798,Baby dress,6,200
+798,Dress,2,200
+799,Set boy,1,420
+800,Pants,1,500
+800,Dress,1,700
+800,Dress,1,350
+800,Set skirt,1,400
+800,Polo shirt,2,560
+800,Dress,2,440
+800,Set pajamas,1,120
+800,Set pajamas,1,150
+801,Set boy,2,620
+801,Set boy,1,660
+801,Toy hammer,1,130
+802,Set boy,1,420
+803,Chinese dress,1,580
+804,Set girl,1,400
+805,Red pajamas,1,200
+805,Scarf,1,30
+806,Blouse,1,300
+807,Set boy,1,420
+808,Dress,1,330
+808,Set boy,1,100
+809,Set girl,1,150
+810,Dress,1,330
+811,Jacket girl,1,720
+812,Set boy,1,500
+812,Set boy,1,460
+813,Tinkerbell costume,1,500
+814,Shorts,1,300
+815,Blouse,1,250
+816,Set girl,1,420
+817,Dress,1,280
+818,Set boy,1,570
+819,T-shirt,1,250
+819,Dress,1,400
+820,Set boy,1,460
+821,Set girl,1,400
+821,Set boy,1,600
+822,Dress,1,670
+823,Chinese dress,1,580
+824,Shorts,1,100
+825,Dress,1,300
+826,Set boy,1,150
+827,Blouse,1,200
+828,Set girl,2,150
+829,Shorts,1,100
+830,Set army,2,540
+831,Blouse,1,280
+832,Jumper,1,250
+833,Leggings,4,180
+833,T-shirt,2,200
+834,Set boy,1,580
+835,Dress,2,700
+836,T-shirt,1,50
+837,Set boy,2,100
+838,Blouse,2,150
+839,Pants,1,500
+840,Set pajamas,1,120
+841,Jacket,1,250
+842,Blouse,1,200
+843,Set boy,1,200
+844,Set boy,1,420
+845,Set boy,1,400
+846,Set boy,1,600
+847,Set girl,1,180
+848,Pajamas,2,90
+848,Pajamas,2,100
+848,Set boy,1,400
+849,Dress,2,700
+850,Dress,1,500
+851,T-shirt,1,50
+852,Shorts,1,100
+853,Set girl,2,580
+834,Set girl,1,600
+855,Set boy,1,400
+856,Blouse,1,150
+857,Shorts,1,100
+858,Skirt,1,100
+859,T-shirt,2,280
+860,Overall,1,420
+861,Set girl,1,420
+862,Set girl,1,420
+863,Dress,1,350
+863,Dress,1,380
+863,Dress,1,700
+864,Dress/accessories,1,1050
+865,Dress,1,470
+865,Wand,1,30
+865,Crown,1,50
+866,Set boy,1,500
+867,Dress,1,720
+868,Set girl,1,600
+869,Set boy,1,500
+870,Dress,1,720
+870,Set girl,1,420
+871,Set boy,1,520
+872,Set boy,1,420
+872,Set girl,1,400
+873,Set boy,1,400
+873,Set girl,1,420
+874,Set boy,1,520
+875,Shorts,1,100
+876,Jacket,1,250
+877,Dress,1,500
+878,Blouse,1,200
+879,Long gown,1,300
+880,Dress,2,400
+880,Jumper,1,470
+881,Shorts,1,250
+882,Dress,1,400
+883,Set boy,1,350
+884,Set boy,1,420
+885,Set girl,1,420
+885,Set boy,1,400
+885,Dress,1,180
+886,Dress,1,720
+887,Set boy,1,400
+888,Dress,1,700
+889,Dress,1,400
+889,Set boy,1,100
+890,Set boy,1,600
+891,Set pajamas,4,150
+891,Set pajamas,2,130
+891,Dress,1,350
+892,Set army,2,570
+893,Overall,1,500
+893,Polo shirt,1,220
+893,Jumper,1,470
+894,Set boy,1,530
+895,Dress,1,160
+895,Dress,1,220
+895,Dress,1,380
+895,Jacket,1,250
+895,Polo shirt,2,250
+896,Set boy,1,600
+897,Set girl,1,500
+898,Set boy,1,400
+899,Dress,1,700
+900,Dress,1,700
+901,Dress,1,240
+902,Shorts,1,340
+903,Polo shirt,1,270
+903,T-shirt,1,230
+903,Dress,1,350
+904,Set boy,1,400
+905,Dress,1,700
+906,Dress,1,600
+907,Set boy,1,400
+908,Set girl,1,500
+909,Set boy,1,400
+910,Set boy,1,570
+911,Dress,1,700
+911,Dress,1,1050
+911,Accessories,1,170
+912,Dress,1,700
+913,Shorts,1,300
+913,Polo shirt,1,280
+914,Blouse,1,300
+914,Skirt,1,340
+915,Dress,1,400
+916,Dress,1,220
+917,Shorts,1,100
+917,Pajamas,1,180
+918,Dress,1,380
+918,Dress,1,300
+919,Shorts,1,340
+919,Blouse,1,150
+920,Dress,1,380
+921,T-shirt,1,170
+921,Set boy,1,100
+922,Dress,1,600
+923,Set boy,1,100
+924,Blouse,1,150
+925,Pants,1,500
+926,Jumper,1,450
+927,T-shirt,1,200
+928,Blouse,1,200
+929,Pajamas,1,130
+930,Long sleeve,1,270
+931,Set boy,1,460
+931,Toy hammer,1,130
+931,Leggings,1,180
+932,Dress,1,320
+932,Dress,1,260
+932,Chinese dress,1,570
+933,Shorts,1,500
+933,Swimsuit,1,500
+933,Pajamas,1,390
+934,Dress,1,700
+934,Jumper,1,450
+934,Shorts,1,320
+935,Set boy,1,400
+936,Dress,1,700
+937,Set girl,1,400
+937,Set boy,1,600
+938,Dress,1,700
+939,Set boy,1,400
+939,Dress,1,180
+940,Dress,2,400
+940,Set girl,1,150
+941,Set boy,1,600
+942,Set girl,1,400
+942,Blouse,1,150
+943,Blouse,1,100
+944,Skirt,1,100
+944,Blouse,1,150
+945,Pants,1,500
+946,Shorts,1,100
+947,Skirt,1,240
+948,Dress,1,700
+949,Set boy,1,600
+950,Set boy,1,600
+951,Set army,2,570
+952,Set boy,1,500
+953,Blouse,1,100
+954,Set boy,1,200
+955,Shorts,1,200
+956,Pants,1,500
+957,Dress,1,700
+958,Set boy,1,600
+958,Set army,1,570
+959,Dress,1,580
+960,Set girl,1,580
+961,Polo shirt,1,200
+962,Shorts,1,100
+963,Dress,2,720
+964,Set boy,1,400
+965,Dress,1,700
+966,Set boy,1,600
+967,Shorts,1,100
+968,Pants,1,500
+969,T-shirt,1,250
+970,Pants,1,500
+971,Blouse,1,150
+972,Shorts,1,100
+973,Pants,1,500
+974,Skirt,1,100
+975,Blazer,1,450
+976,Set boy,1,400
+977,Set girl,1,700
+976,Set girl,1,150
+976,Set boy,1,100
+979,Dress,1,670
+980,Set boy,1,400
+981,Set boy,1,400
+982,Set boy,1,400
+983,Dress,1,700
+984,Set girl,1,420
+985,Dress,1,420
+986,Pants,1,500
+987,Dress,1,700
+988,Pants,1,500
+989,Dress,1,580
+990,Dress,1,700
+991,Pajamas,1,280
+991,Dress,1,400
+992,Pajamas,1,100
+993,Set boy,1,150
+993,Blouse,1,100
+994,Set boy,1,500
+995,Shorts,1,100
+996,Dress,1,700
+997,Shorts,1,200
+998,Skirt,1,240
+998,Shorts,1,320
+999,Pants,1,500
+1000,Sando,1,100
+1001,Blouse,1,100
+1002,Dress,1,500
+1003,Skirt,1,320
+1004,Set boy,1,100
+1005,Dress,1,330
+1006,Skirt,1,320
+1007,Blouse,1,150
+1008,Pants,1,500
+1009,Shorts,1,320
+1011,Dress,1,700
+1012,Set girl,1,580
+1012,Dress,1,370
+1013,Set pajamas,1,300
+1013,Dress,1,700
+1014,Overall,1,420
+1015,Skirt,1,320
+1016,Pants,1,500
+1017,T-shirt,1,200
+1018,Shorts,1,100
+1019,Blouse,1,200
+1020,Shorts,1,150
+1021,Pants,1,500
+1022,Set pajamas,1,130
+1023,Polo blouse,1,280
+1024,Bag,1,270
+1025,Dress,1,700
+1026,Bag,1,250
+1027,Jumper,1,450
+1028,Blouse,1,200
+1029,Pants,1,500
+1030,Shorts,1,320
+1031,Skirt,1,320
+1032,Shorts,1,100
+1033,Blouse,1,150
+1034,Dress,1,1050
+1035,Set boy,1,400
+1036,Pants,1,500
+1037,Shorts,2,100
+1038,Dress,1,240
+1039,Dress,1,650
+1040,Blouse,1,150
+1041,Skirt,1,320
+1042,Set boy,1,180
+1043,Dress,1,170
+1044,Dress,1,700
+1044,Pants,2,500
+1045,Dress,1,240
+1046,Set pajamas,1,130
+1046,Polo shirt,1,280
+1047,Set boy,1,180
+1048,Dress,1,220
+1049,Dress,2,650
+1050,Set boy,1,100
+1051,Set army,1,500
+1051,Polo shirt,1,240
+1052,Set boy,1,400
+1053,Blouse,1,280
+1054,Sando,2,50
+1055,Dress,1,700
+1056,Brief,1,100
+1057,Set boy,1,660
+1057,Toy hammer,1,130
+1058,Set girl,1,870
+1059,Set boy,1,500
+1060,Dress,1,400
+1061,Pants,1,420
+1062,Set boy,1,600
+1063,Set girl,1,150
+1064,Set girl,1,400
+1065,Set girl,1,180
+1066,Set boy,1,600
+1067,Set boy,1,420
+1067,Set girl,1,400
+1068,Dress,1,400
+1069,Set boy,1,100
+1070,Dress,1,700
+1071,Set boy,1,400
+1072,Set boy,1,600
+1073,Dress,1,180
+1073,Set boy,1,100
+1074,Dress,1,180
+1075,Set boy,3,420
+1075,Set boy,1,180
+1075,Hat,1,50
+1076,Set boy,1,400
+1077,Dress,1,180
+1078,Dress,1,720
+1079,Set girl,1,420
+1080,Dress,1,200
+1081,Set boy,1,100
+1082,Set girl,1,150
+1083,Set boy,2,100
+1084,Set girl,2,150
+1085,Set girl,1,270
+1086,Dress,1,400
+1087,Set boy,1,420
+1088,Dress,1,180
+1089,Set boy,1,540
+1090,Set boy,1,400
+1091,Dress,1,720
+1092,Set boy,1,100
+1092,Set girl,1,150
+1093,Set boy,1,400
+1094,Dress,1,170
+1094,Shoes,1,50
+1094,Long gown,1,300
+1094,Pillow,1,160
+1095,Set boy,1,400
+1096,Shorts,1,320
+1096,Shorts,1,400
+1097,Dress,1,700
+1097,Blouse,1,280
+1098,Set boy,1,500
+1098,Set boy,1,320
+1098,Set boy,1,1120
+1098,Set girl,1,420
+1098,Set pajamas,1,250
+1099,Set boy,1,500
+1100,Set boy,1,100
+1101,Set boy,1,180
+1101,Hat,1,50
+1102,Set boy,1,400
+1103,Dress,1,700
+1104,Set boy,1,600
+1105,Polo shirt,1,280
+1106,Hat,1,50
+1107,Dress,1,700
+1108,Set boy,1,400
+1109,Dress,1,700
+1110,Set boy,1,400
+1111,Set girl,1,150
+1112,Shorts,1,100
+1113,Set boy,1,100
+1114,Set girl,1,600
+1115,Dress,1,580
+1116,Dress,1,720
+1117,Skirt,1,340
+1118,Dress,1,580
+1119,Set girl,1,150
+1120,Set boy,1,100
+1121,Dress,1,180
+1122,Set boy,1,100
+1123,Set girl,1,400
+1124,Dress,1,720
+1125,Set boy,1,250
+1126,Set girl,1,400
+1127,Dress,1,720
+1128,Set boy,1,420
+1129,Set boy,1,100
+1129,Set girl,1,150
+1130,Set girl,1,150
+1131,Dress,1,700
+1132,Set girl,1,400
+1133,Dress,2,700
+1134,Set boy,2,100
+1135,Set boy,2,400
+1136,Dress,1,700
+1137,Set boy,1,400
+1138,Elsa dress,1,870
+1138,Toy wand,1,30
+1139,Elsa dress,1,1040
+1140,Set pajamas,2,100
+1140,Set pajamas,2,120
+1140,Set pajamas,2,150
+1141,T-shirt,2,100
+1142,Dress,1,700
+1143,Pants,1,280
+1144,Set boy,2,500
+1145,Set boy,1,400
+1146,Set girl,2,150
+1147,Dress,1,720
+1148,Dress,1,670
+1149,Dress,1,400
+1150,Set girl,1,400
+1151,Dress,1,400
+1152,Set boy,1,400
+1153,Set boy,1,400
+1153,Set boy,1,250
+1153,Set boy,5,100
+1154,Set girl,1,320
+1155,Set boy,2,280
+1156,Set boy,2,100
+1156,Set boy,1,270
+1157,Set boy,1,180
+1157,Shoes,1,50
+1157,Hat,1,50
+1158,Dress,1,700
+1158,Set girl,1,420
+1158,Set girl,1,250
+1158,Long gown,1,50
+1158,Toy wand,1,30
+1159,Set girl,1,600
+1159,Dress,1,370
+1160,Dress,1,700
+1160,Set girl,1,400
+1161,Polo shirt,1,300
+1162,Bag big,1,350
+1162,Bag small,1,250
+1163,Leggings,3,180
+1164,Pants,1,100
+1164,Scarf,1,30
+1165,Set boy,1,400
+1166,Dress,1,720
+1167,Set girl,1,600
+1168,Set girl,1,150
+1169,Set girl,1,150
+1170,Dress,1,700
+1171,Pants,1,500
+1172,Dress,1,400
+1173,Dress,2,400
+1174,Set boy,1,420
+1175,Dress,1,400
+1176,Pants,2,100
+1177,Set girl,1,600
+1178,Set girl,1,150
+1179,Set boy,1,400
+1180,Dress,1,400
+1180,Hat,1,100
+1181,Set boy,1,400
+1182,Dress,1,700
+1183,Dress,1,700
+1184,Set boy,1,520
+1185,Set girl,1,150
+1185,Set girl,1,150
+1186,Set boy,1,400
+1187,Dress,1,700
+1188,Set girl,1,400
+1188,Set girl,1,770
+1188,Set girl,1,720
+1188,Set girl,1,770
+1189,Dress,1,320
+1190,Dress,1,700
+1191,Set boy,1,400
+1192,Set girl,1,150
+1192,Set boy,1,100
+1193,Dress,1,700
+1194,Set boy,1,400
+1194,Set girl,1,700
+1195,Set girl,1,400
+1196,Dress,1,400
+1197,Set boy,1,500
+1198,Swimsuit,1,400
+1199,Dress,1,720
+1200,Set girl,1,400
+1201,Bag,2,190
+1202,Dress,1,400
+1203,Bag,1,370
+1204,Dress,2,170
+1205,Set girl,1,150
+1206,Set boy,1,400
+1207,Set boy,1,600
+1208,Set boy,1,600
+1209,Dress,1,700
+1210,Dress,1,700
+1211,Set boy,1,800
+1212,Dress,2,250
+1213,Shorts,2,320
+1214,Set pajamas,1,100
+1214,Set pajamas,2,300
+1214,Set girl,1,540
+1215,Set boy,1,670
+1216,Assorted items,1,870
+1217,Dress,1,700
+1218,Set boy,1,400
+1219,Set girl,1,400
+1220,Set boy,1,470
+1220,Set boy,1,220
+1221,Set girl,1,700
+1222,Set boy,4,100
+1223,Set boy,1,120
+1224,Pants,1,450
+1224,Set boy,1,540
+1225,Set boy,1,900
+1226,Set girl,1,630
+1226,Dress,2,380
+1226,Dress,3,330
+1227,Set boy,5,600
+1227,Set boy,1,660
+1228,Set girl,1,350
+1229,Dress,2,470
+1229,Polo shirt,2,300
+1229,Polo shirt,1,280
+1230,Set boy,1,790
+1230,Set girl,1,420
+1231,Set girl,2,150
+1232,Set boy,1,400
+1233,Set boy,2,400
+1233,Set girl,1,400
+1234,Set girl,1,700
+1935,Dress,1,400
+1236,Dress,1,700
+1237,Set boy,1,100
+1237,Set girl,1,150
+1238,Dress,1,400
+1239,Set girl,1,490
+1240,Set boy,1,400
+1240,Set girl,1,400
+1241,Set boy,1,400
+1241,Set boy,1,100
+1242,Dress,1,700
+1243,Set girl,1,600
+1244,Set boy,1,400
+1245,Dress,1,700
+1246,Set girl,1,170
+1246,Set boy,1,100
+1247,Set boy,1,600
+1247,Set boy,1,540
+1248,Set boy,1,600
+1249,Set boy,1,660
+1249,Set boy,1,600
+1249,Set girl,1,450
+1250,Set boy,3,800
+1250,Set boy,1,520
+1250,Set boy,1,660
+1250,Toy hammer,1,130
+1251,Set boy,1,660
+1251,Toy hammer,1,130
+1252,Dress,2,580
+1253,Set girl,1,770
+1254,Set boy,2,400
+1255,Dress,3,700
+1256,Dress,1,770
+1257,Dress,1,370
+1258,Dress,1,400
+1259,Dress,1,650
+1260,Dress,1,580
+1261,Set girl,1,820
+1262,Dress,1,720
+1262,Dress,1,670
+1262,Dress,1,400
+1263,Set boy,1,600
+1264,Set boy,1,800
+1265,Dress,1,370
+1265,Set pajamas,2,280
+1265,Pajamas,1,350
+1265,T-shirt,1,200
+1266,Set girl,1,580
+1267,Dress,1,700
+1268,Towel,4,170
+1268,Bath towel,3,125
+1269,Dress,1,700
+1269,Dress,1,600
+1270,Chinese dress,1,800
+1271,Set boy,1,800
+1272,Shorts,5,120
+1273,Dress,1,370
+1274,Dress,1,370
+1275,Pants,1,200
+1275,Scarf,1,30
+1276,Dress,1,800
+1277,Set boy,2,400
+1277,Dress,1,300
+1278,Dress,1,370
+1279,Set boy,1,670
+1279,Set boy,1,770
+1280,Set boy,1,520
+1280,Set girl,1,400
+1281,Dress,1,420
+1282,Dress,1,580
+1282,Dress,1,370
+1283,Set boy,1,460
+1284,Dress,1,770
+1285,Leggings,1,200
+1286,Set boy,1,660
+1287,Set boy,1,600
+1288,Set boy,1,400
+1289,Dress,1,400
+1290,Jacket,1,250
+1291,Set boy,1,600
+1292,Set boy,1,420
+1292,Sash,1,100
+1293,Set boy,1,400
+1294,Muscle batman,1,600
+1295,Set boy,1,600
+1296,Dress,1,670
+1297,Dress,1,600
+1298,Set boy,1,400
+1299,Dress,1,600
+1300,Dress,1,700
+1301,Set girl,1,600
+1302,Dress,1,280
+1303,Set boy,1,800
+1304,Set boy,2,600
+1305,Dress,1,700
+1305,Dress,1,650
+1305,Shorts,1,500
+1305,Polo shirt,1,280
+1306,Set girl,1,770
+1307,Dress,1,50
+1307,Toy wand,1,30
+1308,Set boy,1,600
+1308,Set girl,1,420
+1309,Set boy,1,600
+1310,Dress,1,370
+1310,Mask,1,60
+1311,Dress,2,170
+1311,Shoes,2,50
+1311,Hat,2,50
+1312,Set boy,1,600
+1313,Set boy,1,790
+1313,Set boy,1,1000
+1314,Set boy,1,500
+1314,Dress,1,500
+1314,Dress,1,30
+1315,Set girl,3,420
+1316,Set boy,1,600
+1317,Animal costume,1,420
+1318,Set boy,2,420
+1319,Set boy,1,600
+1320,Set girl,1,500
+1321,Set girl,1,350
+1322,Set boy,1,180
+1322,Shorts,1,340
+1323,Polo shirt,1,300
+1323,Pants,1,100
+1324,Dress,1,700
+1325,Long sleeve,1,290
+1325,Pants,1,500
+1326,Dress,1,670
+1327,Dress,1,170
+1327,Shorts,1,200
+1328,Set boy,1,400
+1329,Set girl,1,600
+1330,Dress,1,180
+1331,Dress,2,700
+1332,Set boy,1,420
+1333,Set boy,1,180
+1333,Dress,1,170
+1334,Dress,1,170
+1335,T-shirt,2,150
+1336,Polo shirt,8,210
+1336,Polo shirt,11,240
+1337,Set boy,1,320
+1338,Set boy,1,700
+1339,Set boy,2,800
+1340,Set boy,1,790
+1340,Dress,1,770
+1341,Set boy,1,770
+1342,Set boy,1,420
+1343,Set boy,1,340
+1343,Blouse,1,200
+1344,Set boy,1,400
+1345,Set boy,1,600
+1346,Set girl,1,750
+1346,Set girl,1,770
+1346,Pajamas,3,130
+1347,Dress,1,300
+1349,Dress,1,700
+1350,Set boy,1,450
+1351,Set boy,1,200
+1352,Dress,1,150
+1353,Dress,1,350
+1354,Set boy,1,250
+1355,Set girl,1,380
+1356,Set boy,1,300
+1357,Dress,1,600
+1357,Set boy,1,250
+1358,Dress,1,700
+1359,Set girl,1,600
+1360,Set boy,1,150
+1360,Dress,1,400
+1360,Set boy,1,250
+1360,Set girl,1,150
+1361,Set boy,1,660
+1362,Set boy,1,790
+1363,Set boy,1,200
+1364,Dress,1,800
+1365,Set girl,1,770
+1366,Set girl,4,180
+1367,Dress,2,720
+1367,Dress,2,600
+1367,Dress,1,350
+1368,Leggings,1,180
+1369,Dress,1,740
+1370,Dress,1,650
+1370,T-shirt,1,200
+1370,Shorts,1,320
+1371,Set boy,1,400
+1372,Dress,1,740
+1372,Set girl,1,150
+1373,Set girl,1,150
+1373,Set boy,1,200
+1374,Overall,1,420
+1375,Leggings,3,200
+1376,Set boy,1,260
+1377,Shorts,1,340
+1378,Dress,1,720
+1378,Set girl,1,150
+1379,Set boy,1,200
+1379,Set girl,1,600
+1379,Dress,1,400
+1380,Dress,1,580
+1381,Dress,1,670
+1381,Dress,1,600
+1381,Accessories,1,20
+1382,Dress,1,170
+1382,Shoes,1,50
+1382,Hat,1,50
+1383,Set boy,1,600
+1384,Dress,1,720
+1385,Dress,1,500
+1386,Set boy,1,280
+1387,Set boy,1,770
+1388,Set boy,1,400
+1389,Jacket,3,250
+1390,Set boy,1,280
+1391,Dress,1,740
+1391,Dress,8,350
+1391,Dress,2,670
+1391,Set girl,1,600
+1391,Blouse,1,280
+1392,Blouse,1,200
+1393,Dress,1,400
+1393,Set girl,1,150
+1393,Set boy,1,150
+1393,Polo shirt,1,280
+1394,Set boy,1,770
+1395,Dress,1,670
+1395,Set boy,1,600
+1396,Set boy,1,600
+1396,Dress,1,400
+1396,Pajamas,1,120
+1397,Set boy,1,180
+1398,Dress,1,320
+1399,Dress,1,400
+1399,Dress,1,170
+1399,Dress,1,720
+1400,Set boy,1,420
+1400,Dress,1,720
+1400,Set girl,1,150
+1401,Dress,1,350
+1402,Dress,1,420
+1403,Dress,5,240
+1403,Dress,2,350
+1403,Jumper,2,250
+1404,Set boy,1,400
+1405,Dress,3,720
+1406,Set girl,1,600
+1407,Dress,1,490
+1408,Set boy,1,600
+1409,Dress,1,490
+1409,Set boy,1,400
+1410,Set girl,1,150
+1410,Dress,1,400
+1410,Set boy,1,400
+1411,Set boy,1,100
+1411,Dress,2,400
+1411,Set girl,2,150
+1412,Blanket,11,100
+1413,Set girl,1,580
+1414,Dress,1,500
+1415,Set boy,1,600
+1416,Set boy,1,400
+1416,Set girl,1,400
+1417,Dress,1,720
+1417,Set boy,1,400
+1417,Set girl,1,400
+1418,Dress,1,720
+1419,Set boy,1,490
+1420,Set girl,1,600
+1420,Dress,1,720
+1421,Dress,1,720
+1421,Set boy,1,420
+1422,Dress,1,720
+1423,Dress,1,720
+1423,Set girl,1,100
+1424,Dress,1,280
+1425,Set boy,1,600
+1425,Set girl,1,420
+1426,Set boy,1,600
+1427,Dress,1,420
+1428,Dress,1,600
+1429,Set girl,1,570
+1430,Shorts,1,180
+1431,Dress,1,200
+1432,Set girl,1,100
+1433,Set boy,1,280
+1434,Set boy,1,470
+1425,Dress,1,200
+1425,Set girl,1,230
+1436,Dress,1,200
+1436,Set boy,1,400
+1437,Set boy,1,400
+1438,Dress,1,240
+1439,Set boy,1,600
+1440,Dress,1,800
+1441,Set boy,1,200
+1442,Set boy,1,200
+1442,Set girl,1,100
+1443,Dress,1,200
+1443,Set boy,1,100
+1444,Set girl,1,100
+1444,Set boy,1,100
+1445,Dress,2,200
+1445,Set girl,1,100
+1446,Set boy,1,420
+1446,Set girl,1,100
+1447,Set girl,1,150
+1447,Set boy,1,200
+1448,Blanket,1,100
+1448,Towel,1,100
+1449,Set boy,1,500
+1450,Set girl,1,600
+1451,Set boy,1,200
+1452,Dress,1,170
+1452,Set girl,1,400
+1453,Dress,1,600
+1453,Dress,1,670
+1454,Set boy,1,400
+1455,Set boy,1,600
+1456,Dress,1,600
+1457,Dress,1,300
+1458,Set girl,1,150
+1458,Dress,1,170
+1459,Dress,2,300
+1459,Dress,1,170
+1459,Shoes,1,50
+1459,Hat,1,50
+1460,Set boy,2,170
+1460,Hat,2,50
+1460,Shoes,2,50
+1461,Set boy,1,600
+1462,Dress,1,350
+1462,T-shirt,1,250
+1463,Set girl,1,370
+1464,Blouse,1,300
+1464,Skirt,1,340
+1465,Shorts,1,280
+1466,Hat,1,300
+1467,Dress,1,170
+1468,Set girl,1,150
+1469,Dress,1,490
+1470,Dress,1,740
+1471,Dress,1,170
+1471,Set boy,1,180
+1472,Set girl,1,150
+1473,Set boy,1,250
+1474,Dress,1,400
+1475,Bag,4,250
+1475,Set boy,1,660
+1476,Dress,1,770
+1476,Bag,1,250
+1477,Dress,1,740
+1478,Dress,1,740
+1478,Dress,1,600
+1478,Costume,1,420
+1479,Set army,1,590
+1480,Dress,1,320
+1481,Dress,1,170
+1481,Set boy,1,100
+1482,Set girl,1,270
+1483,Set girl,1,600
+1484,Set boy,1,600
+1485,Dress,1,370
+1486,Dress,1,570
+1487,Dress,1,740
+1488,Set girl,1,600
+1489,Set boy,1,320
+1490,Set boy,1,620
+1491,Dress,1,370
+1492,Set boy,1,800
+1493,Dress,1,300
+1494,Set boy,1,620
+1494,Dress,1,400
+1495,Set boy,1,600
+1496,Set girl,1,150
+1497,Set boy,1,600
+1498,Set boy,1,400
+1499,Dress,1,570
+1500,Set boy,1,620

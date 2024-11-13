@@ -1,0 +1,1487 @@
+Sale_ID,Sale Date,Store_ID,City_ID
+301,12/22/2022,A,Metro Manila
+302,12/22/2022,A,Cavite
+303,12/22/2022,A,Metro Manila
+304,12/27/2022,A,Metro Manila
+305,12/27/2022,A,Metro Manila
+306,12/27/2022,A,Metro Manila
+307,12/28/2022,A,Tondo
+308,1/11/2023,A,Metro Manila
+309,1/12/2023,A,Metro Manila
+310,1/13/2023,A,Tondo
+311,1/13/2023,A,Metro Manila
+312,1/15/2023,A,Metro Manila
+313,1/15/2023,A,Metro Manila
+314,1/16/2023,A,Quezon City
+315,1/18/2023,A,Tondo
+316,1/19/2023,A,Caloocan
+317,1/17/2023,A,Quezon City
+318,1/20/2023,A,Bulacan
+319,1/21/2023,A,Metro Manila
+320,1/21/2023,A,Tondo
+321,1/22/2023,A,Nueva Ecija
+322,1/24/2023,A,Metro Manila
+323,1/25/2023,A,Rizal
+324,1/26/2023,A,Metro Manila
+325,1/27/2023,A,Metro Manila
+326,1/28/2023,A,Metro Manila
+327,1/29/2023,A,Tondo
+328,1/30/2023,A,Cavite
+329,1/31/2023,A,Rizal
+330,2/1/2023,A,Quezon City
+331,2/2/2023,A,Pasig
+332,2/3/2023,A,Tondo
+333,2/4/2023,A,Tondo
+334,2/5/2023,A,Bulacan
+335,2/6/2023,A,Bulacan
+336,2/7/2023,A,Tondo
+337,2/8/2023,A,Metro Manila
+338,2/9/2023,A,Quezon City
+339,2/10/2023,A,Quezon City
+340,2/11/2023,A,Metro Manila
+341,2/12/2023,A,Quezon City
+342,2/13/2023,A,Tondo
+343,2/14/2023,A,Makati
+344,2/15/2023,A,Bulacan
+345,2/24/2023,A,Quezon City
+346,2/24/2023,A,Metro Manila
+347,2/18/2023,A,Pasig
+349,2/20/2023,A,Pasay
+350,2/20/2023,A,Metro Manila
+351,2/22/2023,A,Metro Manila
+352,2/23/2023,A,Quezon City
+353,2/24/2023,A,Quezon City
+354,2/24/2023,A,Metro Manila
+355,2/26/2023,A,Metro Manila
+356,2/27/2023,A,Metro Manila
+357,2/28/2023,A,Tondo
+358,3/1/2023,A,Tondo
+359,3/2/2023,A,Metro Manila
+360,3/3/2023,A,Quezon City
+362,3/5/2023,A,Quezon City
+363,3/6/2023,A,Metro Manila
+364,3/7/2023,A,Bulacan
+365,3/8/2023,A,Quezon City
+366,3/9/2023,A,Pasig
+367,3/10/2023,A,Tondo
+368,3/11/2023,A,Metro Manila
+369,3/12/2023,A,Tondo
+370,3/13/2023,A,Metro Manila
+371,3/14/2023,A,Quezon City
+372,3/15/2023,A,Tarlac
+373,3/16/2023,A,Pampanga
+374,3/17/2023,A,Quezon City
+375,3/18/2023,A,Tondo
+376,3/19/2023,A,Metro Manila
+377,3/19/2023,A,Pasig
+378,3/20/2023,A,Tarlac
+379,3/21/2023,A,Pasig
+380,3/22/2023,A,Quezon City
+381,3/23/2023,A,Tarlac
+382,3/24/2023,A,Pasay
+383,3/25/2023,A,Quezon City
+384,3/26/2023,A,Tondo
+385,3/27/2023,A,Quezon City
+386,3/29/2023,A,Tondo
+387,3/30/2023,A,Quezon City
+388,3/31/2023,A,Metro Manila
+389,4/1/2023,A,Caloocan
+390,4/3/2023,A,Caloocan
+391,4/4/2023,A,Cavite
+392,4/5/2023,A,Metro Manila
+393,4/6/2023,A,Quezon City
+394,4/8/2023,A,Pasig
+395,4/10/2023,A,Tarlac
+396,4/10/2023,A,Caloocan
+397,4/12/2023,A,Bulacan
+398,4/13/2023,A,Quezon City
+399,4/13/2023,A,Pasig
+400,4/14/2023,A,Pasay
+401,4/16/2023,A,Metro Manila
+402,4/17/2023,A,Metro Manila
+403,4/18/2023,A,Tondo
+404,4/19/2023,A,Quezon City
+405,4/24/2023,A,Quezon City
+406,4/25/2023,A,Tondo
+407,4/26/2023,A,Metro Manila
+408,4/22/2023,A,Metro Manila
+409,4/24/2023,A,Metro Manila
+410,5/8/2023,A,Metro Manila
+412,4/27/2023,A,Tondo
+413,4/28/2023,A,Metro Manila
+414,4/29/2023,A,Tondo
+415,4/20/2023,A,Quezon City
+417,5/1/2023,A,Quezon City
+418,5/2/2023,A,Metro Manila
+420,5/4/2023,A,Pasay
+421,5/5/2023,A,Tarlac
+422,5/6/2023,A,Cavite
+423,5/7/2023,A,Cavite
+424,5/8/2023,A,Tarlac
+425,5/8/2023,A,Metro Manila
+426,5/9/2023,A,Cavite
+427,5/11/2023,A,Cavite
+428,5/12/2023,A,Metro Manila
+429,5/13/2023,A,Metro Manila
+430,5/14/2023,A,Metro Manila
+431,5/15/2023,A,Pasig
+432,5/17/2023,A,Metro Manila
+433,5/20/2023,A,Bicol
+434,5/20/2023,A,Pasig
+435,5/27/2023,A,Quezon City
+436,5/28/2023,A,Pasig
+437,5/29/2023,A,Tondo
+438,5/30/2023,A,Metro Manila
+439,5/30/2023,A,Quezon City
+440,6/1/2023,A,Cavite
+441,6/1/2023,A,Tondo
+442,6/3/2023,A,Metro Manila
+443,6/4/2023,A,Metro Manila
+444,6/6/2023,A,Caloocan
+445,6/7/2023,A,Metro Manila
+446,6/8/2023,A,Pasay
+447,6/10/2023,A,Metro Manila
+448,6/9/2023,A,Metro Manila
+449,6/11/2023,A,Quezon City
+450,6/12/2023,A,Tondo
+451,6/13/2023,A,Bicol
+453,6/16/2023,A,Tondo
+454,6/17/2023,A,Tarlac
+455,6/19/2023,A,Quezon City
+456,6/20/2023,A,Metro Manila
+457,6/21/2023,A,Cavite
+458,6/23/2023,A,Quezon City
+459,6/24/2023,A,Bicol
+460,6/25/2023,A,Tondo
+461,6/26/2023,A,Tondo
+462,6/28/2023,A,Cavite
+463,6/29/2023,A,Bicol
+464,6/30/2023,A,Metro Manila
+465,7/1/2023,A,Metro Manila
+466,7/2/2023,A,Bulacan
+467,7/5/2023,A,Cavite
+468,7/6/2023,A,Metro Manila
+469,7/7/2023,A,Metro Manila
+470,7/8/2023,A,Quezon City
+471,7/9/2023,A,Quezon City
+472,7/9/2023,A,Quezon City
+473,7/11/2023,A,Tondo
+474,7/12/2023,A,Metro Manila
+475,7/14/2023,A,Metro Manila
+476,7/15/2023,A,Metro Manila
+477,7/16/2023,A,Metro Manila
+478,7/17/2023,A,Metro Manila
+479,7/18/2023,A,Metro Manila
+480,7/20/2023,A,Metro Manila
+481,7/20/2023,A,Metro Manila
+482,7/21/2023,A,Quezon City
+483,7/22/2023,A,Metro Manila
+484,7/23/2023,A,Metro Manila
+485,7/24/2023,A,Metro Manila
+486,7/24/2023,A,Metro Manila
+487,7/25/2023,A,Metro Manila
+488,7/26/2023,A,Metro Manila
+489,7/28/2023,A,Metro Manila
+490,7/31/2023,A,Metro Manila
+491,8/4/2023,A,Metro Manila
+492,8/6/2023,A,Metro Manila
+493,8/9/2023,A,Quezon City
+494,8/11/2023,A,Metro Manila
+495,8/13/2023,A,Bicol
+496,8/14/2023,A,Metro Manila
+497,8/15/2023,A,Tondo
+498,8/19/2023,A,Quezon City
+499,8/20/2023,A,Tondo
+500,8/20/2023,A,Metro Manila
+251,10/29/2022,A,Metro Manila
+252,10/30/2022,A,Metro Manila
+253,11/2/2022,A,Bulacan
+254,11/3/2022,A,Rizal
+255,11/4/2022,A,Rizal
+256,11/7/2022,A,Metro Manila
+257,11/6/2022,A,Metro Manila
+258,11/7/2022,A,Metro Manila
+259,11/6/2022,A,Metro Manila
+260,11/8/2022,A,Quezon City
+261,11/13/2022,A,Metro Manila
+262,11/13/2022,A,Metro Manila
+263,11/15/2022,A,Metro Manila
+264,11/15/2022,A,Metro Manila
+265,11/16/2022,A,Metro Manila
+266,11/16/2022,A,Metro Manila
+267,11/16/2022,A,Metro Manila
+268,11/17/2022,A,Metro Manila
+269,11/18/2022,A,Metro Manila
+270,11/19/2022,A,Metro Manila
+271,11/20/2022,A,Metro Manila
+272,11/21/2022,A,Metro Manila
+273,11/22/2022,A,Quezon City
+274,11/26/2022,A,Metro Manila
+275,11/27/2022,A,Metro Manila
+276,11/25/2022,A,Metro Manila
+277,11/26/2022,A,Metro Manila
+278,11/27/2022,A,Tondo
+279,11/28/2022,A,Metro Manila
+280,11/29/2022,A,Metro Manila
+281,11/30/2022,A,Bulacan
+282,12/4/2022,A,Metro Manila
+283,12/2/2022,A,Metro Manila
+284,12/5/2022,A,Quezon City
+285,12/8/2022,A,Metro Manila
+286,12/7/2022,A,Tondo
+287,12/8/2022,A,Metro Manila
+288,12/9/2022,A,Metro Manila
+289,12/10/2022,A,Metro Manila
+290,12/11/2022,A,Metro Manila
+291,12/12/2022,A,Metro Manila
+292,12/13/2022,A,Tondo
+293,12/14/2022,A,Metro Manila
+294,12/15/2022,A,Quezon City
+295,12/16/2022,A,Quezon City
+296,12/17/2022,A,Metro Manila
+297,12/18/2022,A,Quezon City
+298,12/19/2022,A,Makati
+299,12/20/2022,A,Metro Manila
+300,12/21/2022,A,Tondo
+201,9/9/2022,A,Makati
+202,9/9/2022,A,Baguio
+203,9/9/2022,A,Cavite
+204,9/12/2022,A,Quezon City
+205,9/13/2022,A,Pasig
+206,9/14/2022,A,Quezon City
+207,9/15/2022,A,Metro Manila
+208,9/16/2022,A,Quezon City
+209,9/17/2022,A,Pasig
+210,9/18/2022,A,Quezon City
+211,9/19/2022,A,Quezon City
+212,9/20/2022,A,Bulacan
+213,9/21/2022,A,Metro Manila
+214,9/22/2022,A,Tondo
+215,9/23/2022,A,Bohol
+216,9/23/2022,A,Metro Manila
+217,9/25/2022,A,Tondo
+218,9/26/2022,A,Quezon City
+219,9/27/2022,A,Tondo
+220,9/28/2022,A,Metro Manila
+221,9/29/2022,A,Tondo
+222,9/30/2022,A,Ilocos
+223,10/1/2022,A,Cavite
+224,10/2/2022,A,Pasay
+225,10/3/2022,A,Tondo
+226,10/4/2022,A,Quezon City
+227,10/5/2022,A,Tondo
+228,10/6/2022,A,Metro Manila
+229,10/7/2022,A,Quezon
+230,10/8/2022,A,Metro Manila
+231,10/9/2022,A,Tondo
+232,10/10/2022,A,Metro Manila
+233,10/11/2022,A,Caloocan
+234,10/12/2022,A,Metro Manila
+235,10/13/2022,A,Quezon City
+236,10/14/2022,A,Metro Manila
+237,10/15/2022,A,Tondo
+238,10/16/2022,A,Tondo
+239,10/17/2022,A,Quezon City
+240,10/18/2022,A,Pasig
+241,10/19/2022,A,Metro Manila
+242,10/20/2022,A,Tondo
+243,10/20/2022,A,Tondo
+244,10/21/2022,A,Metro Manila
+245,10/21/2022,A,Metro Manila
+246,10/21/2022,A,Tondo
+247,10/22/2022,A,Metro Manila
+248,10/22/2022,A,Tondo
+249,10/23/2022,A,Bulacan
+250,10/23/2022,A,Metro Manila
+151,7/21/2022,A,Metro Manila
+152,7/22/2022,A,Metro Manila
+153,7/23/2022,A,Quezon City
+154,7/24/2022,A,Metro Manila
+155,7/25/2022,A,Metro Manila
+156,7/26/2022,A,Metro Manila
+157,7/27/2022,A,Tondo
+158,7/28/2022,A,Bulacan
+159,7/29/2022,A,Metro Manila
+160,7/30/2022,A,Quezon City
+161,7/31/2022,A,Pasig
+162,8/1/2022,A,Bulacan
+163,8/2/2022,A,Cavite
+164,8/3/2022,A,Ilocos
+165,8/4/2022,A,Metro Manila
+166,8/5/2022,A,Metro Manila
+167,8/5/2022,A,Metro Manila
+168,8/6/2022,A,Tondo
+169,8/7/2022,A,Metro Manila
+170,8/8/2022,A,Cavite
+171,8/9/2022,A,Tondo
+172,8/10/2022,A,Bulacan
+173,8/11/2022,A,Metro Manila
+174,8/12/2022,A,Tondo
+175,8/13/2022,A,Cavite
+176,8/14/2022,A,Metro Manila
+177,8/15/2022,A,Bulacan
+178,8/16/2022,A,Metro Manila
+179,8/17/2022,A,Metro Manila
+180,8/18/2022,A,Bulacan
+181,8/19/2022,A,Tondo
+182,8/20/2022,A,Metro Manila
+183,8/21/2022,A,Quezon City
+184,8/22/2022,A,Makati
+185,8/23/2022,A,Metro Manila
+186,8/24/2022,A,Metro Manila
+187,8/25/2022,A,Bulacan
+188,8/26/2022,A,Metro Manila
+189,8/27/2022,A,Metro Manila
+190,8/28/2022,A,Pasig
+191,8/29/2022,A,Tondo
+192,8/30/2022,A,Metro Manila
+193,8/21/2022,A,Pasay
+194,9/1/2022,A,Metro Manila
+195,9/2/2022,A,Metro Manila
+196,9/3/2022,A,Metro Manila
+197,9/5/2022,A,Quezon City
+198,9/7/2022,A,Tondo
+200,9/8/2022,A,Quezon City
+101,6/1/2022,A,Caloocan
+102,6/2/2022,A,Quezon City
+103,6/3/2022,A,Caloocan
+104,6/4/2022,A,Quezon City
+105,6/5/2022,A,Tondo
+106,6/6/2022,A,Metro Manila
+107,6/7/2022,A,Metro Manila
+108,6/8/2022,A,Quezon City
+109,6/9/2022,A,Metro Manila
+110,6/10/2022,A,Quezon City
+111,6/11/2022,A,Tondo
+112,6/12/2022,A,Pasay
+113,6/13/2022,A,Tondo
+114,6/14/2022,A,Quezon City
+115,6/15/2022,A,Pasay
+116,6/16/2022,A,Cavite
+117,6/17/2022,A,Tondo
+118,6/18/2022,A,Quezon City
+119,6/19/2022,A,Metro Manila
+120,6/20/2022,A,Metro Manila
+121,6/21/2022,A,Metro Manila
+122,6/22/2022,A,Metro Manila
+123,6/23/2022,A,Metro Manila
+124,6/24/2022,A,Metro Manila
+125,6/25/2022,A,Metro Manila
+126,6/26/2022,A,Bicol
+127,6/27/2022,A,Pasig
+128,6/28/2022,A,Metro Manila
+129,6/29/2022,A,Metro Manila
+130,6/30/2022,A,Quezon City
+131,7/1/2022,A,Quezon City
+132,7/2/2022,A,Metro Manila
+133,7/3/2022,A,Quezon City
+134,7/4/2022,A,Metro Manila
+135,7/5/2022,A,Makati
+136,7/6/2022,A,Metro Manila
+137,7/7/2022,A,Pasig
+138,7/8/2022,A,Metro Manila
+139,7/9/2022,A,Tondo
+140,7/10/2022,A,Quezon City
+141,7/11/2022,A,Metro Manila
+142,7/12/2022,A,Quezon City
+143,7/13/2022,A,Metro Manila
+144,7/14/2022,A,Metro Manila
+145,7/15/2022,A,Metro Manila
+146,7/16/2022,A,Metro Manila
+147,7/17/2022,A,Metro Manila
+148,7/17/2022,A,Metro Manila
+149,7/19/2022,A,Metro Manila
+150,7/20/2022,A,Tondo
+51,4/10/2022,A,Metro Manila
+52,4/10/2022,A,Caloocan
+53,4/11/2023,A,Metro Manila
+54,4/12/2022,A,Metro Manila
+55,4/16/2022,A,Metro Manila
+56,4/17/2022,A,Caloocan
+57,4/18/2022,A,Tondo
+58,4/19/2022,A,Tondo
+59,4/20/2022,A,Tondo
+60,4/22/2022,A,Bulacan
+61,4/23/2022,A,Caloocan
+62,4/24/2022,A,Zambales
+63,4/25/2022,A,Metro Manila
+64,4/26/2022,A,Quezon City
+65,4/27/2022,A,Caloocan
+66,4/28/2022,A,Metro Manila
+67,4/29/2022,A,Metro Manila
+68,4/30/2022,A,Metro Manila
+69,4/30/2022,A,Cebu
+70,5/1/2022,A,Tondo
+71,5/2/2022,A,Quezon City
+72,5/3/2022,A,Bulacan
+73,5/4/2022,A,Isabela
+74,5/5/2022,A,Metro Manila
+75,5/6/2022,A,Metro Manila
+76,5/7/2022,A,Tondo
+77,5/8/2022,A,Bulacan
+78,5/9/2022,A,Tondo
+79,5/10/2022,A,Bataan
+80,5/11/2022,A,Bataan
+81,5/12/2022,A,Bulacan
+82,5/13/2022,A,Metro Manila
+83,5/14/2022,A,Makati
+84,5/15/2022,A,Quezon City
+85,5/16/2022,A,Tondo
+86,5/17/2022,A,Tondo
+87,5/18/2022,A,Metro Manila
+88,5/19/2022,A,Tondo
+89,5/20/2022,A,Pasig
+90,5/21/2022,A,Quezon City
+91,5/22/2022,A,Metro Manila
+92,5/23/2022,A,Metro Manila
+93,5/24/2022,A,Quezon City
+94,5/25/2022,A,Metro Manila
+95,5/26/2022,A,Metro Manila
+96,5/27/2022,A,Makati
+97,5/28/2022,A,Cavite
+98,5/29/2022,A,Metro Manila
+99,5/30/2022,A,Metro Manila
+100,5/31/2022,A,Tondo
+1,2/18/2022,A,Quezon City
+2,2/19/2022,A,Metro Manila
+3,2/20/2022,A,Quezon City
+4,2/21/2022,A,Metro Manila
+5,2/22/2022,A,Tondo
+6,2/23/2022,A,Cavite
+7,2/24/2022,A,Bulacan
+8,2/25/2022,A,Metro Manila
+9,2/26/2022,A,Metro Manila
+10,2/27/2022,A,Metro Manila
+11,2/28/2022,A,Metro Manila
+12,3/1/2022,A,Quezon City
+13,3/2/2022,A,Quezon City
+14,3/3/2022,A,Pasay
+15,3/4/2022,A,Metro Manila
+16,3/5/2022,A,Metro Manila
+17,3/6/2022,A,Quezon City
+18,3/7/2022,A,Quezon City
+19,3/8/2022,A,Metro Manila
+20,3/9/2022,A,Metro Manila
+21,3/10/2022,A,Metro Manila
+22,3/11/2022,A,Metro Manila
+23,3/12/2022,A,Metro Manila
+24,3/13/2022,A,Metro Manila
+25,3/14/2022,A,Cavite
+26,3/15/2022,A,Rizal
+27,3/16/2022,A,Metro Manila
+28,3/17/2022,A,Metro Manila
+29,3/18/2022,A,Pasig
+30,3/19/2022,A,Quezon City
+31,3/20/2022,A,Metro Manila
+32,3/21/2022,A,Batanes
+33,3/22/2022,A,Batanes
+34,3/24/2022,A,Metro Manila
+35,3/25/2022,A,Bulacan
+36,3/26/2022,A,Pasig
+37,3/27/2022,A,Metro Manila
+38,3/28/2022,A,Metro Manila
+39,3/29/2022,A,Quezon City
+40,3/30/2022,A,Zambales
+41,3/31/2022,A,Bulacan
+42,4/1/2022,A,Quezon City
+43,4/2/2022,A,Quezon City
+44,4/3/2022,A,Caloocan
+45,4/4/2022,A,Quezon City
+46,4/5/2022,A,Metro Manila
+47,4/6/2022,A,Pasig
+48,4/7/2022,A,Bataan
+49,4/8/2022,A,Metro Manila
+50,4/9/2022,A,Metro Manila
+501,8/10/2023,A,Caloocan
+502,8/11/2023,A,Quezon City
+503,8/12/2023,A,Tondo
+504,8/13/2023,A,Metro Manila
+505,8/14/2023,A,Tondo
+506,8/14/2023,A,Tondo
+507,8/16/2023,A,Metro Manila
+508,8/17/2023,A,Metro Manila
+509,8/18/2023,A,Quezon City
+510,8/19/2023,A,Metro Manila
+511,8/20/2023,A,Pasay
+512,8/21/2023,A,Metro Manila
+513,8/22/2023,A,Metro Manila
+514,8/23/2023,A,Metro Manila
+515,8/24/2023,A,Metro Manila
+516,8/25/2023,A,Metro Manila
+517,8/26/2023,A,Metro Manila
+518,8/27/2023,A,Metro Manila
+519,8/28/2023,A,Cavite
+520,8/29/2023,A,Tondo
+521,8/30/2023,A,Metro Manila
+522,8/31/2023,A,Ilocos
+523,9/1/2023,A,Cavite
+524,9/2/2023,A,Pasay
+525,9/3/2023,A,Tondo
+526,9/4/2023,A,Metro Manila
+527,9/6/2023,A,Metro Manila
+528,9/9/2023,A,Metro Manila
+529,9/10/2023,A,Bulacan
+530,9/12/2023,A,Quezon City
+531,9/13/2023,A,Quezon City
+532,9/15/2023,A,Pasig
+533,9/16/2023,A,Quezon City
+534,9/17/2023,A,Metro Manila
+535,9/18/2023,A,Tondo
+536,9/20/2023,A,Pasig
+537,9/21/2023,A,Tondo
+538,9/22/2023,A,Quezon City
+539,9/25/2023,A,Quezon City
+540,9/26/2023,A,Pasig
+541,9/27/2023,A,Pasig
+542,9/28/2023,A,Quezon City
+543,9/29/2023,A,Tondo
+544,9/30/2023,A,Cavite
+545,10/1/2023,A,Quezon City
+546,10/2/2023,A,Makati
+547,10/3/2023,A,Metro Manila
+548,10/11/2023,A,Metro Manila
+549,10/13/2023,A,Metro Manila
+550,10/14/2023,A,Metro Manila
+551,10/7/2023,A,Metro Manila
+552,10/8/2023,A,Cavite
+553,10/9/2023,A,Tarlac
+554,10/10/2023,A,Quezon City
+555,10/11/2023,A,Tondo
+556,10/12/2023,A,Cavite
+557,10/13/2023,A,Metro Manila
+558,10/14/2023,A,Tondo
+559,10/14/2023,A,Tondo
+560,10/16/2023,A,Makati
+561,10/17/2023,A,Metro Manila
+562,10/18/2023,A,Metro Manila
+563,10/22/2023,A,Metro Manila
+564,10/23/2023,A,Metro Manila
+565,10/24/2023,A,Metro Manila
+566,10/25/2023,A,Metro Manila
+567,10/26/2023,A,Bicol
+568,10/27/2023,A,Quezon City
+569,10/28/2023,A,Metro Manila
+570,10/30/2023,A,Metro Manila
+571,10/31/2023,A,Metro Manila
+572,11/2/2023,A,Metro Manila
+573,11/3/2023,A,Metro Manila
+574,11/4/2023,A,Quezon City
+575,11/5/2023,A,Quezon City
+576,11/6/2023,A,Metro Manila
+577,11/7/2023,A,Pasay
+578,11/8/2023,A,Metro Manila
+579,11/10/2023,A,Tondo
+580,11/11/2023,A,Tondo
+581,11/12/2023,A,Makati
+582,11/13/2023,A,Metro Manila
+583,11/14/2023,A,Metro Manila
+584,11/15/2023,A,Pampanga
+585,11/16/2023,A,Metro Manila
+586,11/17/2023,A,Metro Manila
+587,11/24/2023,A,Tondo
+588,11/19/2023,A,Quezon City
+589,11/20/2023,A,Tondo
+590,11/20/2023,A,Metro Manila
+591,11/21/2023,A,Pasay
+592,11/22/2023,A,Metro Manila
+593,11/23/2023,A,Metro Manila
+594,11/24/2023,A,Pasay
+595,11/25/2023,A,Quezon City
+596,11/26/2023,A,Metro Manila
+597,11/27/2023,A,Tondo
+598,11/28/2023,A,Metro Manila
+599,11/29/2023,A,Metro Manila
+600,11/30/2023,A,Metro Manila
+601,12/1/2023,A,Bicol
+602,12/2/2023,A,Cavite
+603,12/8/2023,A,Metro Manila
+604,12/4/2023,A,Tondo
+605,12/5/2023,A,Pasay
+606,12/6/2023,A,Bicol
+607,12/7/2023,A,Metro Manila
+608,12/8/2023,A,Metro Manila
+609,12/9/2023,A,Metro Manila
+610,12/10/2023,A,Metro Manila
+611,12/11/2023,A,Tondo
+612,12/12/2023,A,Metro Manila
+613,12/16/2023,A,Cavite
+614,12/18/2023,A,Quezon City
+615,12/19/2023,A,Metro Manila
+616,12/19/2023,A,Caloocan
+617,12/22/2023,A,Tondo
+618,12/21/2023,A,Metro Manila
+619,12/22/2023,A,Metro Manila
+620,12/23/2023,A,Laguna
+622,12/26/2023,A,Metro Manila
+623,12/27/2023,A,Quezon City
+624,1/2/2024,A,Quezon City
+625,1/3/2024,A,Metro Manila
+626,1/4/2024,A,Metro Manila
+627,1/5/2024,A,Cavite
+628,1/6/2024,A,Bulacan
+629,1/7/2024,A,Rizal
+630,1/8/2024,A,Metro Manila
+631,1/10/2024,A,Rizal
+632,1/9/2024,A,Metro Manila
+633,1/10/2024,A,Cavite
+634,1/11/2024,A,Quezon City
+635,1/12/2024,A,Metro Manila
+636,1/13/2024,A,Tondo
+637,1/13/2024,A,Metro Manila
+638,1/14/2024,A,Bulacan
+639,1/15/2024,A,Quezon City
+640,1/16/2024,A,Pasay
+641,1/17/2024,A,Cavite
+642,1/18/2024,A,Bicol
+643,1/19/2024,A,Quezon City
+644,1/20/2024,A,Cavite
+645,1/21/2024,A,Quezon City
+646,1/22/2024,A,Rizal
+647,1/23/2024,A,Quezon City
+648,1/24/2024,A,Tondo
+649,1/24/2024,A,Bicol
+650,1/25/2024,A,Pasay
+651,1/27/2024,A,Cavite
+652,1/28/2024,A,Makati
+653,1/29/2024,A,Tondo
+654,1/29/2024,A,Makati
+655,1/30/2024,A,Cavite
+656,1/31/2024,A,Quezon City
+657,2/1/2024,A,Metro Manila
+658,2/4/2024,A,Metro Manila
+659,2/4/2024,A,Pasig
+660,2/2/2024,A,Cavite
+661,2/3/2024,A,Pasay
+662,2/4/2024,A,Tondo
+663,2/5/2024,A,Metro Manila
+664,2/6/2024,A,Metro Manila
+665,2/7/2024,A,Metro Manila
+666,2/8/2024,A,Quezon City
+667,2/9/2024,A,Quezon City
+668,2/10/2024,A,Tondo
+669,2/11/2024,A,Pasig
+670,2/12/2024,A,Quezon City
+671,2/13/2024,A,Metro Manila
+672,2/14/2024,A,Tondo
+673,2/15/2024,A,Tondo
+674,2/16/2024,A,Metro Manila
+675,2/17/2024,A,Makati
+676,2/18/2024,A,Metro Manila
+677,2/19/2024,A,Bulacan
+678,2/20/2024,A,Cavite
+679,2/21/2024,A,Metro Manila
+680,2/22/2024,A,Batangas
+681,2/23/2024,A,Caloocan
+682,2/24/2024,A,Caloocan
+683,2/25/2024,A,Metro Manila
+684,2/26/2024,A,Quezon City
+685,2/27/2024,A,Pasig
+686,2/28/2024,A,Tondo
+687,2/29/2024,A,Metro Manila
+688,3/1/2024,A,Cavite
+689,3/2/2024,A,Tondo
+690,3/3/2024,A,Pasay
+691,3/4/2024,A,Metro Manila
+692,3/5/2024,A,Metro Manila
+694,3/6/2024,A,Metro Manila
+695,3/7/2024,A,Metro Manila
+696,3/8/2024,A,Metro Manila
+697,3/9/2024,A,Pasay
+698,3/10/2024,A,Tarlac
+699,3/11/2024,A,Metro Manila
+700,3/12/2024,A,Tarlac
+701,3/14/2024,A,Metro Manila
+702,3/18/2024,A,Quezon City
+703,3/19/2024,A,Quezon City
+704,3/20/2024,A,Metro Manila
+705,3/21/2024,A,Metro Manila
+706,3/22/2024,A,Tondo
+707,3/23/2024,A,Makati
+708,3/24/2024,A,Quezon City
+709,3/25/2024,A,Cavite
+710,3/26/2024,A,Tondo
+711,3/27/2024,A,Batangas
+712,3/31/2024,A,Pasig
+713,4/1/2024,A,Bicol
+714,4/2/2024,A,Metro Manila
+715,4/3/2024,A,Metro Manila
+716,4/4/2024,A,Metro Manila
+717,4/5/2024,A,Tondo
+718,4/6/2024,A,Metro Manila
+719,4/7/2024,A,Quezon City
+720,4/8/2024,A,Tondo
+721,4/8/2024,A,Makati
+722,4/9/2024,A,Metro Manila
+723,4/10/2024,A,Tondo
+724,4/11/2024,A,Metro Manila
+725,4/12/2024,A,Makati
+726,4/13/2024,A,Quezon City
+727,4/14/2024,A,Pasay
+728,4/15/2024,A,Metro Manila
+729,4/16/2024,A,Bicol
+730,4/17/2024,A,Cavite
+731,4/18/2024,A,Quezon City
+732,4/19/2024,A,Metro Manila
+733,4/20/2024,A,Quezon City
+734,4/21/2024,A,Quezon City
+735,4/22/2024,A,Pasay
+736,4/23/2024,A,Metro Manila
+737,4/24/2024,A,Metro Manila
+738,4/26/2024,A,Cavite
+739,4/26/2024,A,Metro Manila
+740,4/28/2024,A,Metro Manila
+741,4/28/2024,A,Metro Manila
+742,4/29/2024,A,Metro Manila
+743,4/30/2024,A,Tondo
+744,5/1/2024,A,Quezon City
+745,5/2/2024,A,Tondo
+746,5/3/2024,A,Metro Manila
+747,5/4/2024,A,Tondo
+748,5/5/2024,A,Tondo
+749,5/6/2024,A,Ilocos
+750,5/7/2024,A,Metro Manila
+751,12/22/2022,B,Tondo
+752,12/22/2022,B,Makati
+753,12/22/2022,B,Batangas
+754,12/22/2022,B,Metro Manila
+755,12/23/2022,B,Metro Manila
+756,12/23/2022,B,Las Pinas
+757,12/28/2022,B,Metro Manila
+758,12/28/2022,B,Quezon City
+759,12/29/2022,B,Metro Manila
+760,1/2/2023,B,Batangas
+761,1/3/2023,B,Tondo
+762,1/3/2023,B,Tondo
+763,1/4/2023,B,Cavite
+764,1/4/2023,B,Tondo
+765,1/5/2023,B,Quezon City
+766,1/5/2023,B,Laguna
+767,1/5/2023,B,Tondo
+768,1/6/2023,B,Paranaque
+769,1/6/2023,B,Tondo
+770,1/7/2023,B,Caloocan
+771,1/7/2023,B,Caloocan
+772,1/7/2023,B,Cavite
+773,1/8/2023,B,Ilocos
+774,1/8/2023,B,Paranaque
+775,1/9/2023,B,Metro Manila
+776,1/10/2023,B,Tondo
+777,1/10/2023,B,Makati
+778,1/11/2023,B,Tondo
+779,1/11/2023,B,Metro Manila
+780,1/12/2023,B,Quezon City
+781,1/12/2023,B,Metro Manila
+782,1/13/2023,B,Metro Manila
+783,1/14/2023,B,Makati
+784,1/15/2023,B,Makati
+785,1/16/2023,B,Metro Manila
+786,1/17/2023,B,Metro Manila
+787,1/17/2023,B,Metro Manila
+788,1/17/2023,B,Metro Manila
+789,1/18/2023,B,Metro Manila
+790,1/16/2023,B,Tondo
+791,1/16/2023,B,Bulacan
+792,1/17/2023,B,Quezon City
+793,1/17/2023,B,Metro Manila
+794,1/18/2023,B,Metro Manila
+795,1/18/2023,B,Quezon City
+796,1/19/2023,B,Metro Manila
+797,1/19/2023,B,Pasay
+798,1/21/2023,B,Tondo
+799,1/22/2023,B,Quezon City
+800,1/24/2023,B,San Juan
+801,1/24/2023,B,Pasig
+802,1/25/2023,B,Metro Manila
+803,1/27/2023,B,Bulacan
+804,1/27/2023,B,Pampanga
+805,1/27/2023,B,Quezon City
+806,1/28/2023,B,Tondo
+807,1/28/2023,B,Tondo
+808,1/29/2023,B,Tondo
+809,1/29/2023,B,Pasig
+810,1/30/2023,B,Tondo
+811,1/30/2023,B,Paranaque
+812,1/31/2023,B,Metro Manila
+813,2/1/2023,B,Metro Manila
+814,2/3/2023,B,Metro Manila
+815,2/4/2023,B,Metro Manila
+816,2/4/2023,B,Quezon City
+817,2/4/2023,B,Quezon City
+818,2/5/2023,B,Metro Manila
+819,2/5/2023,B,Metro Manila
+820,2/6/2023,B,Metro Manila
+821,2/6/2023,B,Metro Manila
+822,2/7/2023,B,Metro Manila
+823,2/7/2023,B,Quezon City
+824,2/8/2023,B,Tondo
+825,2/9/2023,B,Tondo
+826,2/10/2023,B,Metro Manila
+827,2/11/2023,B,Metro Manila
+828,2/12/2023,B,Bulacan
+829,2/13/2023,B,Tondo
+830,2/14/2023,B,Quezon City
+831,2/15/2023,B,Metro Manila
+832,2/16/2023,B,Metro Manila
+833,2/16/2023,B,Metro Manila
+834,2/17/2023,B,Metro Manila
+835,2/17/2023,B,Quezon City
+836,2/18/2023,B,Tondo
+837,2/19/2023,B,Metro Manila
+838,2/20/2023,B,Bulacan
+839,2/21/2023,B,Tondo
+840,2/22/2023,B,Metro Manila
+841,2/23/2023,B,Ilocos
+842,2/24/2023,B,Tondo
+843,2/25/2023,B,Quezon City
+844,2/26/2023,B,Metro Manila
+845,2/26/2023,B,Leyte
+846,2/27/2023,B,Metro Manila
+847,2/28/2023,B,Ilocos
+848,3/2/2023,B,Cavite
+849,3/2/2023,B,Biliran
+850,3/2/2023,B,Quezon City
+851,3/2/2023,B,Tondo
+852,3/3/2023,B,Quezon City
+853,3/4/2023,B,Metro Manila
+855,3/6/2023,B,Metro Manila
+856,3/7/2023,B,Tondo
+857,3/8/2023,B,Quezon City
+858,3/9/2023,B,Metro Manila
+859,3/11/2023,B,Cavite
+860,3/12/2023,B,Metro Manila
+861,3/13/2023,B,Cavite
+862,3/14/2023,B,Metro Manila
+863,3/15/2023,B,Metro Manila
+864,3/16/2023,B,Tondo
+865,3/16/2023,B,Tondo
+866,3/17/2023,B,Quezon City
+867,3/18/2023,B,Metro Manila
+868,3/18/2023,B,Quezon City
+869,3/19/2023,B,Tondo
+870,3/19/2023,B,Quezon City
+871,3/19/2023,B,Metro Manila
+872,3/20/2023,B,Cavite
+873,3/20/2023,B,Metro Manila
+874,3/20/2023,B,Bulacan
+875,3/21/2023,B,Metro Manila
+876,3/21/2023,B,Metro Manila
+877,3/21/2023,B,Bulacan
+878,3/22/2023,B,Metro Manila
+879,3/23/2023,B,Metro Manila
+880,3/23/2023,B,Metro Manila
+881,3/24/2023,B,Tondo
+882,3/25/2023,B,Nueva Ecija
+883,3/25/2023,B,Quezon City
+884,3/25/2023,B,Bulacan
+885,3/26/2023,B,Quezon City
+886,3/26/2023,B,Cavite
+887,3/27/2023,B,Bulacan
+888,3/27/2023,B,Cavite
+889,3/28/2023,B,Metro Manila
+890,3/28/2023,B,Cavite
+891,3/29/2023,B,Soccsksargen
+892,3/29/2023,B,Soccsksargen
+893,3/29/2023,B,Soccsksargen
+894,3/29/2023,B,Makati
+895,3/30/2023,B,Tondo
+896,3/30/2023,B,Metro Manila
+897,3/31/2023,B,Quezon City
+898,3/31/2023,B,Metro Manila
+899,4/1/2023,B,Metro Manila
+900,4/1/2023,B,Metro Manila
+901,4/3/2023,B,Metro Manila
+902,4/4/2023,B,Rizal
+903,4/5/2023,B,Quezon City
+904,4/5/2023,B,Metro Manila
+905,4/8/2023,B,Paranaque
+906,4/8/2023,B,Quezon City
+907,4/8/2023,B,Metro Manila
+908,4/9/2023,B,Cavite
+909,4/9/2023,B,Quezon City
+910,4/10/2023,B,Metro Manila
+911,4/10/2023,B,Quezon City
+912,4/11/2023,B,Metro Manila
+913,4/11/2023,B,Quezon City
+914,4/11/2023,B,Las Pinas
+915,4/12/2023,B,Paranaque
+916,4/12/2023,B,Leyte
+917,4/12/2023,B,Metro Manila
+918,4/13/2023,B,Laguna
+919,4/13/2023,B,Metro Manila
+920,4/14/2023,B,Metro Manila
+921,4/14/2023,B,Metro Manila
+922,4/14/2023,B,Metro Manila
+923,4/15/2023,B,Quezon City
+924,4/15/2023,B,Metro Manila
+925,4/16/2023,B,Metro Manila
+926,4/16/2023,B,Cavite
+927,4/17/2023,B,Metro Manila
+928,4/17/2023,B,Samar
+929,4/18/2023,B,Metro Manila
+930,4/18/2023,B,Bulacan
+931,4/19/2023,B,Cavite
+932,4/19/2023,B,Caloocan
+933,4/20/2023,B,Metro Manila
+934,4/20/2023,B,Metro Manila
+935,4/21/2023,B,Caloocan
+936,4/21/2023,B,Cavite
+937,4/22/2023,B,Metro Manila
+938,4/22/2023,B,Metro Manila
+939,4/22/2023,B,Quezon City
+940,4/23/2023,B,Laguna
+941,4/23/2023,B,Davao
+942,4/24/2023,B,Tondo
+943,4/24/2023,B,Metro Manila
+944,4/25/2023,B,Metro Manila
+945,4/25/2023,B,Dagupan
+946,4/26/2023,B,Dagupan
+947,4/26/2023,B,Metro Manila
+948,4/27/2023,B,Quezon City
+949,4/27/2023,B,Metro Manila
+950,4/28/2023,B,Metro Manila
+951,4/28/2023,B,Quezon City
+952,4/28/2023,B,Rizal
+953,4/29/2023,B,Quezon City
+954,4/29/2023,B,Dagupan
+955,4/30/2023,B,Bulacan
+956,4/30/2023,B,Dagupan
+957,5/1/2023,B,Metro Manila
+958,5/1/2023,B,Quezon City
+959,5/1/2023,B,Paranaque
+960,5/2/2023,B,Metro Manila
+961,5/2/2023,B,Laguna
+962,5/3/2023,B,Quezon City
+963,5/3/2023,B,Bulacan
+964,5/4/2023,B,Metro Manila
+965,5/4/2023,B,Quezon City
+966,5/5/2023,B,Caloocan
+967,5/5/2023,B,Dagupan
+968,5/5/2023,B,Bulacan
+969,5/6/2023,B,Bulacan
+970,5/6/2023,B,Tondo
+971,5/7/2023,B,Caloocan
+972,5/7/2023,B,Metro Manila
+973,5/8/2023,B,Masbate
+974,5/8/2023,B,Metro Manila
+975,5/9/2023,B,Metro Manila
+976,5/9/2023,B,Metro Manila
+977,5/10/2023,B,Metro Manila
+979,5/11/2023,B,Moriones
+980,5/11/2023,B,Metro Manila
+981,5/12/2023,B,Metro Manila
+982,5/12/2023,B,Metro Manila
+983,5/12/2023,B,Quezon City
+984,5/13/2023,B,Metro Manila
+985,5/13/2023,B,Cavite
+986,5/14/2023,B,Metro Manila
+987,5/14/2023,B,Metro Manila
+988,5/14/2023,B,Caloocan
+989,5/15/2023,B,Quezon City
+990,5/15/2023,B,Metro Manila
+991,5/16/2023,B,Metro Manila
+992,5/15/2023,B,Metro Manila
+993,5/17/2023,B,Metro Manila
+994,5/18/2023,B,Bulacan
+995,5/18/2023,B,Metro Manila
+996,5/19/2023,B,Metro Manila
+997,5/19/2023,B,Quezon City
+998,5/20/2023,B,Dagupan
+999,5/20/2023,B,Bulacan
+1000,5/21/2023,B,Quezon City
+1001,5/22/2023,B,Tondo
+1002,5/22/2023,B,Quezon City
+1003,5/23/2023,B,Metro Manila
+1004,5/23/2023,B,Bulacan
+1005,5/24/2023,B,Metro Manila
+1006,5/25/2023,B,Metro Manila
+1007,5/25/2023,B,Quezon City
+1008,5/26/2023,B,Bulacan
+1009,5/26/2023,B,Metro Manila
+1011,5/27/2023,B,Metro Manila
+1012,5/27/2023,B,Tondo
+1013,5/27/2023,B,Metro Manila
+1014,5/28/2023,B,Bulacan
+1015,5/29/2023,B,Metro Manila
+1016,5/29/2023,B,Metro Manila
+1017,5/30/2023,B,Quezon City
+1018,5/30/2023,B,Bulacan
+1019,5/30/2023,B,Metro Manila
+1020,5/31/2023,B,Metro Manila
+1021,5/31/2023,B,Metro Manila
+1022,5/31/2023,B,Quezon City
+1023,6/1/2023,B,Metro Manila
+1024,6/1/2023,B,Tondo
+1025,6/2/2023,B,Metro Manila
+1026,6/3/2023,B,Quezon City
+1027,6/3/2023,B,Bulacan
+1028,6/4/2023,B,Metro Manila
+1029,6/5/2023,B,Tondo
+1030,6/5/2023,B,Tondo
+1031,6/5/2023,B,Quezon City
+1032,6/5/2023,B,Tarlac
+1033,6/6/2023,B,Metro Manila
+1034,6/6/2023,B,Metro Manila
+1035,6/7/2023,B,Bulacan
+1036,6/7/2023,B,Metro Manila
+1037,6/7/2023,B,Tondo
+1038,6/8/2023,B,Metro Manila
+1039,6/8/2023,B,Metro Manila
+1040,6/9/2023,B,Metro Manila
+1041,6/9/2023,B,Tondo
+1042,6/10/2023,B,Metro Manila
+1043,6/10/2023,B,Laguna
+1044,6/11/2023,B,Metro Manila
+1045,6/12/2023,B,Tondo
+1046,6/12/2023,B,Pasay
+1047,6/13/2023,B,Bulacan
+1048,6/13/2023,B,Quezon City
+1049,6/14/2023,B,Metro Manila
+1050,6/14/2023,B,Metro Manila
+1051,6/15/2023,B,Pasig
+1052,6/15/2023,B,Metro Manila
+1053,6/15/2023,B,Metro Manila
+1054,6/16/2023,B,Metro Manila
+1055,6/16/2023,B,Metro Manila
+1056,6/17/2023,B,Agusan del Norte
+1057,6/17/2023,B,Tondo
+1058,6/18/2023,B,Metro Manila
+1059,6/18/2023,B,Metro Manila
+1060,6/19/2023,B,Quezon City
+1061,6/19/2023,B,Metro Manila
+1062,6/19/2023,B,Caloocan
+1063,6/20/2023,B,Bulacan
+1064,6/20/2023,B,Metro Manila
+1065,6/20/2023,B,Makati
+1066,6/21/2023,B,Paranaque
+1067,6/21/2023,B,Metro Manila
+1068,6/22/2023,B,Metro Manila
+1069,6/22/2023,B,Caloocan
+1070,6/23/2023,B,Pasay
+1071,6/23/2023,B,Rizal
+1072,6/23/2023,B,Metro Manila
+1073,6/24/2023,B,Caloocan
+1074,6/24/2023,B,Metro Manila
+1075,6/25/2023,B,Makati
+1076,6/25/2023,B,Metro Manila
+1077,6/26/2023,B,Caloocan
+1078,6/26/2023,B,Caloocan
+1079,6/27/2023,B,Metro Manila
+1080,6/27/2023,B,Metro Manila
+1081,6/28/2023,B,Metro Manila
+1082,6/28/2023,B,Metro Manila
+1083,6/29/2023,B,Metro Manila
+1084,6/29/2023,B,Metro Manila
+1085,6/30/2023,B,Metro Manila
+1086,6/30/2023,B,Metro Manila
+1087,7/1/2023,B,Metro Manila
+1088,7/1/2023,B,Metro Manila
+1089,7/2/2023,B,Bulacan
+1090,7/2/2023,B,Caloocan
+1091,7/3/2023,B,Metro Manila
+1092,7/3/2023,B,Metro Manila
+1093,7/3/2023,B,Metro Manila
+1094,7/4/2023,B,Bulacan
+1095,7/4/2023,B,Caloocan
+1096,7/5/2023,B,Bulacan
+1097,7/8/2023,B,Cavite
+1098,7/8/2023,B,Metro Manila
+1099,7/8/2023,B,Metro Manila
+1100,7/9/2023,B,Rizal
+1101,7/9/2023,B,Metro Manila
+1102,7/10/2023,B,Caloocan
+1103,7/10/2023,B,Laguna
+1104,7/11/2023,B,Metro Manila
+1105,7/11/2023,B,Metro Manila
+1106,7/12/2023,B,Bataan
+1107,7/12/2023,B,Metro Manila
+1108,7/13/2023,B,Tondo
+1109,7/13/2023,B,Quezon City
+1110,7/14/2023,B,Metro Manila
+1111,7/14/2023,B,Quezon City
+1112,7/15/2023,B,Tondo
+1113,7/15/2023,B,Quezon City
+1114,7/16/2023,B,Metro Manila
+1115,7/16/2023,B,Quezon City
+1116,7/17/2023,B,Metro Manila
+1117,7/17/2023,B,Metro Manila
+1118,7/18/2023,B,Metro Manila
+1119,7/19/2023,B,Metro Manila
+1120,7/19/2023,B,Metro Manila
+1121,7/19/2023,B,Tondo
+1122,7/20/2023,B,Metro Manila
+1123,7/20/2023,B,Metro Manila
+1124,7/21/2023,B,Caloocan
+1125,7/21/2023,B,Metro Manila
+1126,7/22/2023,B,Quezon City
+1127,7/22/2023,B,Bulacan
+1128,7/23/2023,B,Metro Manila
+1129,7/23/2023,B,Metro Manila
+1130,7/24/2023,B,Metro Manila
+1131,7/24/2023,B,Metro Manila
+1132,7/25/2023,B,Caloocan
+1133,7/25/2023,B,Quezon City
+1134,7/26/2023,B,Cebu
+1135,7/26/2023,B,Metro Manila
+1136,7/27/2023,B,Pasay
+1137,7/27/2023,B,Cavite
+1138,7/28/2023,B,Metro Manila
+1139,7/29/2023,B,Quezon City
+1140,7/30/2023,B,Metro Manila
+1141,7/31/2023,B,Ilocos Sur
+1142,8/1/2023,B,Tondo
+1143,8/1/2023,B,Metro Manila
+1144,8/2/2023,B,Bulacan
+1145,8/2/2023,B,Cavite
+1146,8/3/2023,B,Capiz
+1147,8/3/2023,B,Caloocan
+1148,8/4/2023,B,Metro Manila
+1149,8/4/2023,B,Tondo
+1150,8/5/2023,B,Metro Manila
+1151,8/6/2023,B,Metro Manila
+1152,8/6/2023,B,Cavite
+1153,8/7/2023,B,Metro Manila
+1154,8/8/2023,B,Caloocan
+1155,8/8/2023,B,Nueva Ecija
+1156,8/9/2023,B,Metro Manila
+1157,8/9/2023,B,Tondo
+1158,8/10/2023,B,Cagayan Valley
+1159,8/10/2023,B,Metro Manila
+1160,8/11/2023,B,Metro Manila
+1161,8/11/2023,B,Metro Manila
+1162,8/12/2023,B,Metro Manila
+1163,8/12/2023,B,Batangas
+1164,8/13/2023,B,Metro Manila
+1165,8/13/2023,B,Quezon City
+1166,8/14/2023,B,Tondo
+1167,8/14/2023,B,Cavite
+1168,8/15/2023,B,Metro Manila
+1169,8/15/2023,B,Davao
+1170,8/16/2023,B,Metro Manila
+1171,8/16/2023,B,Zamboanga del Norte
+1172,8/17/2023,B,Bulacan
+1173,8/17/2023,B,Metro Manila
+1174,8/18/2023,B,Metro Manila
+1175,8/18/2023,B,Metro Manila
+1176,8/19/2023,B,Metro Manila
+1177,8/19/2023,B,Metro Manila
+1178,8/20/2023,B,Ilocos
+1179,8/20/2023,B,Metro Manila
+1180,8/21/2023,B,Makati
+1181,8/21/2023,B,Quezon City
+1182,8/22/2023,B,Metro Manila
+1183,8/23/2023,B,Metro Manila
+1184,8/23/2023,B,Metro Manila
+1185,8/24/2023,B,Metro Manila
+1186,8/24/2023,B,Quezon City
+1187,8/24/2023,B,Metro Manila
+1188,8/25/2023,B,Soccsksargen
+1189,8/25/2023,B,Quezon City
+1190,8/26/2023,B,Metro Manila
+1191,8/26/2023,B,Caloocan
+1192,8/27/2023,B,Quezon City
+1193,8/27/2023,B,Metro Manila
+1194,8/28/2023,B,Cebu
+1195,8/28/2023,B,Metro Manila
+1196,8/29/2023,B,Metro Manila
+1197,8/29/2023,B,Cebu
+1198,8/30/2023,B,Negros Oriental
+1199,8/30/2023,B,Quezon City
+1200,8/31/2023,B,Cebu
+1201,9/1/2023,B,Metro Manila
+1202,9/1/2023,B,Metro Manila
+1203,9/2/2023,B,Cebu
+1204,9/2/2023,B,Quezon City
+1205,9/2/2023,B,Tondo
+1206,9/3/2023,B,Quezon City
+1207,9/3/2023,B,Bulacan
+1208,9/4/2023,B,Metro Manila
+1209,9/4/2023,B,Metro Manila
+1210,9/4/2023,B,Cebu
+1211,9/5/2023,B,Metro Manila
+1212,9/5/2023,B,Metro Manila
+1213,9/6/2023,B,Metro Manila
+1214,9/6/2023,B,Metro Manila
+1215,9/7/2023,B,Metro Manila
+1216,9/7/2023,B,Metro Manila
+1217,9/8/2023,B,Metro Manila
+1218,9/8/2023,B,Portel
+1219,9/9/2023,B,Quezon City
+1220,9/9/2023,B,Metro Manila
+1221,9/10/2023,B,Caloocan
+1222,9/10/2023,B,Metro Manila
+1223,9/11/2023,B,Metro Manila
+1224,9/12/2023,B,Quezon City
+1225,9/12/2023,B,Metro Manila
+1226,9/12/2023,B,Metro Manila
+1227,9/13/2023,B,Rizal
+1228,9/13/2023,B,Cavite
+1229,9/14/2023,B,Metro Manila
+1230,9/15/2023,B,Metro Manila
+1231,9/15/2023,B,Metro Manila
+1232,9/16/2023,B,Metro Manila
+1233,9/16/2023,B,Quezon City
+1234,9/16/2023,B,Metro Manila
+1235,9/16/2023,B,Cavite
+1236,9/17/2023,B,Cavite
+1237,9/17/2023,B,Portel
+1238,9/18/2023,B,Ilocos
+1239,9/18/2023,B,Metro Manila
+1240,9/19/2023,B,Metro Manila
+1241,9/19/2023,B,Metro Manila
+1242,9/20/2023,B,Bulacan
+1243,9/20/2023,B,Rizal
+1244,9/21/2023,B,Metro Manila
+1245,9/21/2023,B,Cavite
+1246,9/22/2023,B,Metro Manila
+1247,9/23/2023,B,Bicol
+1248,9/23/2023,B,Metro Manila
+1249,9/24/2023,B,Metro Manila
+1250,9/24/2023,B,Metro Manila
+1251,9/25/2023,B,Caloocan
+1252,9/26/2023,B,Metro Manila
+1253,9/27/2023,B,Rizal
+1254,9/28/2023,B,Pasay
+1255,9/30/2023,B,Quezon City
+1256,10/1/2023,B,Bulacan
+1257,10/2/2023,B,Metro Manila
+1258,10/4/2023,B,Makati
+1259,10/5/2023,B,Bulacan
+1260,10/6/2023,B,Bulacan
+1261,10/6/2023,B,Tondo
+1262,10/7/2023,B,Cavite
+1263,10/8/2023,B,Metro Manila
+1264,10/9/2023,B,Metro Manila
+1265,10/9/2023,B,Metro Manila
+1266,10/9/2023,B,Cavite
+1267,10/10/2023,B,Quezon City
+1268,10/10/2023,B,Makati
+1269,10/10/2023,B,Mindoro
+1270,10/11/2023,B,Metro Manila
+1271,10/12/2023,B,Metro Manila
+1272,10/13/2023,B,Makati
+1273,10/13/2023,B,Metro Manila
+1274,10/14/2023,B,Metro Manila
+1275,10/14/2023,B,Cavite
+1276,10/15/2023,B,Makati
+1277,10/15/2023,B,Metro Manila
+1278,10/16/2023,B,Quezon City
+1279,10/17/2023,B,Metro Manila
+1280,10/17/2023,B,Metro Manila
+1281,10/18/2023,B,Metro Manila
+1282,10/18/2023,B,Bulacan
+1283,10/19/2023,B,Metro Manila
+1284,10/19/2023,B,Quezon City
+1285,10/20/2023,B,Metro Manila
+1286,10/20/2023,B,Makati
+1287,10/22/2023,B,Metro Manila
+1288,10/23/2023,B,Metro Manila
+1289,10/23/2023,B,Quezon City
+1290,10/23/2023,B,Metro Manila
+1291,10/24/2023,B,Metro Manila
+1292,10/24/2023,B,Metro Manila
+1293,10/24/2023,B,Metro Manila
+1294,10/25/2023,B,Tondo
+1295,10/26/2023,B,Metro Manila
+1296,10/27/2023,B,Quezon City
+1297,10/28/2023,B,Metro Manila
+1298,10/29/2023,B,Metro Manila
+1299,10/30/2023,B,Caloocan
+1300,10/31/2023,B,Quezon City
+1301,11/2/2023,B,Metro Manila
+1302,11/2/2023,B,Cavite
+1303,11/3/2023,B,Caloocan
+1304,11/4/2023,B,Caloocan
+1305,11/4/2023,B,Metro Manila
+1306,11/6/2023,B,Quezon City
+1307,11/7/2023,B,Metro Manila
+1308,11/8/2023,B,Zambales
+1309,11/9/2023,B,Metro Manila
+1310,11/10/2023,B,Palawan
+1311,11/11/2023,B,Quezon City
+1312,11/12/2023,B,Negros Occidental
+1313,11/13/2023,B,Makati
+1314,11/14/2023,B,Metro Manila
+1315,11/15/2023,B,Tondo
+1316,11/16/2023,B,Metro Manila
+1317,11/17/2023,B,Bohol
+1318,11/18/2023,B,Cavite
+1319,11/19/2023,B,Metro Manila
+1320,11/20/2023,B,Laguna
+1321,11/21/2023,B,Laguna
+1322,11/21/2023,B,Quezon City
+1323,11/22/2023,B,Bulacan
+1324,11/23/2023,B,Batangas
+1325,11/23/2023,B,Mindoro
+1326,11/23/2023,B,Metro Manila
+1327,11/23/2023,B,Quezon City
+1328,11/24/2023,B,Metro Manila
+1329,11/24/2023,B,Quezon City
+1330,11/25/2023,B,Quezon City
+1331,11/25/2023,B,Metro Manila
+1332,11/25/2023,B,Makati
+1333,11/26/2023,B,Marinduque
+1334,11/26/2023,B,Metro Manila
+1335,11/26/2023,B,Quezon City
+1336,11/26/2023,B,Metro Manila
+1337,11/27/2023,B,Tondo
+1338,11/27/2023,B,Pasig
+1339,11/27/2023,B,Quezon City
+1340,11/28/2023,B,Makati
+1341,11/28/2023,B,Metro Manila
+1342,11/28/2023,B,Metro Manila
+1343,11/28/2023,B,Bulacan
+1344,11/29/2023,B,Metro Manila
+1345,11/29/2023,B,Metro Manila
+1346,11/30/2023,B,Metro Manila
+1347,12/1/2023,B,Metro Manila
+1349,12/2/2023,B,Metro Manila
+1350,12/2/2023,B,Metro Manila
+1351,12/2/2023,B,Quezon City
+1352,12/3/2023,B,Cavite
+1353,12/3/2023,B,Metro Manila
+1354,12/3/2023,B,Rizal
+1355,12/3/2023,B,Metro Manila
+1356,12/3/2023,B,Metro Manila
+1357,12/4/2023,B,Metro Manila
+1358,12/4/2023,B,Tondo
+1359,12/4/2023,B,Cavite
+1360,12/4/2023,B,Bicol
+1361,12/5/2023,B,Tondo
+1362,12/5/2023,B,Metro Manila
+1363,12/5/2023,B,Ilocos
+1364,12/5/2023,B,Bulacan
+1365,12/6/2023,B,Quezon City
+1366,12/6/2023,B,Metro Manila
+1367,12/6/2023,B,Metro Manila
+1368,12/6/2023,B,Tondo
+1369,12/7/2023,B,Tondo
+1370,12/7/2023,B,Metro Manila
+1371,12/7/2023,B,Quezon City
+1372,12/7/2023,B,Marinduque
+1373,12/7/2023,B,Quezon City
+1374,12/8/2023,B,Rizal
+1375,12/8/2023,B,Metro Manila
+1376,12/8/2023,B,Tondo
+1377,12/8/2023,B,Makati
+1378,12/8/2023,B,Metro Manila
+1379,12/9/2023,B,Quezon City
+1380,12/9/2023,B,Makati
+1381,12/10/2023,B,Metro Manila
+1382,12/10/2023,B,Caloocan
+1383,12/10/2023,B,Metro Manila
+1384,12/10/2023,B,Metro Manila
+1385,12/10/2023,B,Tondo
+1386,12/10/2023,B,Bulacan
+1387,12/10/2023,B,Tondo
+1388,12/10/2023,B,Pampanga
+1389,12/11/2023,B,Tondo
+1390,12/11/2023,B,Quezon City
+1391,12/11/2023,B,Batangas
+1392,12/11/2023,B,Batangas
+1393,12/12/2023,B,Metro Manila
+1394,12/12/2023,B,Metro Manila
+1395,12/12/2023,B,Bulacan
+1396,12/12/2023,B,Metro Manila
+1397,12/12/2023,B,Cavite
+1398,12/13/2023,B,Metro Manila
+1399,12/13/2023,B,Metro Manila
+1400,12/13/2023,B,Metro Manila
+1401,12/14/2023,B,Metro Manila
+1402,12/14/2023,B,Metro Manila
+1403,12/14/2023,B,Metro Manila
+1404,12/14/2023,B,Metro Manila
+1405,12/14/2023,B,Metro Manila
+1406,12/14/2023,B,Metro Manila
+1407,12/14/2023,B,Bataan
+1408,12/15/2023,B,Metro Manila
+1409,12/15/2023,B,Tondo
+1410,12/15/2023,B,Metro Manila
+1411,12/15/2023,B,Cavite
+1412,12/16/2023,B,Metro Manila
+1413,12/16/2023,B,Metro Manila
+1414,12/16/2023,B,Metro Manila
+1415,12/16/2023,B,Tondo
+1416,12/17/2023,B,Bulacan
+1417,12/17/2023,B,Cavite
+1418,12/17/2023,B,Bulacan
+1419,12/17/2023,B,Metro Manila
+1420,12/18/2023,B,Metro Manila
+1421,12/18/2023,B,Metro Manila
+1422,12/18/2023,B,Metro Manila
+1423,12/18/2023,B,Caloocan
+1424,12/19/2023,B,Caloocan
+1425,12/19/2023,B,Metro Manila
+1426,12/19/2023,B,Metro Manila
+1427,12/20/2023,B,Metro Manila
+1428,12/20/2023,B,Metro Manila
+1429,12/20/2023,B,Pangasinan
+1430,12/21/2023,B,Metro Manila
+1431,12/21/2023,B,Metro Manila
+1432,12/21/2023,B,Tondo
+1433,12/22/2023,B,Metro Manila
+1434,12/22/2023,B,Metro Manila
+1436,12/23/2023,B,Samar
+1437,12/23/2023,B,Metro Manila
+1438,12/24/2023,B,Metro Manila
+1439,12/24/2023,B,Metro Manila
+1440,12/26/2023,B,Caloocan
+1441,12/26/2023,B,Metro Manila
+1442,12/26/2023,B,Metro Manila
+1443,12/27/2023,B,Batangas
+1444,12/27/2023,B,Metro Manila
+1445,12/28/2023,B,Metro Manila
+1446,12/28/2023,B,Bulacan
+1447,12/29/2023,B,Cavite
+1448,12/29/2023,B,Metro Manila
+1449,12/30/2023,B,Quezon City
+1450,12/30/2023,B,Metro Manila
+1451,12/31/2023,B,Tondo
+1452,1/2/2024,B,Metro Manila
+1453,1/2/2024,B,Metro Manila
+1454,1/2/2024,B,Bulacan
+1455,1/3/2024,B,Metro Manila
+1456,1/3/2024,B,Metro Manila
+1457,1/4/2024,B,Tondo
+1458,1/4/2024,B,Tondo
+1459,1/5/2024,B,Metro Manila
+1460,1/5/2024,B,Pampanga
+1461,1/6/2024,B,Quezon City
+1462,1/6/2024,B,Mindoro
+1463,1/6/2024,B,Bulacan
+1464,1/7/2024,B,Metro Manila
+1465,1/7/2024,B,Mindoro
+1466,1/8/2024,B,Nueva Ecija
+1467,1/8/2024,B,Laguna
+1468,1/9/2024,B,Batangas
+1469,1/10/2024,B,Pampanga
+1470,1/10/2024,B,Quezon City
+1471,1/11/2024,B,Metro Manila
+1472,1/11/2024,B,Tondo
+1473,1/12/2024,B,Davao
+1474,1/12/2024,B,Caloocan
+1475,1/13/2024,B,Metro Manila
+1476,1/14/2024,B,Laguna
+1477,1/14/2024,B,Cagayan Valley
+1478,1/15/2024,B,Quezon City
+1479,1/15/2024,B,Cagayan Valley
+1480,1/16/2024,B,Tondo
+1481,1/16/2024,B,Caloocan
+1482,1/17/2024,B,Metro Manila
+1483,1/17/2024,B,Metro Manila
+1484,1/18/2024,B,Metro Manila
+1485,1/18/2024,B,Laguna
+1486,1/19/2024,B,Metro Manila
+1487,1/20/2024,B,Metro Manila
+1488,1/20/2024,B,Tondo
+1489,1/21/2024,B,Metro Manila
+1490,1/21/2024,B,Nueva Ecija
+1491,1/22/2024,B,Metro Manila
+1492,1/22/2024,B,Batangas
+1493,1/23/2024,B,Makati
+1494,1/23/2024,B,Metro Manila
+1495,1/24/2024,B,Cavite
+1496,1/24/2024,B,Metro Manila
+1497,1/25/2024,B,Bulacan
+1498,1/25/2024,B,Metro Manila
+1499,1/26/2024,B,Metro Manila
+1500,1/27/2024,B,Metro Manila
