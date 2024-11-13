@@ -807,6 +807,52 @@ product_page = html.Div([html.Hr(),
                     html.P(id='product-notif'),
                     ])
 
+online_page = html.Div([html.Hr(),
+                
+                    html.A('Upload Order.completed.YYYYMMDD.csv File'),
+                
+                    html.Hr(),
+                
+                    dcc.Upload(
+                        id='upload-data10',
+                        children=html.Div([
+                            'Drag and Drop or ',
+                            html.A('Select Files')
+                        ]),
+                        style={
+                            'width': '75%',
+                            'height': '60px',
+                            'lineHeight': '60px',
+                            'borderWidth': '1px',
+                            'borderStyle': 'dashed',
+                            'borderRadius': '5px',
+                            'textAlign': 'center',
+                            'margin': '10px'
+                        },
+                        # Allow multiple files to be uploaded
+                        multiple=True
+                    ),
+                    html.Div([
+                        
+                          html.Br(),
+                          html.Button(
+                            id='online-save-button',
+                            n_clicks=0,
+                            children='Save Online Sales',
+                            style={'fontsize':14,
+                           'color':'rgb(255,255,255)',
+                           'backgroundColor':'#1f2630',
+                           'borderRadius':5,
+                           'height':38}),
+                          html.Br(),
+                          ],
+                                 ),
+                    html.Div(id='output-data-online'),
+                        
+                    html.P(id='online-notif'),
+                    ])
+
+
 # Create call back functions
 
 # sales graphs
@@ -2603,17 +2649,7 @@ def parse_contents(contents, filename, date):
                     [{'name': i, 'id': i} for i in df.columns]
                 )
             ]),
-        #html.Div([
-         #       html.H5(filename),
-          #      html.H6(datetime.datetime.fromtimestamp(date)),
-           #     html.P("Displaying first 5 records."),
-            #    dash_table.DataTable(
-             #       df2[0:5].to_dict('records'),
-              #      [{'name': i, 'id': i} for i in df.columns]
-               # )
-           # ])
-        
-
+      
        # html.Hr(),  # horizontal line
 
         # For debugging, display the raw contents provided by the web browser
@@ -2676,15 +2712,15 @@ def parse_contents2(contents, filename):
                 data = {
                     "Sale_ID": list(range(input_id,input_id+len(df_raw.index))),
                     "Sale Date": [x[:10] for x in df_raw["Order Creation Date"]], 
-                    "Store_ID": ["Online"] * len(df_raw.index), 
+                    "Store_ID": ["O"] * len(df_raw.index), 
                     "City_ID": df_raw["City"].tolist(), 
-                #    }
+                    }
                 #data2 = {
                 #    "Sale_ID": list(range(input_id,input_id+len(df_raw.index))),
-                    "Product_ID": df_raw["Product Name"].tolist(), 
-                    "Sale Price": df_raw["Products' Price Paid by Buyer (PHP)"].tolist(), 
-                    "Quantity": df_raw["Quantity"].tolist()
-                    }
+                #    "Product_ID": df_raw["Product Name"].tolist(), 
+                #    "Sale Price": df_raw["Products' Price Paid by Buyer (PHP)"].tolist(), 
+                #    "Quantity": df_raw["Quantity"].tolist()
+                #    }
                 df = pd.DataFrame(data)
                 #df2 = pd.DataFrame(data2)
             else:
@@ -2698,7 +2734,44 @@ def parse_contents2(contents, filename):
 
     return  df
             
+# for updating data in postgresql
+def parse_contents3(contents, filename):
+    content_type, content_string = contents.split(',')
 
+    decoded = base64.b64decode(content_string)
+    try:
+        if 'xlsx' in filename:
+            # Assume that the user uploaded an excel file
+            if 'Order.completed.' in filename:
+                # Assume data is from Online and requires column conversion
+                df_raw = pd.read_excel(io.BytesIO(decoded))
+                sql = 'SELECT max("Sale_ID") as "Sale_ID" FROM "sale"'
+                df_order = querydatafromdatabase(sql,[],["Sale_ID"])
+                input_id = int(df_order['Sale_ID'][0])+1
+                data = {
+                #    "Sale_ID": list(range(input_id,input_id+len(df_raw.index))),
+                #    "Sale Date": [x[:10] for x in df_raw["Order Creation Date"]], 
+                #    "Store_ID": ["O"] * len(df_raw.index), 
+                #    "City_ID": df_raw["City"].tolist(), 
+                #    }
+                #data2 = {
+                    "Sale_ID": list(range(input_id,input_id+len(df_raw.index))),
+                    "Product_ID": df_raw["Product Name"].tolist(), 
+                    "Sale Price": df_raw["Products' Price Paid by Buyer (PHP)"].tolist(), 
+                    "Quantity": df_raw["Quantity"].tolist()
+                    }
+                df = pd.DataFrame(data)
+                #df2 = pd.DataFrame(data2)
+            else:
+                df = pd.read_csv(io.BytesIO(decoded))
+    except Exception as e:
+        print(e)
+        return html.Div([
+            'There was an error processing this file.'
+            ])
+
+    return  df
+  
 # start update callbacks
 @app.callback(Output('output-data-upload', 'children'),
               Input('upload-data', 'contents'),
@@ -2785,6 +2858,16 @@ def update_output8(list_of_contents, list_of_names, list_of_dates):
               State('upload-data9', 'filename'),
               State('upload-data9', 'last_modified'))
 def update_output9(list_of_contents, list_of_names, list_of_dates):
+    if list_of_contents is not None:
+        children = [
+            parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
+        return children
+
+@app.callback(Output('output-data-online', 'children'),
+              Input('upload-data10', 'contents'),
+              State('upload-data10', 'filename'),
+              State('upload-data10', 'last_modified'))
+def update_output10(list_of_contents, list_of_names, list_of_dates):
     if list_of_contents is not None:
         children = [
             parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
@@ -3011,6 +3094,32 @@ def po_product_output(po_product_save_button, list_of_contents, file_name):
                    df_parsed = parse_contents2(c, n)
                    df_parsed.to_sql(name='po_product', con=engine, if_exists='append', index=False)
                return ['Posting PO Items was Successful!']
+           else:
+               return ['Error encountered.']
+   else:
+       return ['']
+
+# online sales callbacks
+@app.callback(
+    Output('online-notif', 'children'),
+    [Input('online-save-button', 'n_clicks'),
+     Input('upload-data10', 'contents')
+     ],
+    [
+     State('upload-data10', 'filename')
+     ])
+def online_output(online_save_button, list_of_contents, file_name):
+   ctx = dash.callback_context
+   if ctx.triggered:
+       eventid = ctx.triggered[0]['prop_id'].split('.')[0]
+       if eventid =="online-save-button":
+           if list_of_contents is not None:
+               for c, n in zip(list_of_contents, file_name):
+                   df_parsed2 = parse_contents2(c, n)
+                   df_parsed3 = parse_contents3(c, n)
+                   df_parsed2.to_sql(name='sale', con=engine, if_exists='append', index=False)
+                   df_parsed3.to_sql(name='sale_product', con=engine, if_exists='append', index=False)
+               return ['Posting Online Sales was Successful!']
            else:
                return ['Error encountered.']
    else:
