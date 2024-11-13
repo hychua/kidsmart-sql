@@ -47,6 +47,7 @@ dropdown = dbc.DropdownMenu(
         dbc.DropdownMenuItem("STORE", href="/store", style = {"font-size": "1.5rem"}),
         dbc.DropdownMenuItem("REGION", href="/region", style = {"font-size": "1.5rem"}),
         dbc.DropdownMenuItem("CITY", href="/city", style = {"font-size": "1.5rem"}),
+        dbc.DropdownMenuItem("ONLINE", href="/online", style = {"font-size": "1.5rem"}),
     ],
     nav=True,
     in_navbar=True,
@@ -122,6 +123,8 @@ def display_page(pathname):
         return dashboard.region_page
     elif pathname == "/city":
         return dashboard.city_page
+    elif pathname == "/online":
+        return dashboard.online_page
     else:
         return dbc.Jumbotron(
             [
