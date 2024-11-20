@@ -1764,11 +1764,11 @@ def set_rop_display(year,selected_region,selected_brand,selected_product,selecte
     #Lead time demand = avg. daily sales x avg. lead time
     data =  dff.groupby(['Sale Date']).agg({'Sales Count':['sum']})
     mean_qty = data.mean()
-    ltd = mean_qty * 3
+    #ltd = mean_qty * 3
     #Safety stock = (max. daily sales x max. lead time) – Lead time demand
-    ss = (data.max() * 3) - ltd
+    #ss = (data.max() * 3) - ltd
     #Reorder point = lead time demand + safety stock
-    rop = round(ltd + ss)
+    rop = round(data.max() * 3)
     
     return rop
 
@@ -2069,11 +2069,11 @@ def set_gauge_2_value(year, selected_brand, selected_product, selected_region, s
     #Lead time demand = avg. daily sales x avg. lead time
     data =  dff.groupby(['Sale Date']).agg({'Order Quantity':['sum']})
     mean_qty = data.mean()
-    ltd = mean_qty * 3
+    #ltd = mean_qty * 3
     #Safety stock = (max. daily sales x max. lead time) – Lead time demand
-    ss = (data.max() * 3) - ltd
-    #Reorder point = lead time demand + safety stock
-    rop = round(ltd + ss)
+    #ss = (data.max() * 3) - ltd
+    #Reorder point = lead time demand + safety stock = (max. daily sales x max. lead time)
+    rop = round((data.max() * 3))
 
     # convert values to scale 50
     curr_rop = int(rop)
