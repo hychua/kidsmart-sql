@@ -1,6 +1,7 @@
 import dash
 from dash import dcc
 from dash import html
+from dash import dash_table
 import dash_split_pane
 from dash.dependencies import Input, Output, State
 from dash import dash_table
@@ -21,7 +22,6 @@ import datetime
 import io
 from app import app
 from sqlalchemy import create_engine
-
 
 engine = create_engine('postgresql://kidsmart_6_user:xKtAHODVAHVwDJRYh04S4Xu8p7n6Sd0l@dpg-ctn13a9opnds73fjd03g-a.oregon-postgres.render.com:5432/kidsmart_6')
 
@@ -49,7 +49,8 @@ METRIC_TYPES = [
     'bottom_avg_inventory_turnover',
     'sales_over_time',
     'reorder_point',
-    'economic_order_quantity'
+    'economic_order_quantity',
+    'reorder_summary'
 ]
 
 METRIC_DICT = {
@@ -68,7 +69,8 @@ METRIC_DICT = {
     'bottom_avg_inventory_turnover':'Inventory Turnover',
     'sales_over_time': 'Sales Over Time',
     'reorder_point': 'Reorder Point',
-    'economic_order_quantity': 'Quantity to Reorder'
+    'economic_order_quantity': 'Quantity to Reorder',
+    'reorder_summary': 'Reorder Point Summary'
 }
 
 layout1 = html.Div([
@@ -252,6 +254,11 @@ layout2 = html.Div([
                                             },
                                             
                                             {
+                                                "label": "Reorder Point Summary",
+                                                "value":"reorder_summary",
+                                            },
+                                            
+                                            {
                                                 "label": "Highest Turnover",
                                                 "value":"top_turnover"
                                             },
@@ -310,10 +317,10 @@ layout2 = html.Div([
                                 ),
                                 html.Div(
                                     children=[
-                                        html.P(id="shoe-sizes-dropdown-text",
+                                        html.P(id="site-sizes-dropdown-text",
                                         children="Choose Site: "),
                                         dcc.Dropdown(
-                                            id="shoe-size-dropdown",
+                                            id="site-size-dropdown",
                                             options = [
                                             {
                                                 "label": "Store A",
@@ -342,6 +349,8 @@ layout2 = html.Div([
                 ]),
                 
                 html.Div([
+                    
+                    
                     
                         html.Div(id="app-container-3",
                                  className="row")
@@ -396,8 +405,7 @@ sale_page = html.Div([html.Hr(),
                           ],
                                  ),
                     
-                    html.Div(id='output-data-upload'),
-                    html.Br(),
+                    html.Div(id='output-data-sale'),
                     
                     html.P(id='sale-notif'),
                     ])
@@ -442,7 +450,7 @@ sale_product_page = html.Div([html.Hr(),
                           html.Br(),
                           ],
                                  ),
-                    html.Div(id='output-data-upload8'),
+                    html.Div(id='output-data-sale-product'),
                         
                     html.P(id='sale-product-notif'),
                     ])
@@ -487,7 +495,7 @@ po_page = html.Div([html.Hr(),
                           html.Br(),
                           ],
                                  ),
-                    html.Div(id='output-data-upload2'),
+                    html.Div(id='output-data-po'),
                         
                     html.P(id='po-notif'),
                     ])
@@ -532,7 +540,7 @@ po_product_page = html.Div([html.Hr(),
                           html.Br(),
                           ],
                                  ),
-                    html.Div(id='output-data-upload9'),
+                    html.Div(id='output-data-po-product'),
                         
                     html.P(id='po-product-notif'),
                     ])
@@ -577,7 +585,7 @@ category_page = html.Div([html.Hr(),
                           html.Br(),
                           ],
                                  ),
-                    html.Div(id='output-data-upload3'),
+                    html.Div(id='output-data-category'),
                     
                     html.P(id='cat-notif'),
                     ])
@@ -622,7 +630,7 @@ store_page = html.Div([html.Hr(),
                           html.Br(),
                           ],
                                  ),
-                    html.Div(id='output-data-upload4'),
+                    html.Div(id='output-data-store'),
                     
                     html.P(id='store-notif'),
                     ])
@@ -667,7 +675,7 @@ region_page = html.Div([html.Hr(),
                           html.Br(),
                           ],
                                  ),
-                    html.Div(id='output-data-upload5'),
+                    html.Div(id='output-data-region'),
                     
                     html.P(id='region-notif'),
                     ])
@@ -712,7 +720,7 @@ city_page = html.Div([html.Hr(),
                           html.Br(),
                           ],
                                  ),
-                    html.Div(id='output-data-upload6'),
+                    html.Div(id='output-data-city'),
                     
                     html.P(id='city-notif'),
                     ])
@@ -757,7 +765,7 @@ product_page = html.Div([html.Hr(),
                           html.Br(),
                           ],
                                  ),
-                    html.Div(id='output-data-upload7'),
+                    html.Div(id='output-data-product'),
                         
                     html.P(id='product-notif'),
                     ])
@@ -806,7 +814,6 @@ online_page = html.Div([html.Hr(),
                         
                     html.P(id='online-notif'),
                     ])
-
 
 # Create call back functions
 
@@ -1631,7 +1638,7 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
 
     return round(dii,2)
 
-
+# Current inventory led
 @app.callback(
     Output("inventory-current-led", "value"),
     [
@@ -1639,12 +1646,11 @@ def set_led_display(year,selected_region,selected_brand,selected_product):
         Input("category-dropdown", "value"),
         Input("product-dropdown", "value"),
         Input("region-dropdown", "value"),
-        Input("shoe-size-dropdown", "value"),
+        Input("site-size-dropdown", "value"),
     ],
 )
 
-
-def set_current_inventory_led(year, selected_brand, selected_product, selected_region, selected_shoe_size):
+def set_current_inventory_led(year, selected_brand, selected_product, selected_region, selected_site_size):
 
     filters = ['Order Year','Region_ID','Category_ID','Product_ID','Store_ID']
     filters2 = ['Order Year','Category_ID','Product_ID']
@@ -1656,39 +1662,39 @@ def set_current_inventory_led(year, selected_brand, selected_product, selected_r
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
     curr_products = [product for product in selected_product]
-    curr_shoe_sizes = [shoe for shoe in selected_shoe_size]
+    curr_site_sizes = [site for site in selected_site_size]
 
     df = create_plot_metric(filters,metric_type)
     df2 = create_plot_metric(filters2,metric_type2)
   
     # If Brand is All
 
-    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year)]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
-        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_shoe_sizes))]
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)>=1):
+        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_site_sizes))]
         
 
-    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0]))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0])) & (df['Product_ID'].isin(curr_products))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0])) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions))]
 
     else:
-        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_shoe_sizes))]
+        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_site_sizes))]
 
     # if statements for curr_inventory2
     if (len(curr_brand)==0) and (len(curr_products)==0):
@@ -1719,7 +1725,7 @@ def set_current_inventory_led(year, selected_brand, selected_product, selected_r
         Input("region-dropdown", "value"),
         Input("category-dropdown", "value"),
         Input("product-dropdown", "value"),
-        Input("shoe-size-dropdown", "value")
+        Input("site-size-dropdown", "value")
     ],
 )
 def set_rop_display(year,selected_region,selected_brand,selected_product,selected_site):
@@ -1730,46 +1736,46 @@ def set_rop_display(year,selected_region,selected_brand,selected_product,selecte
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
     curr_products = [product for product in selected_product]
-    curr_shoe_sizes = [shoe for shoe in selected_site]
+    curr_site_sizes = [site for site in selected_site]
     
     df = create_plot_metric(filters,metric_type)
     
-    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year)]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
-        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_shoe_sizes))]
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)>=1):
+        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_site_sizes))]
         
 
-    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0]))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0])) & (df['Product_ID'].isin(curr_products))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0])) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions))]
 
     else:
-        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_shoe_sizes))]
+        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_site_sizes))]
 
     #Lead time demand = avg. daily sales x avg. lead time
     data =  dff.groupby(['Sale Date']).agg({'Sales Count':['sum']})
     mean_qty = data.mean()
-    #ltd = mean_qty * 3
+    ltd = mean_qty * 3
     #Safety stock = (max. daily sales x max. lead time) – Lead time demand
-    #ss = (data.max() * 3) - ltd
+    ss = (data.max() * 3) - ltd
     #Reorder point = lead time demand + safety stock
-    rop = round(data.max() * 3)
-    
+    rop = round(ltd + ss)
+    #ROP = max. daily sales X max. lead time
     return rop
 
 # Get Economic Order Quantity Led Display
@@ -1780,7 +1786,7 @@ def set_rop_display(year,selected_region,selected_brand,selected_product,selecte
         Input("region-dropdown", "value"),
         Input("category-dropdown", "value"),
         Input("product-dropdown", "value"),
-        Input("shoe-size-dropdown", "value")
+        Input("site-size-dropdown", "value")
     ],
 )
 def set_eoq_display(year,selected_region,selected_brand,selected_product,selected_site):
@@ -1794,7 +1800,7 @@ def set_eoq_display(year,selected_region,selected_brand,selected_product,selecte
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
     curr_products = [product for product in selected_product]
-    curr_shoe_sizes = [shoe for shoe in selected_site]
+    curr_site_sizes = [site for site in selected_site]
     
     sql1 = 'SELECT * FROM "sale"'
     sql2 = "SELECT * FROM product"
@@ -1835,36 +1841,36 @@ def set_eoq_display(year,selected_region,selected_brand,selected_product,selecte
     df = m_order.copy()
     df2 = create_plot_metric(filters2,metric_type2)
     
-    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year)]
         dff2 = df2[(df2['Order Year']==curr_year)]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products))]
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions))]
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
-        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_shoe_sizes))]
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)>=1):
+        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_site_sizes))]
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0]))]
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Category_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0])) & (df['Product_ID'].isin(curr_products))]
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products)) & (df2['Category_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0])) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions))]
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products)) & (df2['Category_ID'].isin(curr_products))]
 
     else:
-        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_shoe_sizes))]
+        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_site_sizes))]
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products)) & (df2['Category_ID'].isin(curr_products))]
 
     #EOQ Method = √ (2DS/H)
@@ -1888,7 +1894,7 @@ def set_eoq_display(year,selected_region,selected_brand,selected_product,selecte
     
     return reorder
 
-# Get Shoe Site from Selected Region
+# Get Inventory from Selected Region
 @app.callback(
     Output("curr-inventory-gauage", "value"),
     [
@@ -1896,12 +1902,12 @@ def set_eoq_display(year,selected_region,selected_brand,selected_product,selecte
         Input("category-dropdown", "value"),
         Input("product-dropdown", "value"),
         Input("region-dropdown", "value"),
-        Input("shoe-size-dropdown", "value"),
+        Input("site-size-dropdown", "value"),
     ],
 )
 
 
-def set_gauge_value(year, selected_brand, selected_product, selected_region, selected_shoe_size):
+def set_gauge_value(year, selected_brand, selected_product, selected_region, selected_site_size):
     filters = ['Order Year','Region_ID','Category_ID','Product_ID','Store_ID']
     filters2 = ['Order Year','Category_ID','Product_ID']
     metric_type = 'curr_inventory'
@@ -1912,38 +1918,38 @@ def set_gauge_value(year, selected_brand, selected_product, selected_region, sel
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
     curr_products = [product for product in selected_product]
-    curr_shoe_sizes = [shoe for shoe in selected_shoe_size]
+    curr_site_sizes = [site for site in selected_site_size]
 
     df = create_plot_metric(filters,metric_type)
     df2 = create_plot_metric(filters2,metric_type2)
     # If Brand is All
 
-    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year)]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
-        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_shoe_sizes))]
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)>=1):
+        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_site_sizes))]
         
 
-    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0]))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0])) & (df['Product_ID'].isin(curr_products))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0])) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions))]
 
     else:
-        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_shoe_sizes))]
+        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_site_sizes))]
 
     # if statements for curr_inventory2
     if (len(curr_brand)==0) and (len(curr_products)==0):
@@ -1952,10 +1958,10 @@ def set_gauge_value(year, selected_brand, selected_product, selected_region, sel
     elif (len(curr_brand)==0) and (len(curr_products)>=1):
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and len(curr_shoe_sizes)==0:
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and len(curr_site_sizes)==0:
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)>=1):
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products))]
         
 
@@ -1979,7 +1985,7 @@ def set_gauge_value(year, selected_brand, selected_product, selected_region, sel
 
     return scaled_inventory
 
-# Get Shoe Site from Selected Region
+# Get ROP from Selected Region
 @app.callback(
     Output("curr-inventory-gauage-2", "value"),
     [
@@ -1987,14 +1993,13 @@ def set_gauge_value(year, selected_brand, selected_product, selected_region, sel
         Input("category-dropdown", "value"),
         Input("product-dropdown", "value"),
         Input("region-dropdown", "value"),
-        Input("shoe-size-dropdown", "value"),
+        Input("site-size-dropdown", "value"),
     ],
 )
 
 
-def set_gauge_2_value(year, selected_brand, selected_product, selected_region, selected_shoe_size):
+def set_gauge_2_value(year, selected_brand, selected_product, selected_region, selected_site_size):
     
-
     filters = ['Sale Date','Order Year','Region_ID','Category_ID','Product_ID','Store_ID']
     filters2 = ['Order Year','Category_ID','Product_ID']
     metric_type = 'curr_inventory'
@@ -2005,38 +2010,38 @@ def set_gauge_2_value(year, selected_brand, selected_product, selected_region, s
     curr_brand = selected_brand
     curr_regions = [region for region in selected_region]
     curr_products = [product for product in selected_product]
-    curr_shoe_sizes = [shoe for shoe in selected_shoe_size]
+    curr_site_sizes = [site for site in selected_site_size]
 
     df = create_plot_metric(filters,metric_type)
     df2 = create_plot_metric(filters2,metric_type2)
     # If Brand is All
 
-    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    if (len(curr_brand)==0) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year)]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
-        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_shoe_sizes))]
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)>=1):
+        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_site_sizes))]
         
 
-    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)==0) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0]))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)==0) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0])) & (df['Product_ID'].isin(curr_products))]
 
 
-    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)==0):
+    elif (len(curr_brand)>=1) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)==0):
         dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0])) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions))]
 
     else:
-        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_shoe_sizes))]
+        dff = df[(df['Order Year']==curr_year) & (df['Product_ID'].isin(curr_products)) & (df['Region_ID'].isin(curr_regions)) & (df['Store_ID'].isin(curr_site_sizes))]
     
     # if statements for curr_inventory2
     if (len(curr_brand)==0) and (len(curr_products)==0):
@@ -2045,10 +2050,10 @@ def set_gauge_2_value(year, selected_brand, selected_product, selected_region, s
     elif (len(curr_brand)==0) and (len(curr_products)>=1):
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and len(curr_shoe_sizes)==0:
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and len(curr_site_sizes)==0:
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products))]
 
-    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_shoe_sizes)>=1):
+    elif (len(curr_brand)==0) and (len(curr_products)>=1) and (len(curr_regions)>=1) and (len(curr_site_sizes)>=1):
         dff2 = df2[(df2['Order Year']==curr_year) & (df2['Product_ID'].isin(curr_products))]
         
 
@@ -2069,11 +2074,12 @@ def set_gauge_2_value(year, selected_brand, selected_product, selected_region, s
     #Lead time demand = avg. daily sales x avg. lead time
     data =  dff.groupby(['Sale Date']).agg({'Order Quantity':['sum']})
     mean_qty = data.mean()
-    #ltd = mean_qty * 3
+    ltd = mean_qty * 3
     #Safety stock = (max. daily sales x max. lead time) – Lead time demand
-    #ss = (data.max() * 3) - ltd
-    #Reorder point = lead time demand + safety stock = (max. daily sales x max. lead time)
-    rop = round((data.max() * 3))
+    ss = (data.max() * 3) - ltd
+    #Reorder point = lead time demand + safety stock
+    #Or ROP = max. daily sales x max. lead time
+    rop = round(ltd + ss)
 
     # convert values to scale 50
     curr_rop = int(rop)
@@ -2083,7 +2089,7 @@ def set_gauge_2_value(year, selected_brand, selected_product, selected_region, s
     return scaled_rop
 
 
-# Get Shoe Store_ID from Selected Region
+# Get site Store_ID from Selected Region
 @app.callback(
     Output("best-turnover-graph", "figure"),
     [
@@ -2228,7 +2234,7 @@ def set_best_turnover_graph(year, selected_brand, selected_region):
 
 
     
-# Get Shoe Store_ID from Selected Region
+# Get Store_ID from Selected Region
 @app.callback(
     Output("worse-turnover-graph", "figure"),
     [
@@ -2355,9 +2361,6 @@ def set_worse_turnover_graph(year, selected_brand, selected_region):
     
     )
 
-
-
-
     fig.update_layout(
         title = f'Worse Days in Inventory (DSI)',
         #paper_bgcolor="#1f2630",
@@ -2368,13 +2371,121 @@ def set_worse_turnover_graph(year, selected_brand, selected_region):
     )
     return fig         
 
+
+# generate df for inventory dash_table
+@app.callback(
+    Output("inventory-dashtable", "children"),
+    [
+        Input("years-slider", "value"),
+        Input("region-dropdown", "value"),
+        Input("category-dropdown", "value"),
+        Input("product-dropdown", "value"),
+        Input("site-size-dropdown", "value")
+    ],
+)
+def generate_inv_df(year, selected_region, selected_brand, selected_product, selected_site_size):
+    curr_year = year
+    curr_brand = selected_brand
+    curr_regions = [region for region in selected_region]
+    curr_products = [product for product in selected_product]
+    curr_site_sizes = [site for site in selected_site_size]
+
+    sql1 = 'SELECT * FROM "sale"'
+    sql2 = "SELECT * FROM product"
+    sql3 = "SELECT * FROM category"
+    sql4 = "SELECT * FROM po"
+    sql5 = "SELECT * FROM sale_product"
+    sql6 = "SELECT * FROM po_product"
+    sql7 = "SELECT * FROM city"
+    df_order = querydatafromdatabase(sql1,[],["Sale_ID", "Sale Date", "Store_ID", "City_ID"])
+    df_product = querydatafromdatabase(sql2,[],["Product_ID", "Product Name", "Category_ID"])
+    df_po = querydatafromdatabase(sql4,[],["PO_ID","Release Date"])
+    df_sale_product = querydatafromdatabase(sql5,[],["Sale_ID","Product_ID","Quantity","Sale Price"])
+    df_po_product = querydatafromdatabase(sql6,[],["PO_ID","Product_ID","Stock","Retail Price"])
+    df_city = querydatafromdatabase(sql7,[],["City_ID", "Buyer City", "Region_ID"])
+    
+    # append order year
+    df_order['Sale Date'] = pd.to_datetime(df_order['Sale Date'])
+    df_order["Order Year"] = df_order["Sale Date"].dt.year
+    
+    # merge city
+    m_city = pd.merge(df_order, df_city, on=["City_ID"])
+    
+    # merge product
+    m_product = pd.merge(df_sale_product, df_product, on=["Product_ID"])
+    
+    # merge city with product
+    m_order = pd.merge(m_city, m_product, on=["Sale_ID"])
+    
+    # append order year
+    df_po['Release Date'] = pd.to_datetime(df_po['Release Date'])
+    df_po["Order Year"] = df_po["Release Date"].dt.year
+    
+    # merge product
+    m_product = pd.merge(df_po_product, df_product, on=["Product_ID"])
+    
+    # merge po with product
+    m_po = pd.merge(df_po, m_product, on=["PO_ID"])
+    
+    df = m_order.copy()
+    df2 = m_po.copy()
+   
+    if (len(curr_brand)==0) and (len(curr_regions)==0):
+        dff = df[(df['Order Year']==curr_year)]
+        dff2 = df2[(df2['Order Year']==curr_year)]
+
+    elif (len(curr_brand)==0) and (len(curr_regions)>=1):
+        dff = df[(df['Order Year']==curr_year) & (df['Region_ID'].isin(curr_regions))]
+        dff2 = df2[(df2['Order Year']==curr_year)]
+
+    elif (len(curr_brand)>=1) and (len(curr_regions)==0):
+        dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0]))]
+        dff2 = df2[(df2['Order Year']==curr_year) & (df2['Category_ID']==str(curr_brand[0]))]
+
+    elif (len(curr_brand)>=1) and (len(curr_regions)>=1):
+        dff = df[(df['Order Year']==curr_year) & (df['Category_ID']==str(curr_brand[0])) & (df['Region_ID'].isin(curr_regions))]
+        dff2 = df2[(df2['Order Year']==curr_year) & (df2['Category_ID']==str(curr_brand[0]))]
+        
+    else:
+        dff = df[(df['Order Year']==curr_year)]
+        dff2 = df2[(df2['Order Year']==curr_year)]
+
+    df_sale = dff.groupby(["Product_ID"]).agg({'Quantity' : 'sum'}).reset_index()
+    df_po = dff2.groupby(["Product_ID"]).agg({'Stock' : 'sum'}).reset_index()
+    # inventory = po - sales
+    df_inv = pd.merge(df_sale, df_po, on=['Product_ID']).set_axis(df_sale.index)
+    df_inv['Inventory'] = df_po['Stock'] - df_sale['Quantity']
+    df_inv = df_inv.drop(columns=['Quantity', 'Stock'])
+    #ROP = max. daily sales x max. lead time
+    df_sale_date = dff.groupby(["Product_ID","Sale Date"]).agg({'Quantity' : 'sum'}).reset_index()
+    df_sale_max = df_sale_date.groupby(["Product_ID"]).agg({'Quantity':'max'}).reset_index()
+    df_sale_max['ROP'] = df_sale_max['Quantity'] * 3
+    df_rop = pd.merge(df_inv, df_sale_max, on=['Product_ID']).set_axis(df_inv.index)
+    df_rop = df_rop.drop(columns=['Quantity'])
+    df_rop['Difference'] = df_rop['ROP'] - df_rop['Inventory']
+    sorted_df = df_rop.sort_values(by='Difference',ascending=False)
+    #EOQ Method = √ (2DS/H)
+    #where : 
+    #D : annual demand for material inventory 
+    #S : costs required per order
+    #H : holding cost per unit annually
+    #EOQ = sqrt(Qty^2*Price/Holding Cost)
+    #dff['q2pc'] = 2*dff['Quantity']*dff['Quantity']*dff['Sale Price']/18220.91
+    #df_q2pc = dff.groupby(["Product_ID"]).agg({'q2pc' : 'sum'}).reset_index()
+    #EOQ : number of items in each order 
+    #eoq = round(math.sqrt(df_q2pc))
+    #reorder = eoq - curr_inventory
+
+    return [
+            dash_table.DataTable(sorted_df.to_dict('records'), [{"name": i, "id": i} for i in sorted_df.columns])
+                ]
+
+
 # product inventory graphs-metric selector
 @app.callback([
      Output("app-container-3", "children"),
      ],
-
     Input("metric-dropdown", "value")
-    
 )
 def inventory_metric_selector(metric):
     if metric == "inventory_metrics":
@@ -2512,7 +2623,12 @@ def inventory_metric_selector(metric):
                 ])
                                       
                 ]
-
+    elif metric == "reorder_summary":
+        # df = data frame containing product, current inv, and rop sorted by highest difference
+        # df = generate_inv_df()
+        return [ 
+            html.Div(id="inventory-dashtable") 
+            ]
     elif metric == "top_turnover":
         return [
             
@@ -2546,7 +2662,6 @@ def inventory_metric_selector(metric):
                     ), style={"display":"block"}
                 ), # end area graph    
                                      
-            
             ]
     else:
         return [html.H1("404: Not found", className="text-danger")]
@@ -2610,7 +2725,7 @@ def parse_contents(contents, filename, date):
                     #"Product_ID": df_raw["Product_ID"].tolist(), 
                     #"PO_ID": [str(x) for x in PO_ID], 
                     #"Sale Price": df_raw["Products' Price Paid by Buyer (PHP)"].tolist(), 
-                    "Store_ID": ["Online"] * len(df_raw.index), 
+                    "Store_ID": ["O"] * len(df_raw.index), 
                     #"Region_ID": df_raw["Province"].tolist(), 
                     #"Order Year": [x[:4] for x in df_raw["Order Creation Date"]], 
                     "City_ID": df_raw["City"].tolist(), 
@@ -2652,7 +2767,17 @@ def parse_contents(contents, filename, date):
                     [{'name': i, 'id': i} for i in df.columns]
                 )
             ]),
-      
+        #html.Div([
+         #       html.H5(filename),
+          #      html.H6(datetime.datetime.fromtimestamp(date)),
+           #     html.P("Displaying first 5 records."),
+            #    dash_table.DataTable(
+             #       df2[0:5].to_dict('records'),
+              #      [{'name': i, 'id': i} for i in df.columns]
+               # )
+           # ])
+        
+
        # html.Hr(),  # horizontal line
 
         # For debugging, display the raw contents provided by the web browser
@@ -2728,7 +2853,6 @@ def parse_contents2(contents, filename):
                 #df2 = pd.DataFrame(data2)
             else:
                 df = pd.read_csv(io.BytesIO(decoded))
-
     except Exception as e:
         print(e)
         return html.Div([
@@ -2774,9 +2898,9 @@ def parse_contents3(contents, filename):
             ])
 
     return  df
-  
-# start update callbacks
-@app.callback(Output('output-data-upload', 'children'),
+
+# start update callbacks for displaying data on screen
+@app.callback(Output('output-data-sale', 'children'),
               Input('upload-data', 'contents'),
               State('upload-data', 'filename'),
               State('upload-data', 'last_modified'))
@@ -2786,7 +2910,7 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
             parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
         return children
     
-@app.callback(Output('output-data-upload2', 'children'),
+@app.callback(Output('output-data-po', 'children'),
               Input('upload-data2', 'contents'),
               State('upload-data2', 'filename'),
               State('upload-data2', 'last_modified'))
@@ -2796,7 +2920,7 @@ def update_output2(list_of_contents, list_of_names, list_of_dates):
             parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
         return children
     
-@app.callback(Output('output-data-upload3', 'children'),
+@app.callback(Output('output-data-category', 'children'),
               Input('upload-data3', 'contents'),
               State('upload-data3', 'filename'),
               State('upload-data3', 'last_modified'))
@@ -2806,7 +2930,7 @@ def update_output3(list_of_contents, list_of_names, list_of_dates):
             parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
         return children
     
-@app.callback(Output('output-data-upload4', 'children'),
+@app.callback(Output('output-data-store', 'children'),
               Input('upload-data4', 'contents'),
               State('upload-data4', 'filename'),
               State('upload-data4', 'last_modified'))
@@ -2816,7 +2940,7 @@ def update_output4(list_of_contents, list_of_names, list_of_dates):
             parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
         return children
     
-@app.callback(Output('output-data-upload5', 'children'),
+@app.callback(Output('output-data-region', 'children'),
               Input('upload-data5', 'contents'),
               State('upload-data5', 'filename'),
               State('upload-data5', 'last_modified'))
@@ -2826,7 +2950,7 @@ def update_output5(list_of_contents, list_of_names, list_of_dates):
             parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
         return children
     
-@app.callback(Output('output-data-upload6', 'children'),
+@app.callback(Output('output-data-city', 'children'),
               Input('upload-data6', 'contents'),
               State('upload-data6', 'filename'),
               State('upload-data6', 'last_modified'))
@@ -2836,7 +2960,7 @@ def update_output6(list_of_contents, list_of_names, list_of_dates):
             parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
         return children
     
-@app.callback(Output('output-data-upload7', 'children'),
+@app.callback(Output('output-data-product', 'children'),
               Input('upload-data7', 'contents'),
               State('upload-data7', 'filename'),
               State('upload-data7', 'last_modified'))
@@ -2846,7 +2970,7 @@ def update_output7(list_of_contents, list_of_names, list_of_dates):
             parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
         return children
     
-@app.callback(Output('output-data-upload8', 'children'),
+@app.callback(Output('output-data-sale-product', 'children'),
               Input('upload-data8', 'contents'),
               State('upload-data8', 'filename'),
               State('upload-data8', 'last_modified'))
@@ -2856,7 +2980,7 @@ def update_output8(list_of_contents, list_of_names, list_of_dates):
             parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
         return children
     
-@app.callback(Output('output-data-upload9', 'children'),
+@app.callback(Output('output-data-po-product', 'children'),
               Input('upload-data9', 'contents'),
               State('upload-data9', 'filename'),
               State('upload-data9', 'last_modified'))
@@ -2865,7 +2989,7 @@ def update_output9(list_of_contents, list_of_names, list_of_dates):
         children = [
             parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
         return children
-
+    
 @app.callback(Output('output-data-online', 'children'),
               Input('upload-data10', 'contents'),
               State('upload-data10', 'filename'),
@@ -3101,7 +3225,7 @@ def po_product_output(po_product_save_button, list_of_contents, file_name):
                return ['Error encountered.']
    else:
        return ['']
-
+   
 # online sales callbacks
 @app.callback(
     Output('online-notif', 'children'),

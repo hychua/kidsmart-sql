@@ -13,7 +13,7 @@ import math
 def querydatafromdatabase(sql, values,dbcolumns):
     db = psycopg2.connect(
         user="kidsmart_6_user",
-        password="xKtAHODVAHVwDJRYh04S4Xu8p7n6Sd0l",
+        password="OiA31iCst2NPewhNhKLf2aj7PzkboXfw",
         host="dpg-ctn13a9opnds73fjd03g-a.oregon-postgres.render.com",
         port=5432,
         database="kidsmart_6")
@@ -26,7 +26,7 @@ def querydatafromdatabase(sql, values,dbcolumns):
 def modifydatabase(sqlcommand, values):
     db = psycopg2.connect(
             user="kidsmart_6_user",
-            password="xKtAHODVAHVwDJRYh04S4Xu8p7n6Sd0l",
+            password="OiA31iCst2NPewhNhKLf2aj7PzkboXfw",
             host="dpg-ctn13a9opnds73fjd03g-a.oregon-postgres.render.com",
             port=5432,
             database="kidsmart_6")
