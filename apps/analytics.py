@@ -12,11 +12,11 @@ import math
 
 def querydatafromdatabase(sql, values,dbcolumns):
     db = psycopg2.connect(
-        user="hychua",
-        password="OiA31iCst2NPewhNhKLf2aj7PzkboXfw",
-        host="dpg-csparlpu0jms73bhujs0-a.oregon-postgres.render.com",
+        user="kidsmart_6_user",
+        password="xKtAHODVAHVwDJRYh04S4Xu8p7n6Sd0l",
+        host="dpg-ctn13a9opnds73fjd03g-a.oregon-postgres.render.com",
         port=5432,
-        database="kidsmart_5")
+        database="kidsmart_6")
     cur = db.cursor()
     cur.execute(sql, values)
     rows = pd.DataFrame(cur.fetchall(), columns=dbcolumns)
@@ -25,11 +25,11 @@ def querydatafromdatabase(sql, values,dbcolumns):
 
 def modifydatabase(sqlcommand, values):
     db = psycopg2.connect(
-            user="hychua",
-            password="OiA31iCst2NPewhNhKLf2aj7PzkboXfw",
-            host="dpg-csparlpu0jms73bhujs0-a.oregon-postgres.render.com",
+            user="kidsmart_6_user",
+            password="xKtAHODVAHVwDJRYh04S4Xu8p7n6Sd0l",
+            host="dpg-ctn13a9opnds73fjd03g-a.oregon-postgres.render.com",
             port=5432,
-            database="kidsmart_5")
+            database="kidsmart_6")
     cursor = db.cursor()
     cursor.execute(sqlcommand, values)
     db.commit()
