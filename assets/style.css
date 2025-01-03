@@ -333,12 +333,12 @@ p {
     padding: 0.5rem;
 }
 
-#slider-text, #chart-selector, #product-dropdown-text,#regions-dropdown-text,#shoe-sizes-dropdown-text,#category-dropdown-text,#site-dropdown-text, #variable-selector, #metric-selector{
+#slider-text, #chart-selector, #product-dropdown-text,#regions-dropdown-text,#site-sizes-dropdown-text,#category-dropdown-text,#site-dropdown-text, #variable-selector, #metric-selector{
     margin-left: 1rem !important;
     font-size: 2rem;
 }
 
-#chart-dropdown,#product-dropdown,#region-dropdown,#shoe-size-dropdown,#category-dropdown, #site-dropdown, #variable-dropdown, #metric-dropdown{
+#chart-dropdown,#product-dropdown,#region-dropdown,#site-size-dropdown,#category-dropdown, #site-dropdown, #variable-dropdown, #metric-dropdown{
     margin: 1rem !important;
 
 }
