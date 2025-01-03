@@ -2461,20 +2461,20 @@ def generate_inv_df(year, selected_region, selected_brand, selected_product, sel
     df_sale_max = df_sale_date.groupby(["Product_ID"]).agg({'Quantity':'max'}).reset_index()
     df_sale_max['ROP'] = df_sale_max['Quantity'] * 3
     df_rop = pd.merge(df_inv, df_sale_max, on=['Product_ID']).set_axis(df_inv.index)
-    df_rop = df_rop.drop(columns=['Quantity'])
     df_rop['Difference'] = df_rop['ROP'] - df_rop['Inventory']
-    sorted_df = df_rop.sort_values(by='Difference',ascending=False)
     #EOQ Method = √ (2DS/H)
     #where : 
     #D : annual demand for material inventory 
     #S : costs required per order
     #H : holding cost per unit annually
+    df_eoq = pd.merge(df_rop,dff[["Product_ID","Sale Price"]],on=["Product_ID"])
+    df_unique = df_eoq.drop_duplicates(subset=['Product_ID'])
+    holding = 18220.91 / df_unique["Inventory"].sum()
     #EOQ = sqrt(Qty^2*Price/Holding Cost)
-    #dff['q2pc'] = 2*dff['Quantity']*dff['Quantity']*dff['Sale Price']/18220.91
-    #df_q2pc = dff.groupby(["Product_ID"]).agg({'q2pc' : 'sum'}).reset_index()
     #EOQ : number of items in each order 
-    #eoq = round(math.sqrt(df_q2pc))
-    #reorder = eoq - curr_inventory
+    df_unique['EOQ'] = np.sqrt(2*df_unique['Quantity']*df_unique['Sale Price']/holding)
+    df_unique = df_unique.drop(columns=['Quantity', 'Sale Price'])
+    sorted_df = df_unique.sort_values(by='Difference',ascending=False)
 
     return [
             dash_table.DataTable(sorted_df.to_dict('records'), [{"name": i, "id": i} for i in sorted_df.columns])
